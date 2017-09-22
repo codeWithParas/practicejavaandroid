@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PracticeJavaAndroid.iml" filepath="$PROJECT_DIR$/PracticeJavaAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/javapractice/javapractice.iml" filepath="$PROJECT_DIR$/javapractice/javapractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javapractice/javapractice.iml" filepath="$PROJECT_DIR$/javapractice/javapractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practicejavaandroid.iml" filepath="$PROJECT_DIR$/practicejavaandroid.iml" />
     </modules>
   </component>
 </project>
