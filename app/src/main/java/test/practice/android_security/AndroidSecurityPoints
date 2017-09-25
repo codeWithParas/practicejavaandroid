@@ -1,0 +1,9 @@
+
+Security should be provided on each layer of implementation in complete project.
+We can have number of ways as :
+
+1) Web server port based security w.r.t Session.
+2) SSL for session. Secured Socket Layer through handshake between client and server using
+ keys Public Key and Secret Key.
+3) FingerPrint Authentication.
+4) Captcha Authentication.

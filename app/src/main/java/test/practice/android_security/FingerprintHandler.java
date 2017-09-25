@@ -1,4 +1,4 @@
-package test.practicejavaandroid.android_security;
+package test.practice.android_security;
 
 import android.annotation.TargetApi;
 import android.content.Context;

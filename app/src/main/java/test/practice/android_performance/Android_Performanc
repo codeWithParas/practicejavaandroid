@@ -1,0 +1,7 @@
+TO maintain performance through following ways :
+
+1) Use Fragments.
+2) Use foreach loop as much as possible . (w.r.t JIT compiler : Good if JIT not available also).
+3) Use lint
+4) Use of Proguard
+5) Don't use Static variables. That may create strong reference after activity destroyed.

@@ -1,25 +1,28 @@
-package test.practicejavaandroid.parcelable;
+package test.practice.android_parcelable;
 
 import android.content.Intent;
-import android.support.v4.util.ArrayMap;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
-import test.practicejavaandroid.R;
-import test.practicejavaandroid.model.Student;
+import test.practice.R;
+import test.practice.model.Student;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by Parasmani Sharma on 9/24/2017.
+ */
 
-    private Button txt_checkparcelable;
+public class FirstActivity extends AppCompatActivity {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_first);
 
-        /*
+         /* Note : Moving to second activity by taking custom object reference through Parcelable
+        *
         * 1)Container for a message (data and object references) that can
         * be sent through an IBinder.  A Parcel can contain both flattened data
         * that will be unflattened on the other side of the IPC
@@ -49,16 +52,16 @@ public class MainActivity extends AppCompatActivity {
 
         final Student student = new Student("Boy1", 1);
 
-        txt_checkparcelable = (Button) findViewById(R.id.txt_checkparcelable);
-        txt_checkparcelable.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.txt_checkparcelable).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
                 intent.putExtra("Student", student);
                 startActivity(intent);
 
             }
         });
+
     }
 }

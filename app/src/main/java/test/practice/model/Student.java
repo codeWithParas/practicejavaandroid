@@ -1,4 +1,4 @@
-package test.practicejavaandroid.model;
+package test.practice.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

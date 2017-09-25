@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="test.practicejavaandroid">
+    package="test.practice">
 
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <!-- android : required = "false" Google Play will then permit users to download your app even
@@ -12,7 +12,7 @@
         android:label="@string/App_Name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".android_security.FingerPrintActivity">
+        <activity android:name="test.practice.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +20,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".parcelable.SecondActivity"/>
+        <activity android:name="test.practice.android_parcelable.FirstActivity"/>
+        <activity android:name="test.practice.android_parcelable.SecondActivity"/>
+        <activity android:name="test.practice.android_broadcast.Android_BroadCast_Server"/>
 
         <!--<activity android:name=".android_security.FingerPrintActivity"/>-->
+
+        <receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="test.server.broadcast.receiver" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -1,12 +1,12 @@
-package test.practicejavaandroid.parcelable;
+package test.practice.android_parcelable;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import test.practicejavaandroid.R;
-import test.practicejavaandroid.model.Student;
+import test.practice.R;
+import test.practice.model.Student;
 
 /**
  * Created by parasmani.sharma on 20/09/2017.
