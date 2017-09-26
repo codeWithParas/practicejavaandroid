@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="test.practicejavaandroid">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <!-- android : required = "false" Google Play will then permit users to download your app even
     if their device doesn’t have a fingerprint sensor.-->
@@ -12,7 +13,7 @@
         android:label="@string/App_Name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".android_security.FingerPrintActivity">
+        <activity android:name=".parcelable.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +23,7 @@
 
         <activity android:name=".parcelable.SecondActivity"/>
 
-        <!--<activity android:name=".android_security.FingerPrintActivity"/>-->
+        <activity android:name=".android_security.FingerPrintActivity"/>
     </application>
 
 </manifest>
