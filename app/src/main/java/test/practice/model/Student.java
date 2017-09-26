@@ -2,12 +2,15 @@ package test.practice.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
+
+import java.util.Comparator;
 
 /**
  * Created by parasmani.sharma on 20/09/2017.
  */
 
-public class Student implements Parcelable {
+public class Student implements Parcelable, Comparator<Student>, Comparable<Student> {
 
     public Student(String name, int roll)
     {
@@ -60,5 +63,27 @@ public class Student implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeInt(rollnumber);
+    }
+
+    public Student()
+    {
+
+    }
+
+
+    @Override
+    public int compare(Student lhs, Student rhs) {
+
+        //+1 after
+        //-1 before
+
+        return lhs.getRollnumber()-rhs.getRollnumber();
+
+        //return 0; //duplicate
+    }
+
+    @Override
+    public int compareTo(@NonNull Student another) {
+        return this.getRollnumber()-another.getRollnumber();
     }
 }
