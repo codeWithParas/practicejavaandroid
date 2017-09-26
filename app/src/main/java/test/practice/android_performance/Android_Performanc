@@ -5,3 +5,4 @@ TO maintain performance through following ways :
 3) Use lint
 4) Use of Proguard
 5) Don't use Static variables. That may create strong reference after activity destroyed.
+6) Use parcelable interface for marshalling and un-marshalling the object.
