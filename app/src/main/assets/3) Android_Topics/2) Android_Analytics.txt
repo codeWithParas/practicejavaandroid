@@ -1,0 +1,7 @@
+Crashlytics.
+
+1)Crashlytic download and install the plugin and restrat studio
+2)Register Crashlytics to www.fabric.io
+3)You will find an icon of fabrics in android studio.
+4)Login into fabric and go ahead with the steps given.
+5)Build project and now you are ready with Crashlytics.

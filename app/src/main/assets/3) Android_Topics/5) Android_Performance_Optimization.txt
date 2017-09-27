@@ -1,0 +1,86 @@
+Android Performance Tips : 
+
+A)  Tips for optimize :
+
+..proguard
+..lint
+..Relative layout
+..Constraint layout
+..used fragments (ligth-weigth & passing data become easy) 
+
+
+B)There are two basic rules for writing efficient code:
+
+1)Don't do work that you don't need to do.
+2)Don't allocate memory if you can avoid it.
+
+3) Avoid Creating Unnecessary Objects or Avoiding Memory Leaks
+
+As you allocate more objects in your app, you will force a periodic garbage collection, creating little "hiccups" in the user experience.
+1)Ex.- If you have a method returning a string, and you know that its result will always be appended to a StringBuffer anyway, change your signature and implementation so that the function does the append directly, instead of creating a short-lived temporary object.
+Accessing object fields is much slower than accessing local variables. Instead of writing:
+for (int i = 0; i < this.mCount; i++)
+      dumpItem(this.mItems[i]);
+You should write:
+  int count = this.mCount;
+  Item[] items = this.mItems;
+ 
+  for (int i = 0; i < count; i++)
+      dumpItems(items[i]);
+(We're using an explicit "this" to make it clear that these are member variables.)
+A similar guideline is never call a method in the second clause of a "for" statement. For example, the following code will execute the getCount() method once per iteration, which is a huge waste when you could have simply cached the value as an int:
+for (int i = 0; i < this.getCount(); i++)
+    dumpItems(this.getItem(i));
+It's also usually a good idea to create a local variable if you're going to be accessing an instance field more than once.
+
+2) Use Enhanced For Loop Syntax
+
+The enhanced for loop (also sometimes known as "for-each" loop) can be used for collections that implement the Iterable interface and for arrays. 
+There are several alternatives for iterating through an array:
+static class Foo {
+    int mSplat;
+}
+
+Foo[] mArray = ...
+
+public void zero() {
+    int sum = 0;
+    for (int i = 0; i < mArray.length; ++i) {
+        sum += mArray[i].mSplat;
+    }
+}
+
+public void one() {
+    int sum = 0;
+    Foo[] localArray = mArray;
+    int len = localArray.length;
+
+    for (int i = 0; i < len; ++i) {
+        sum += localArray[i].mSplat;
+    }
+}
+
+public void two() {
+    int sum = 0;
+    for (Foo a : mArray) {
+        sum += a.mSplat;
+    }
+}
+zero() is slowest, because the JIT can't yet optimize away the cost of getting the array length once for every iteration through the loop.
+one() is faster. It pulls everything out into local variables, avoiding the lookups. Only the array length offers a performance benefit.
+two() is fastest for devices without a JIT, and indistinguishable from one() for devices with a JIT. 
+
+
+3)Avoid Using Floating Point : Use Integer as possible
+
+4)Use inbuilt classes in place of customize as much as possible.
+   Ex: String.IndexOf()
+
+
+5)Improving Layout Performance :
+1)Optimize layout using Hierarchy view .
+2)Use Lint : It is automatically executed at the time of Building of an app.
+3)Make listview scrolling smooth using AsyncTask (BackgroundTask) .
+4)Hold View Objects in view holder.
+5)We can use constraint layout.
+6) Create reusable layout and make use of <include> in layout.

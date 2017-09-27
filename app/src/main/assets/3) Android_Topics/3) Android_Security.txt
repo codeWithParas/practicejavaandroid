@@ -1,0 +1,60 @@
+a) Back Ground : port security authentication at webserver w.r.t sessoin :
+
+refer : https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/13367-3.html#trans
+
+b) we should use SSL layer protocols
+
+c) we should use incripted data.
+
+d) Finger Print
+
+e) Captcha
+
+
+
+
+
+*&&**&&*&&*&&*&*&*&*&*&*&*&*&*&*************************&*&*&&*&*&*&*&*&&**&*&&*&&*&&&&&&&*&&&&***
+
+
+
+Android Security 
+
+The following core security features help you build secure apps:
+1)The Android Application Sandbox, which isolates your app data and code execution from other apps.
+2)By default, files that you create on internal storage are accessible only to your app. Content Provider is the best practice to provide IPC since it does dynamic permission grant to other apps on case by case basis.
+3)Don't store sensitive information using external storage.
+4)Using SSL
+In a typical SSL usage scenario, a server is configured with a certificate containing a public key as well as a matching private key. As part of the handshake between an SSL client and server, the server proves it has the private key by signing its certificate with public-key cryptography.
+“In a public key encryption system, any person can encrypt a message using the public key of the receiver, but such a message can be decrypted only with the receiver's private key.”
+5) Using Device Policy Manager. We can perform screen lock.
+
+
+Working of SSL : 
+
+Refer : https://stackoverflow.com/questions/6241991/how-exactly-https-ssl-works
+
+
+Why is HTTPS required?
+
+To verify whether the website is authenticated/certified or not (uncertified websites can do evil things). An authenticated website has a unique personal certificate purchased from one of the CA’s.
+
+Who are CA’s (Certificate Authorities)?
+
+CA’s are globally trusted companies like GoDaddy, GeoTrust, VeriSign etc who provide digital certificates to the websites.
+
+What are public keys and private keys?
+
+Keys are nothing but long random numbers used to encrypt/decrypt data.
+Public keys are keys which can be shared with others. Private keys are meant to be kept private.
+
+Suppose Jerry generates a private key and public key. He makes many copies of that public key and shares with others.
+Now, others can only encrypt the data using the public key and that data can only be decrypted by the private key of Jerry.
+Another approach is to use public keys to only decrypt the data and private keys to only encrypt the data.
+
+How does a company get a certificate?
+
+Website owner first generates a public key and private key, keeping the private key secret. He gives a Certificate Signing Request file (CSR) and his public key to the CA.
+CA then creates a personal certificate based on CSR including domain name, owner name, expiry date, serial no. etc and also adds an encrypted text (= digital signature) to the certificate and finally encrypts the whole certificate with the public key of the server and sends it back to the website owner.
+This certificate is then decrypted with the private key of the website owner and finally, he installs it on the website.
+
