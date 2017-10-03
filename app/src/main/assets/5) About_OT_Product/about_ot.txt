@@ -1,0 +1,61 @@
+Project Related Question :
+1) Your project is based on ? What is your role in the project ?
+
+..Airlines and Aviation
+..Android Developer and Tester
+
+2) How you manage session in your app ?
+
+..SharedPref.
+..Server API mgmt.
+..onUserInteraction().(Difference between last time user interaction and current user interaction.)
+
+3) How did you get Idle time of your app ?
+
+..by Using onUserInteraction() method.
+
+4) The most challenging task in the project you have done ?
+
+..Local json request retreival from assets
+..Transfer of Optionpass from eclipse to android
+..Seat map
+
+5) Have you used analytic in your app ? Which one and How ?
+
+..Crashlytics by Fabric
+
+6) What have you done for app security ?
+
+..SSL layer
+..use encrypted data
+..Session Mgmt by onUserInteraction(), 
+..FingerPrint > API 23
+..Captcha (API using google play services, after side key generation, use it in call back)
+
+7) How you prevent memory leaks in your project ?
+..The first memory-leak-category is caused by a process-global static object that exists regardless of the app’s state and maintains a chain of references to the Activity.
+..resource deallocation properly.
+
+8) Do you applied any optimization techniques in your app ? What are they and how you did it ?
+
+..proguard
+..lint
+..Relative layout
+..Constraint layout
+..used fragments (ligth-weigth & passing data become easy) 
+
+
+
+&**&&**&&**&**&*&*&**&*&***&*&*&^&*&*^(&(&(&*(^&*(^&*(^&*(^&*(^&*(^&*(
+^&*(^&^*%^*^*%^*%^*%^*%^*%^*%^&*^&*%^*^&*^&*^&*%^&%*%^&*^&*^&*^&*&^*^&*
+
+
+
+About OT :
+
+It is a flight pass product that has tie-ups with most of famous international airlines available in the world with other supported modules that allows you to conveniently pre-purchase a Number of flights at an agreed low price and provide further flights booking arrangement as per our need.
+By using upgrade module we can get number of upgrades on flights like economic to business class and so on. 
+
+Flight booking , flight filteration based on zones.
+
+OP is also one other product that is having same scenerio as like OT but it basically work with indian merchands and shopkeepres all around our native.

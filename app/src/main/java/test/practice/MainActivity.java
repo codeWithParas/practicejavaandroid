@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import test.practice.android_broadcast.Android_BroadCast_Server;
+import test.practice.android_cp.ContentProvider_Server;
 import test.practice.model.Student;
 import test.practice.android_parcelable.FirstActivity;
 
@@ -70,5 +71,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        /*
+        * Content provider
+        * */
+
+        findViewById(R.id.txt_check_cp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, ContentProvider_Server.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+
     }
 }

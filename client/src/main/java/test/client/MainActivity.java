@@ -1,12 +1,16 @@
 package test.client;
 
 import android.content.ComponentName;
+import android.content.ContentProviderClient;
 import android.content.Intent;
 import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import test.client.android_CP_client.ContentProvider_Client;
+import test.client.android_aidl_client.AIDL_Client_Binding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +47,36 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        /*
+        * REceive Content provider
+        * */
+
+        findViewById(R.id.but_cp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, ContentProvider_Client.class);
+                startActivity(i);
+
+            }
+        });
+
+
+        /*
+        * AIDL Client.
+        * 1) Bind with Server App
+        * 2) Send two numbers and receive sum of both from server app.
+        * */
+
+        findViewById(R.id.but_aidl).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, AIDL_Client_Binding.class);
+                startActivity(i);
+
+            }
+        });
 
 
     }

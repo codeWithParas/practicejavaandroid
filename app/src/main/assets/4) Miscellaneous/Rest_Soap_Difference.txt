@@ -1,0 +1,26 @@
+REST: REST (REpresentational State Transfer) was introduced and defined in 2000 by Roy Thomas Fielding in his PhD dissertation “Architectural Styles and the Design of Network-based Software Architectures”. Rest facilitates the philosophy of the open web.
+
+
+Soap : Stands for "Simple Object Access Protocol," and can do more than just get your hands clean. SOAP is a method of transferring messages, or small amounts of information, over the Internet. SOAP messages are formatted in XML and are typically sent using HTTP (hypertext transfer protocol).
+
+History : SOAP was designed as an object-access protocol in 1998 by Dave Winer(by Some more) for Microsoft.
+
+Each SOAP message is contained in an "envelope" that includes a header and a body. The header may include the message ID and date the message was sent, while the body contains the actual message. Because SOAP messages all use the same format, they are compatible with many different operating systems and protocols. For example, a user can send a SOAP message from a Windows XP machine to a Unix-based Web server without worrying about the message being altered. The Unix machine can then redirect the message to the appropriate location or open the file using a program on the system. While most SOAP messages are sent over the Web via HTTP, they can also be sent via e-mail, using SMTP.
+
+SOAP building blocks :
+
+A SOAP message is an ordinary XML document containing the following elements:
+
+Element	Description	 Required
+Envelope	         Identifies the XML document as a SOAP message.	                               Yes
+Header	                 Contains header information.	                                                No
+Body	                 Contains call, and response information.	                               Yes
+Fault	                 Provides information about errors that occurred while processing the message.	No
+
+
+
+                                        When to Use What ?
+            REST	                                                                    SOAP
+When your bandwidth is very limited.	                When performing transactions that involve multiple calls.
+When client and server operates on a web environment.	When you want to enforce a strict contract between client and server
+Examples: Social Media Service, Web chat service	Examples: Financial services, telecommunication services

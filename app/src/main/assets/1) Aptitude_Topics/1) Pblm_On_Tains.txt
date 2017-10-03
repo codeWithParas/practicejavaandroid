@@ -1,0 +1,84 @@
+Aptitude : Time Distance   (https://www.indiabix.com/aptitude/problems-on-trains/)
+
+Question : Think and answer.
+A man standing on the plateform. A train crosses him with a speed of 15m/sec in 20 minutes. The length of the plateform is 400 meter. How much time it takes to cross the plateform ? 
+
+
+
+>>>>
+A train running at the speed of 60 km/hr crosses a pole in 9 seconds. What is the length of the train?
+A.	120 metres
+B.	180 metres
+C.	324 metres
+D.	150 metres
+Answer: Option D
+
+Explanation:
+
+Speed=		60 x	5	m/sec	=		50	m/sec.
+18	3
+Length of the train = (Speed x Time).
+
+ Length of the train =		50	x 9	m = 150 m.
+
+
+
+>>>>>	
+Two trains running in opposite directions cross a man standing on the platform in 27 seconds and 17 seconds respectively and they cross each other in 23 seconds. The ratio of their speeds is:
+A.	1 : 3
+B.	3 : 2
+C.	3 : 4
+D.	None of these
+Answer: Option B
+
+
+
+
+>>>>>>>>
+
+	
+A train 360 m long is running at a speed of 45 km/hr. In what time will it pass a bridge 140 m long?
+A.	40 sec
+B.	42 sec
+C.	45 sec
+D.	48 sec
+Answer: Option A
+
+Explanation:
+
+Formula for converting from km/hr to m/s:   X km/hr =		X x	5		m/s.
+18
+Therefore, Speed =		45 x	5	m/sec	=	25	m/sec.
+18	2
+Total distance to be covered = (360 + 140) m = 500 m.
+
+Formula for finding Time =		Distance	
+Speed
+ Required time =		500 x 2	sec	= 40 sec.
+25
+
+
+
+
+>>>>>
+Two trains running in opposite directions cross a man standing on the platform in 27 seconds and 17 seconds respectively and they cross each other in 23 seconds. The ratio of their speeds is:
+A.	1 : 3
+B.	3 : 2
+C.	3 : 4
+D.	None of these
+Explanation:
+Let the speeds of the two trains be x m/sec and y m/sec respectively.
+
+Then, length of the first train = 27x metres,
+
+and length of the second train = 17y metres.
+
+	27x + 17y	= 23
+x+ y
+ 27x + 17y = 23x + 23y
+
+ 4x = 6y
+
+	x	=	3	.
+y	2
+
