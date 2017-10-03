@@ -22,10 +22,23 @@
 
         <activity android:name="test.practice.android_parcelable.FirstActivity"/>
         <activity android:name="test.practice.android_parcelable.SecondActivity"/>
+        <activity android:name=".android_security.FingerPrintActivity"/>
         <activity android:name="test.practice.android_broadcast.Android_BroadCast_Server"/>
 
-        <!--<activity android:name=".android_security.FingerPrintActivity"/>-->
 
+
+        <!--Content Provider Server-->
+        <activity android:name=".android_cp.ContentProvider_Server"/>
+        <provider
+            android:name=".android_cp.MyContentProvider"
+            android:enabled="true"
+            android:multiprocess="true"
+            android:exported="true"
+            android:authorities="paras.server.MyContentProvider">
+        </provider>
+
+
+        <!--Registering BroadCast Receiver through Manifest-->
         <receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
             android:enabled="true"
             android:exported="true">
@@ -33,6 +46,16 @@
                 <action android:name="test.server.broadcast.receiver" />
             </intent-filter>
         </receiver>
+
+
+        <!--Registring binding service for AIDL-->
+        <service android:name=".android_aidl.BindingService" >
+            <intent-filter>
+                <action android:name="android.test.server.BindingService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

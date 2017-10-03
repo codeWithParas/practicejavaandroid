@@ -1,3 +1,8 @@
+
+Following Ways :
+
+Ma
+
 a) Back Ground : port security authentication at webserver w.r.t sessoin :
 
 refer : https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/13367-3.html#trans
@@ -22,11 +27,12 @@ Android Security
 
 The following core security features help you build secure apps:
 1)The Android Application Sandbox, which isolates your app data and code execution from other apps.
-2)By default, files that you create on internal storage are accessible only to your app. Content Provider is the best practice to provide IPC since it does dynamic permission grant to other apps on case by case basis.
+2)By default, files that you create onï¿½internal storageï¿½are accessible only to your app. Content Provider is the best practice
+ to provide IPC since it does dynamic permission grant to other apps on case by case basis.
 3)Don't store sensitive information using external storage.
 4)Using SSL
-In a typical SSL usage scenario, a server is configured with a certificate containing a public key as well as a matching private key. As part of the handshake between an SSL client and server, the server proves it has the private key by signing its certificate with public-key cryptography.
-“In a public key encryption system, any person can encrypt a message using the public key of the receiver, but such a message can be decrypted only with the receiver's private key.”
+In a typical SSL usage scenario, a server is configured with a certificate containing a public key as well as a matching private key. As part of the handshake between an SSL client and server, the server proves it has the private key by signing its certificate withï¿½public-key cryptography.
+ï¿½In a public key encryption system, any person can encrypt a message using the public key of the receiver, but such a message can be decrypted only with the receiver's private key.ï¿½
 5) Using Device Policy Manager. We can perform screen lock.
 
 
@@ -37,11 +43,11 @@ Refer : https://stackoverflow.com/questions/6241991/how-exactly-https-ssl-works
 
 Why is HTTPS required?
 
-To verify whether the website is authenticated/certified or not (uncertified websites can do evil things). An authenticated website has a unique personal certificate purchased from one of the CA’s.
+To verify whether the website is authenticated/certified or not (uncertified websites can do evil things). An authenticated website has a unique personal certificate purchased from one of the CAï¿½s.
 
-Who are CA’s (Certificate Authorities)?
+Who are CAï¿½s (Certificate Authorities)?
 
-CA’s are globally trusted companies like GoDaddy, GeoTrust, VeriSign etc who provide digital certificates to the websites.
+CAï¿½s are globally trusted companies like GoDaddy, GeoTrust, VeriSign etc who provide digital certificates to the websites.
 
 What are public keys and private keys?
 

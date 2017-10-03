@@ -8,29 +8,34 @@ A > onCreate
 A > onStart   ( <--- onRestart() )
 A > onResume
 A > onPostResume
-A > Use up a load of memory (A could even use up too much and crash)
-A > Launch activity B
-B > onCreate
+
+ > Use up a load of memory (A could even use up too much and crash)
+ > Launch activity B
+
 A > onPause
+B > onCreate
 B > onStart
-A > onStop
 B > onResume
+A > onStop
 B > Use up a load of memory 
 
 
-When the available memory goes down, the framework will stop and remove activities and services which are not associated with the current task. If your app eats up even more memory, the framework will stop your activities which are in the background. Then comes the services associated with your app and the last one to finish off will be the current activity.
+When the available memory goes down, the framework will stop and remove activities and services which are not
+associated with the current task. If your app eats up even more memory, the framework will stop your activities which
+are in the background. Then comes the services associated with your app and the last one to finish off will be the current activity.
 
 c) when finish() called from onCreate().
 
-  ...onCreate method........main..
-  ...onStart method.........main..
-  ...onResume method........main..
-  ...onPostResume method....main..
-  ..onPause method..........main..
-  ..2..onCreate method......(finish called here)
-  ....onResume method........main..
-  ....onPostResume method....main..
-  ..2..onDestroy method......
+  A...onCreate method........main..
+  A...onStart method.........main..
+  A...onResume method........main..
+  A...onPostResume method....main..
+  (Switch to B activity)
+  A..onPause method..........main..
+  B..2..onCreate method......(finish called from here)
+  A....onResume method........main..
+  A....onPostResume method....main..
+  B..2..onDestroy method......(onDestroy of 2 activity is called directly)
 
 d) when finish is from onClick()
 
@@ -123,7 +128,7 @@ d) single instance :
 
 
 
-A.4) Intent-Filter : 
+A.4) Intent-Filter : (Justify Incoming Type Event For The Component)
 
 It set the state of android component so that its incoming event receiving can be modified in order to accept various categories of incoming event.
 Incoming event here can be : receiving type of broadcast, receive url to view on browser, receive email.
@@ -176,7 +181,7 @@ C.1) Content Provider :
 a)Component of android.
 b)used to store data in Sqlilte.
 c)usefull in interprocess communication.
-d)by using getContentResolver() method we find the perticular URI to fetch data from.
+d)by using getContentResolver() method we pass the perticular URI to fetch data from.
 
 Server Side : insert name
 
@@ -205,24 +210,36 @@ cursorLoader = new CursorLoader(this, Uri.parse("content://zafar.contentprovider
 
 D.1) Services : 
 
-a)A Service is an application component that can perform long-running operations in the background, and it does not provide a user interface. Another application component can start a service, and it continues to run in the background even if the user switches to another application.
-b)Additionally, a component can bind to a service to interact with it and even perform interprocess communication (IPC). 
+a)A Service is an application component that can perform long-running operations in the background, and it does not provide a user interface.
+  Another application component can start a service, and it continues to run in the background even if the user switches to another application.
+b)Additionally, a component can bind to a service to interact with it and even perform interprocess communication (IPC). (Refer : Aidl Example)
 
-* Previously, on google doc. services where categories as start, bound, intent serves. But now due to major update in Oreo(API-8) which basically prioritize foreground components and related services to run first . The major optimization done here. So due to this services where categories as :- 
+* Previously, on google doc. services where categories as start, bound, intent serves. But now due to major update in Oreo(API-8) which
+  basically prioritize foreground components and related services to run first . The major optimization done here. So due to this services
+  where categories as :-
 
 Categories of Service:
 
-a) Foreground : A foreground service performs some operation that is noticeable to the user. For example, an audio app would use a foreground service to play an audio track. Foreground services must display a status bar icon.An app is considered to be in the foreground if any of the following is true:
+a) Foreground : A foreground service performs some operation that is noticeable to the user. For example, an audio app would use a foreground
+   service to play an audio track. Foreground services must display a status bar icon.An app is considered to be in the foreground if any of
+   the following is true:
 ...It has a visible activity, whether the activity is started or paused.
 ...It has a foreground service.
 ...Another foreground app is connected to the app, either by binding to one of its services or by making use of one of its content providers.
+
 If none of those conditions is true, the app is considered to be in the background.
 
-...While an app is in the foreground, it can create and run both foreground and background services freely. When an app goes into the background, it has a window(whitelist) of several minutes in which it is still allowed to create and use services. At the end of that window, the app is considered to be idle. At this time, the system stops the app's background services, just as if the app had called the services' Service.stopSelf() methods.
+...While an app is in the foreground, it can create and run both foreground and background services freely. When an app goes into the
+   background, it has a window(whitelist) of several minutes in which it is still allowed to create and use services. At the end of that
+   window, the app is considered to be idle. At this time, the system stops the app's background services, just as if the app had called
+   the services' Service.stopSelf() methods.
 
-Bound services are not affected...These rules do not affect bound services in any way. If your app defines a bound service, other components can bind to that service whether or not your app is in the foreground.
+Important Note : Bound services are not affected...These rules do not affect bound services in any way. If your app defines a bound service, other components
+can bind to that service whether or not your app is in the foreground.
 
-Under certain circumstances, a background app is placed on a temporary whitelist for several minutes. While an app is on the whitelist, it can launch services without limitation, and its background services are permitted to run. An app is placed on the whitelist when it handles a task that's visible to the user, such as:
+Under certain circumstances, a background app is placed on a temporary whitelist for several minutes. While an app is on the whitelist, it
+can launch services without limitation, and its background services are permitted to run. An app is placed on the whitelist when it handles
+a task that's visible to the user, such as:
 
 ..Handling a high-priority Firebase Cloud Messaging (FCM) message.
 ..Receiving a broadcast, such as an SMS/MMS message.
@@ -231,20 +248,26 @@ Under certain circumstances, a background app is placed on a temporary whitelist
 
 So now bckground services at this point depends on Job Sheduler.
 
-So Buddy,.......Prior to Android 8.0, the usual way to create a foreground service was to create a background service, then promote that service to the foreground.
-...........With Android 8.0, there is a complication; the system doesn't allow a background app to create a background service.
-...........For this reason, Android 8.0 introduces the new method startForegroundService() to start a new service in the foreground. 
+So Buddy,....Prior to Android 8.0, the usual way to create a foreground service was to create a background service, then promote that
+                service to the foreground.
+.Important : ............With Android 8.0, there is a complication; the system doesn't allow a background app to create a background service.
+.............For this reason, Android 8.0 introduces the new method startForegroundService() to start a new service in the foreground.
 
 ...... For this reason, Android 8.0 introduces the new method startForegroundService() to start a new service in the foreground. After the system has created the service, the app has five seconds to call the service's startForeground() method to show the new service's user-visible notification. If the app does not call startForeground() within the time limit, the system stops the service and declares the app to be ANR.
 
 ...IntentService is subject to these restrictions
-IntentService is a service, and is therefore subject to the new restrictions on background services. As a result, many apps that rely on IntentService do not work properly when targeting Android 8.0 or higher. For this reason, Android Support Library 26.0.0 introduces a new JobIntentService class, which provides the same functionality as IntentService but uses jobs instead of services when running on Android 8.0 or higher.
+IntentService is a service, and is therefore subject to the new restrictions on background services. As a result, many apps that rely on
+IntentService do not work properly when targeting Android 8.0 or higher. For this reason, Android Support Library 26.0.0 introduces a new
+JobIntentService class, which provides the same functionality as IntentService but uses jobs instead of services when running on Android 8.0
+or higher.
 
 
 b) Background : A background service performs an operation that isn't directly noticed by the user.
 After Api 26 >= some instruction were imposed.
 
-c) Bound : A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC). A bound service runs only as long as another application component is bound to it. Multiple components can bind to the service at once, but when all of them unbind, the service is destroyed.
+c) Bound :
+A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface
+that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC). A bound service runs only as long as another application component is bound to it. Multiple components can bind to the service at once, but when all of them unbind, the service is destroyed.
 
 ***Broadcasts that require a signature permission are exempted from this restriction, since these broadcasts are only sent to apps that are signed with the same certificate, not to all the apps on the device.
 
@@ -253,10 +276,14 @@ c) Bound : A service is bound when an application component binds to it by calli
 Types of Service : 
 
 Service
-This is the base class for all services. When you extend this class, it's important to create a new thread in which the service can complete all of its work; the service uses your application's main thread by default, which can slow the performance of any activity that your application is running.
+This is the base class for all services. When you extend this class, it's important to create a new thread in which the service can complete
+all of its work; the service uses your application's main thread by default, which can slow the performance of any activity that your
+application is running.
 
 IntentService
-This is a subclass of Service that uses a worker thread to handle all of the start requests, one at a time. This is the best option if you don't require that your service handle multiple requests simultaneously. Implement onHandleIntent(), which receives the intent for each start request so that you can complete the background work.
+This is a subclass of Service that uses a worker thread to handle all of the start requests, one at a time. This is the best option if you
+don't require that your service handle multiple requests simultaneously. Implement onHandleIntent(), which receives the intent for each
+start request so that you can complete the background work.
 
 
 
@@ -297,20 +324,27 @@ E.2.1)Receiving broadcasts :
 
 Apps can receive broadcasts in two ways: through manifest-declared receivers and context-registered receivers
 Manifest-declared receivers
-If you declare a broadcast receiver in your manifest, the system launches your app (if the app is not already running) when the broadcast is sent.
+If you declare a broadcast receiver in your manifest, the system launches your app (if the app is not already running) when the broadcast is
+sent.
 
-Note: If your app targets API level 26 or higher, you cannot use the manifest to declare a receiver for implicit broadcasts (broadcasts that do not target your app specifically), except for a few implicit broadcasts that are exempted from that restriction. In most cases, you can use scheduled jobs instead.
+Note: If your app targets API level 26 or higher, you cannot use the manifest to declare a receiver for implicit broadcasts
+(broadcasts that do not target your app specifically), except for a few implicit broadcasts that are exempted from that restriction.
+In most cases, you can use scheduled jobs instead.
 To declare a broadcast receiver in the manifest, perform the following steps:
 
 Specify the <receiver> element in your app's manifest.
+
 <receiver android:name=".MyBroadcastReceiver"  android:exported="true">
     <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED"/>
         <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
     </intent-filter>
 </receiver>
+
 The intent filters specify the broadcast actions your receiver subscribes to.
-Subclass BroadcastReceiver and implement onReceive(Context, Intent). The broadcast receiver in the following example logs and displays the contents of the broadcast:
+Subclass BroadcastReceiver and implement onReceive(Context, Intent). The broadcast receiver in the following example logs and displays the
+contents of the broadcast:
+
 public class MyBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "MyBroadcastReceiver";
     @Override
@@ -328,12 +362,16 @@ Context-registered receivers :
 
 To register a receiver with a context, perform the following steps:
 
-Create an instance of BroadcastReceiver.
+1) Create an instance of BroadcastReceiver.
+
 BroadcastReceiver br = new MyBroadcastReceiver();
-Create an IntentFilter and register the receiver by calling registerReceiver(BroadcastReceiver, IntentFilter):
+
+2) Create an IntentFilter and register the receiver by calling registerReceiver(BroadcastReceiver, IntentFilter):
+
 IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
 intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
 this.registerReceiver(br, filter);
+
 Note: To register for local broadcasts, call LocalBroadcastManager.registerReceiver(BroadcastReceiver, IntentFilter) instead.
 
 To stop receiving broadcasts, call unregisterReceiver(android.content.BroadcastReceiver). Be sure to unregister the receiver when you no longer need it or the context is no longer valid.
@@ -423,16 +461,22 @@ F.2)Volley offers the following benefits:
 ..Debugging and tracing tools.
 
 
-F.3)Volley is not suitable for large download or streaming operations, since Volley holds all responses in memory during parsing. For large download operations, consider using an alternative like DownloadManager.
+F.3)Volley is not suitable for large download or streaming operations, since Volley holds all responses in memory during parsing.
+ For large download operations, consider using an alternative like DownloadManager.
 
-...The download manager is a system service that handles long-running HTTP downloads. Clients may request that a URI be downloaded to a particular destination file. The download manager will conduct the download in the background, taking care of HTTP interactions and retrying downloads after failures or across connectivity changes and system reboots.
+...The download manager is a system service that handles long-running HTTP downloads. Clients may request that a URI be
+downloaded to a particular destination file. The download manager will conduct the download in the background, taking care
+of HTTP interactions and retrying downloads after failures or across connectivity changes and system reboots.
 
 F.4) The core Volley library is developed on GitHub .
 
 
 F.5) Sending a Simple Request
 
-At a high level(interaction-level or front-level), you use Volley by creating a RequestQueue and passing it Request objects. The RequestQueue manages worker threads for running the network operations, reading from and writing to the cache, and parsing responses. Requests do the parsing of raw responses and Volley takes care of dispatching the parsed response back to the main thread for delivery.
+At a high level(interaction-level or front-level), you use Volley by creating a RequestQueue and passing it Request objects.
+The RequestQueue manages worker threads for running the network operations, reading from and writing to the cache, and parsing
+responses. Requests do the parsing of raw responses and Volley takes care of dispatching the parsed response back to the main
+thread for delivery.
 
 REfer below code: 
 
@@ -493,7 +537,6 @@ onPreExecute()
 doInbackGround()
 onPostExecute()
 
-IKYA
 
 
 ^&*^&*^&**&^*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^^&*^&*^&*^&*^**^&*^&*^&*^&*^&*^&*&
@@ -504,7 +547,11 @@ IKYA
 H.1) Retrofit :
 
 
+3 classes :
 
+a) pojo class
+b) interface which defines HTTP operation
+c) Retrofit BUilder class
 
 
 ^&*^&*^&**&^*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^^&*^&*^&*^&*^**^&*^&*^&*^&*^&*^&*&
@@ -516,6 +563,9 @@ I.1) webRTC :
 
 REfer : https://tech.appear.in/2015/05/25/Introduction-to-WebRTC-on-Android/
 
+Def : WebRTC ("Web Real-Time Communication") is a collection of communications protocols and application programming interfaces
+that enable real-time communication over peer-to-peer connections. This allows web browsers to not only request resources from
+backend servers, but also real-time information from browsers of other users.
 
 a) With Web Real-Time Communication (WebRTC).
 b) Provide peer connectivity between two browsers. (or end to end aopplication)
