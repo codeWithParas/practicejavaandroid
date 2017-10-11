@@ -2,6 +2,7 @@ package com.example.logicprogram.collection;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
@@ -51,6 +52,8 @@ public class Sorting_Comparamble_Comparator {
             return 0;*/
             return this.getRollNumb()-o.getRollNumb();
         }
+
+
     }
 
     static class SortStudent_Comparator implements Comparator<Students>
@@ -87,7 +90,7 @@ public class Sorting_Comparamble_Comparator {
 
 
         // by deafult TreesSet implement sortin so it will make use of compareTo() method in model class.
-        TreeSet<Students> treeSet = new TreeSet<>(student);
+        //TreeSet<Students> treeSet = new TreeSet<>(student);
 
 
 
@@ -95,20 +98,28 @@ public class Sorting_Comparamble_Comparator {
         // collection framework sorting approach.
         //Collections.sort(student);
 
-        Iterator<Students> itr = treeSet.iterator();
+        /*Iterator<Students> itr = treeSet.iterator();
         while (itr.hasNext())
         {
             Students std = (Students) itr.next();
             System.out.println(std.getName() + " " + std.getRollNumb());
-        }
+        }*/
 
+
+       /* ArrayList<SortStudent_Comparator> student1 = new ArrayList<>();
+        student1.add(new SortStudent_Comparator("Ram",5));
+        student1.add(new SortStudent_Comparator("Shyam",4));
+        student1.add(new SortStudent_Comparator("Alex",2));
+        student1.add(new SortStudent_Comparator("Paras",1));
+        student1.add(new SortStudent_Comparator("Zafar",3));
+        student1.add(new SortStudent_Comparator("Amit",6));*/
 
         // by using comparator interface . Remove compareTo from model class.
-        //Collections.sort(student, new SortStudent_Comparator());   // using
+        Collections.sort(student,new SortStudent_Comparator());   // using
 
-        /*for (Students std :student) {
+        for (Students std :student) {
             System.out.println(std.getName()+ "    " + std.getRollNumb());
-        }*/
+        }
 
 
     }
