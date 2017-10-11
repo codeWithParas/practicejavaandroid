@@ -1,6 +1,7 @@
 package test.practice;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_cp.ContentProvider_Server;
+import test.practice.android_launchmodes.Activity_A;
 import test.practice.model.Student;
 import test.practice.android_parcelable.FirstActivity;
 
@@ -65,8 +67,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Android_BroadCast_Server.class);
-                startActivity(intent);
+                new Asyncc().execute();
+
+                /*Intent intent = new Intent(MainActivity.this, Android_BroadCast_Server.class);
+                startActivity(intent);*/
 
 
             }
@@ -89,5 +93,55 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        /*
+        * Intent
+        * */
+
+        findViewById(R.id.txt_check_intent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, test.practice.android_intent.lifecycleactivity.FirstActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        /*
+        * IActivity LAunch modes
+        * */
+
+        findViewById(R.id.txt_check_intent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Activity_A.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+    }
+
+
+    class Asyncc extends AsyncTask
+    {
+
+        @Override
+        protected Object doInBackground(Object[] params) {
+
+            for(int i = 0 ; i<100; i++)
+            {
+                System.out.println("Async is running " + i);
+            }
+
+
+            finish();
+
+            return null;
+        }
     }
 }

@@ -119,7 +119,7 @@ There are four different launch modes: standard, singleTop, singleTask and singl
 
 a) standard : A new instance of the activity is created and pushed on top of the current task. The created instance will receive the intent. This is the default and most commonly used behavior.
 
-b) single top : In a (A-app) app if an (A-activity)activity is on top and its launched mode is single top and user switched from other app to this (A-app)app from recent app list then new instance of this (A-activity)activity will not be created again it will make use of previous instance only. 
+b) single top : If activity is on top of Stack don't create new instance.
 
 c) single task : Create new task on the same instance.
 

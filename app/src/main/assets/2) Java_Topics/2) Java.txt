@@ -1,0 +1,29 @@
+A) Object class 7 methods :
+
+1) equals()
+2) hashCode()
+3) wait()
+4) notify()
+5) notifyAll()
+6) finalize()  -- works in case of garbage collection
+7) getClass()
+
+B)Which return statement will get execute ?
+
+  try
+   {}
+  catch(Exception e)
+   {
+    (1)return;(3)
+   }
+
+  finally()
+   {
+   (2)
+    return;
+   }
+
+ Ans: Both  :  (1)first execute catch then control execute (2)finally then control go back to (3)catch block again.
+
+
+C)

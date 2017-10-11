@@ -20,10 +20,21 @@
             </intent-filter>
         </activity>
 
+        <!--android:label="singleTop launchMode"
+            android:launchMode="singleTop"-->
+        <activity
+            android:name=".android_intent.lifecycleactivity.FirstActivity"
+            />
+        <activity android:name=".android_intent.lifecycleactivity.Second"/>
         <activity android:name="test.practice.android_parcelable.FirstActivity"/>
         <activity android:name="test.practice.android_parcelable.SecondActivity"/>
         <activity android:name=".android_security.FingerPrintActivity"/>
         <activity android:name="test.practice.android_broadcast.Android_BroadCast_Server"/>
+        <activity android:name=".android_launchmodes.Activity_A"/>
+        <activity android:name=".android_launchmodes.Activity_B"
+            android:launchMode="singleTop"/>
+        <activity android:name=".android_launchmodes.Activity_C"/>
+
 
 
 
