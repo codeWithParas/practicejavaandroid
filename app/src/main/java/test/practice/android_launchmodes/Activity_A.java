@@ -19,11 +19,13 @@ public class Activity_A extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a);
 
+        System.out.println("...onCreate method....A..");
         findViewById(R.id.but_b).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent obj = new Intent(Activity_A.this, Activity_A.class);
+                Intent obj = new Intent(Activity_A.this, Activity_B.class);
+                obj.putExtra("Test", "data");
                 startActivity(obj);
             }
         });

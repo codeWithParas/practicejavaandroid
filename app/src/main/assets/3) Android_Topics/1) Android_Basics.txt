@@ -1,3 +1,11 @@
+
+Check this link atleast once in a month
+
+GOOGLE IO LINK : https://events.google.com/io/
+
+***************************************************************************************
+
+
 A .1) Life Cycles.
 
 a) Activity are maintained in activity stack memory.
@@ -99,6 +107,32 @@ Refer : https://blog.akquinet.de/2010/04/15/android-activites-and-tasks-series-i
 ...SINGLE TOP
 ...MULTIPLE TASK
 
+Explicit Intent: When your application is aware of which component to call to perform some action
+Implicit Intent: When your application is not aware of which component can exactly perform your desired action.
+For Ex, If you simply say that you want to display a URL, the system decides what component will fulfill the intention.
+
+
+A.2) Pending Intent : (refer w.r.t Notification Builder Example)
+
+A PendingIntent specifies an action to take in the future. It lets you pass a future Intent to another application and allow
+that application to execute that Intent as if it had the same permissions as your application, whether or not your application
+is still around when the Intent is eventually invoked.It is a token that you give to a foreign application which allows the
+foreign application to use your application’s permissions to execute a predefined piece of code.
+
+Other way :
+
+So what's a pending intent?
+It's a token that your app process will give to the location process, and the location process will use it to wake up your app
+when an event of interest happens. So this basically means that your app in the background doesn't have to be always running.
+When something of interest happens, we will wake you up. This saves a lot of battery.
+
+
+->It is used to do future task behalf from other application.
+->It wraps the intent (that has bussiness logic) and fire that intent after some time elapsed or at the time of foriegn app event
+ occur.
+
+
+
 
 
 A.3) Activity Launched Modes : 
@@ -121,9 +155,56 @@ a) standard : A new instance of the activity is created and pushed on top of the
 
 b) single top : If activity is on top of Stack don't create new instance.
 
-c) single task : Create new task on the same instance.
+---> onNewIntent() method will be invoked.
 
-d) single instance :   
+c) single task :
+Note :
+1)The same instance will be used again.
+2)Remove top level activities that are already present in stack.
+
+Before : Task 1 : A -> B(singleTask) -> C -> D -> (if B is called again then)
+After  : Task 1 : A -> B (C & D popped up from stack)
+
+******As according to official documentation : for singleTask :
+1) The system creates new task and instantiate the activity at the root of new task.
+2) And if an instance of the activity already exists in a separate task, the system routes the intent to the existing instance
+   through a call to its onNewIntent() method, rather than creating a new instance.
+3) Only one instance of the activity can exist at a time.
+
+
+But here above we have shown example on same task. Pblm ? So , e.i now it comes to topic.....
+...taskAffinity of Activity ?
+...Ans : What is the preference of the activity e.i for which task it want to be associated. Is called taskAffinity of Activity.
+...By default all activities in an application is having same affinity.
+...Affinity value : is nothing but a default package name that we have given to our app is nothing but a affinity area.
+
+So now,
+What if we want to change Affinity of Activity B which has a launch mode "SingleTask" ?
+Ans : For that we need to assign diiferent value to affinity in manifest of singleTask Activity B
+(android:taskAffinity="com.some.new.task") , e.i
+
+   <application...
+   .
+   .
+    <activity android:name=".android_launchmodes.Activity_B"
+                android:launchMode="singleTask"
+                android:taskAffinity="com.some.new.task"/>
+    .
+    .
+    </application>
+
+So now we need to understand singleTask in two ways : (1) with taskAffinity (2) without taskAffinity ?
+
+
+
+d) single instance :  single instance is same like singleTask but the only difference is it will not allow other activity
+ instances in the new task that was created for Activity B if activity B assigned as singleInstance including affinity.
+ But the popping operation goes same.
+
+
+
+
+***********************************************************************************************************
 
 
 
@@ -137,10 +218,6 @@ Incoming event here can be : receiving type of broadcast, receive url to view on
 
 
 
-A.5) 
-
-
-
 ^&*^&*^&**&^*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^^&*^&*^&*^&*^**^&*^&*^&*^&*^&*^&*&
 ^&*^&*^&**^*^&***^&*^&&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*^&*
 
@@ -149,8 +226,9 @@ A.5)
 
 B.1 ) Fragments : 
 
-Fragments are reusable component of android . Fragments are light weight. 
-Used in case for app more optimized.
+1)Fragments are reusable component of android .
+2)Fragments are light weight.
+3)Used in case to optimize app and make app light-weight.
 
 Lifecycle Methods : total 11 method
 
@@ -181,7 +259,10 @@ C.1) Content Provider :
 a)Component of android.
 b)used to store data in Sqlilte.
 c)usefull in interprocess communication.
-d)by using getContentResolver() method we pass the perticular URI to fetch data from.
+d)by using getContentResolver() method we pass the perticular URI to insert data from.
+e)used to provide data to outside app by returning cursor.
+
+ex: accessing contacts, sms, calender.
 
 Server Side : insert name
 
@@ -253,7 +334,10 @@ So Buddy,....Prior to Android 8.0, the usual way to create a foreground service 
 .Important : ............With Android 8.0, there is a complication; the system doesn't allow a background app to create a background service.
 .............For this reason, Android 8.0 introduces the new method startForegroundService() to start a new service in the foreground.
 
-...... For this reason, Android 8.0 introduces the new method startForegroundService() to start a new service in the foreground. After the system has created the service, the app has five seconds to call the service's startForeground() method to show the new service's user-visible notification. If the app does not call startForeground() within the time limit, the system stops the service and declares the app to be ANR.
+...... For this reason, Android 8.0 introduces the new method startForegroundService() to start a new service in the foreground. After the
+system has created the service, the app has five seconds to call the service's startForeground() method to show the new service's
+user-visible notification. If the app does not call startForeground() within the time limit, the system stops the service and
+declares the app to be ANR.
 
 ...IntentService is subject to these restrictions
 IntentService is a service, and is therefore subject to the new restrictions on background services. As a result, many apps that rely on
@@ -267,9 +351,12 @@ After Api 26 >= some instruction were imposed.
 
 c) Bound :
 A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface
-that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC). A bound service runs only as long as another application component is bound to it. Multiple components can bind to the service at once, but when all of them unbind, the service is destroyed.
+that allows components to interact with the service, send requests, receive results, and even do so across processes with
+interprocess communication (IPC). A bound service runs only as long as another application component is bound to it.
+Multiple components can bind to the service at once, but when all of them unbind, the service is destroyed.
 
-***Broadcasts that require a signature permission are exempted from this restriction, since these broadcasts are only sent to apps that are signed with the same certificate, not to all the apps on the device.
+***Broadcasts that require a signature permission are exempted from this restriction, since these broadcasts are only sent
+to apps that are signed with the same certificate, not to all the apps on the device.
 
 
 
@@ -297,10 +384,13 @@ E.1) BroadCast :
 
 1) Android Apps send and receive broadcast from android system. 
 2) Basically it makes use of Publish-Sucsriber design pattern.
-3) For example, the Android system sends broadcasts when various system events occur, such as when the system boots up or the device starts charging. 
+3) For example, the Android system sends broadcasts when various system events occur, such as when
+   the system boots up or the device starts charging.
 4) Apps can send their custom broadcast also.
 
-Generally speaking, broadcasts can be used as a messaging system across apps and outside of the normal user flow. However, you must be careful not to abuse the opportunity to respond to broadcasts and run jobs in the background that can contribute to a slow system performance.
+Generally speaking, broadcasts can be used as a messaging system across apps and outside of the normal user flow.
+However, you must be careful not to abuse the opportunity to respond to broadcasts and run jobs in the background
+that can contribute to a slow system performance.
 
 
 E.2) How to Receive and Send BroadCast Receiver ?
@@ -308,13 +398,17 @@ Ans :  Refer : https://developer.android.com/guide/components/broadcasts.html
 
 a) System BroadCast :
 
-A broadcast is a message that any app can receive. The system delivers various broadcasts for system events, such as when the system boots up or the device starts charging. You can deliver a broadcast to other apps by passing an Intent to sendBroadcast() or sendOrderedBroadcast().
+A broadcast is a message that any app can receive. The system delivers various broadcasts for system events, such as when the
+system boots up or the device starts charging. You can deliver a broadcast to other apps by passing an Intent to
+sendBroadcast() or sendOrderedBroadcast().
 
-Android 7.0 and higher no longer sends the following system broadcasts. This optimization affects all apps, not only those targeting Android 7.0.
+Android 7.0 and higher no longer sends the following system broadcasts. This optimization affects all apps, not only those
+targeting Android 7.0.
 ACTION_NEW_PICTURE
 ACTION_NEW_VIDEO
 
-Apps targeting Android 7.0 (API level 24) and higher must register the following broadcasts with registerReceiver(BroadcastReceiver, IntentFilter). Declaring a receiver in the manifest does not work.
+Apps targeting Android 7.0 (API level 24) and higher must register the following broadcasts with
+registerReceiver(BroadcastReceiver, IntentFilter). Declaring a receiver in the manifest does not work.
 
 b) Local BroadCast: Custom BroadCast
 
@@ -324,8 +418,8 @@ E.2.1)Receiving broadcasts :
 
 Apps can receive broadcasts in two ways: through manifest-declared receivers and context-registered receivers
 Manifest-declared receivers
-If you declare a broadcast receiver in your manifest, the system launches your app (if the app is not already running) when the broadcast is
-sent.
+If you declare a broadcast receiver in your manifest, the system launches your app (if the app is not already running)
+when the broadcast is sent.
 
 Note: If your app targets API level 26 or higher, you cannot use the manifest to declare a receiver for implicit broadcasts
 (broadcasts that do not target your app specifically), except for a few implicit broadcasts that are exempted from that restriction.
@@ -358,7 +452,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     }
 }
 
-Context-registered receivers : 
+Context-registered receivers : Refer Example
 
 To register a receiver with a context, perform the following steps:
 
@@ -395,11 +489,15 @@ sendBroadcast(intent);
 
 E.3) Restricting broadcasts with permissions :   (PERFORMANCE IMPROVEMENT)
 
-Permissions allow you to restrict broadcasts to the set of apps that hold certain permissions. You can enforce restrictions on either the sender or receiver of a broadcast.
+Permissions allow you to restrict broadcasts to the set of apps that hold certain permissions.
+You can enforce restrictions on either the sender or receiver of a broadcast.
 
 Sending with permissions :  
 
-When you call sendBroadcast(Intent, String) or sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle), you can specify a permission parameter. Only receivers who have requested that permission with the tag in their manifest (and subsequently been granted the permission if it is dangerous) can receive the broadcast. For example, the following code sends a broadcast:
+When you call sendBroadcast(Intent, String) or sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle),
+you can specify a permission parameter. Only receivers who have requested that permission with the tag in their manifest
+(and subsequently been granted the permission if it is dangerous) can receive the broadcast. For example, the following
+code sends a broadcast:
 
 sendBroadcast(new Intent("com.example.NOTIFY"),
               Manifest.permission.SEND_SMS);
@@ -414,23 +512,36 @@ E.4) Security considerations and best practices (SECURITY CONSIDERATION) :
 
 Here are some security considerations and best practices for sending and receiving broadcasts:
 
-1)If you don't need to send broadcasts to components outside of your app, then send and receive local broadcasts with the LocalBroadcastManager which is available in the Support Library. The LocalBroadcastManager is much more efficient (no interprocess communication needed) and allows you to avoid thinking about any security issues related to other apps being able to receive or send your broadcasts. Local Broadcasts can be used as a general purpose pub/sub event bus in your app without any overheads of system wide broadcasts.
-2)If many apps have registered to receive the same broadcast in their manifest, it can cause the system to launch a lot of apps, causing a substantial impact on both device performance and user experience. To avoid this, prefer using context registration over manifest declaration. Sometimes, the Android system itself enforces the use of context-registered receivers(registering inside activity on oncreate()). For example, the CONNECTIVITY_ACTION broadcast is delivered only to context-registered receivers.
-3)Do not broadcast sensitive information using an implicit intent. The information can be read by any app that registers to receive the broadcast. There are three ways to control who can receive your broadcasts:
+1)If you don't need to send broadcasts to components outside of your app, then send and receive local broadcasts with
+the LocalBroadcastManager which is available in the Support Library. The LocalBroadcastManager is much more efficient
+(no interprocess communication needed) and allows you to avoid thinking about any security issues related to other apps
+being able to receive or send your broadcasts. Local Broadcasts can be used as a general purpose pub/sub event bus in your
+app without any overheads of system wide broadcasts.
+2)If many apps have registered to receive the same broadcast in their manifest, it can cause the system to launch a lot of apps,
+causing a substantial impact on both device performance and user experience. To avoid this, prefer using context registration
+over manifest declaration. Sometimes, the Android system itself enforces the use of context-registered
+receivers(registering inside activity on oncreate()). For example, the CONNECTIVITY_ACTION broadcast is delivered only to context-registered receivers.
+3)Do not broadcast sensitive information using an implicit intent. The information can be read by any app that registers
+to receive the broadcast. There are three ways to control who can receive your broadcasts:
 a)You can specify a permission when sending a broadcast.
 b)In Android 4.0 and higher, you can specify a package with setPackage(String) when sending a broadcast. The system restricts the broadcast to the set of apps that match the package.
 c)You can send local broadcasts with LocalBroadcastManager.
 
-4) When you register a receiver, any app can send potentially malicious broadcasts to your app's receiver. There are three ways to limit the broadcasts that your app receives:
+4) When you register a receiver, any app can send potentially malicious broadcasts to your app's receiver.
+There are three ways to limit the broadcasts that your app receives:
 a) You can specify a permission when registering a broadcast receiver.
-b) For manifest-declared receivers, you can set the android:exported attribute to "false" in the manifest. The receiver does not receive broadcasts from sources outside of the app.
+b) For manifest-declared receivers, you can set the android:exported attribute to "false" in the manifest. The
+receiver does not receive broadcasts from sources outside of the app.
 c) You can limit yourself to only local broadcasts with LocalBroadcastManager.
 
 
-5)Because a receiver's onReceive(Context, Intent) method runs on the main thread, it should execute and return quickly. If you need to perform long running work, be careful about spawning threads or starting background services because the system can kill the entire process after onReceive() returns. For more information, see Effect on process state To perform long running work, we recommend:
-Calling goAsync() in your receiver's onReceive() method and passing the BroadcastReceiver.PendingResult to a background thread. This keeps the broadcast active after returning from onReceive(). However, even with this approach the system expects you to finish with the broadcast very quickly (under 10 seconds). It does allow you to move work to another thread to avoid glitching the main thread.
+5)Because a receiver's onReceive(Context, Intent) method runs on the main thread, it should execute and return quickly.
+If you need to perform long running work, be careful about spawning threads or starting background services because
+the system can kill the entire process after onReceive() returns. For more information, see Effect on process state
+To perform long running work, we recommend: Calling goAsync() in your receiver's onReceive() method and passing the BroadcastReceiver.PendingResult to a background thread. This keeps the broadcast active after returning from onReceive(). However, even with this approach the system expects you to finish with the broadcast very quickly (under 10 seconds). It does allow you to move work to another thread to avoid glitching the main thread.
 Scheduling a job with the JobScheduler. For more information, see Intelligent Job Scheduling.
-Do not start activities from broadcast receivers because the user experience is jarring; especially if there is more than one receiver. Instead, consider displaying a notification.
+Do not start activities from broadcast receivers because the user experience is jarring; especially if there is more than
+one receiver. Instead, consider displaying a notification.
 
 
 
@@ -574,5 +685,65 @@ c)WebRTC is a powerful tool that can be used to infuse Real-Time Communications 
 
 
 
+J.1) Media Projection Manager :
+
+Record Screen Capture
 
 
+******************************************************************************************
+
+
+K.1) Sqlite :
+
+refer: https://thebhwgroup.com/blog/how-android-sqlite-onupgrade
+
+1) extend SQLiteOpenHelper class
+- onCreate - we create table
+  onCreate will execute at the first time when app is insalled. Otherwise onUpgrade will execute if database already created.
+
+- onUpgrade - onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) : We will check for SQlite Vesioning.
+
+2) make use of constructor of SQliteOpenHelper
+
+public MySQLiteHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+
+
+
+J.1)  Volley : Googlw recommended networking library for android.
+
+Adv : Faster, Smooth, cache management (LRU cache), request priority management, byitself create the background thread.
+
+3 things :
+A)--->
+1) String Request
+2) JsonObject Request
+3) JsonArray Request
+4) Image Request
+
+b)--->
+The methods we override for above request :
+onResponseListener
+onErrorListener
+
+To maintain request at application level : addToRequestQueue
+
+c)--->Methods :
+
+getHeaders()
+
+getCache() :
+      int maxMemory = (int)Runtime.getRuntime().maxMemory()/1024;
+      int cacheMemory = maxMemory/8;
+      Cache cache = new DiskBasedCache(context.getCacheDir(),cacheMemory);
+
+D) parseNetworkResponse() method will return perticular response.
+
+
+
+K.1) Android Handler :
+
+1)To communicate between UI thread and background thread we use handler.
+2)By default w.r.t each handler there is a looper.

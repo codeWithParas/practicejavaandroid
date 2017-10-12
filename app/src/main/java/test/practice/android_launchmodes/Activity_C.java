@@ -23,7 +23,7 @@ public class Activity_C extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent obj = new Intent(Activity_C.this, Activity_A.class);
+                Intent obj = new Intent(Activity_C.this, Activity_B.class);
                 startActivity(obj);
             }
         });

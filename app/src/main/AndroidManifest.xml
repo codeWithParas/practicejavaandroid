@@ -23,17 +23,22 @@
         <!--android:label="singleTop launchMode"
             android:launchMode="singleTop"-->
         <activity
-            android:name=".android_intent.lifecycleactivity.FirstActivity"
+            android:name=".android_lifecycle.lifecycleactivity.FirstActivity"
             />
-        <activity android:name=".android_intent.lifecycleactivity.Second"/>
+        <activity android:name=".android_lifecycle.lifecycleactivity.Second"/>
         <activity android:name="test.practice.android_parcelable.FirstActivity"/>
         <activity android:name="test.practice.android_parcelable.SecondActivity"/>
         <activity android:name=".android_security.FingerPrintActivity"/>
         <activity android:name="test.practice.android_broadcast.Android_BroadCast_Server"/>
         <activity android:name=".android_launchmodes.Activity_A"/>
+
+        <!--change this affinity value-->
         <activity android:name=".android_launchmodes.Activity_B"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.some.new.task"/>
         <activity android:name=".android_launchmodes.Activity_C"/>
+        <activity android:name=".android_intent.Intent_Example"/>
+        <activity android:name=".android_intent.PendingIntent_Example"/>
 
 
 

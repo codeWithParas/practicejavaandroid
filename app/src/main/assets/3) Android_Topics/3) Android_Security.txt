@@ -3,17 +3,21 @@ Following Ways :
 
 Ma
 
-a) Back Ground : port security authentication at webserver w.r.t sessoin :
+a) Back Ground (Session based security): port security authentication at webserver w.r.t sessoin :
 
 refer : https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/13367-3.html#trans
 
-b) we should use SSL layer protocols
+b) we should use SSL(Secured Socket) layer protocols
 
 c) we should use incripted data.
 
 d) Finger Print
 
 e) Captcha
+
+f) Using Device Policy Manager. We can perform screen lock.
+
+g) use local broadcast as possible. Registering broadcast through context is the bast practice.
 
 
 
@@ -31,8 +35,11 @@ The following core security features help you build secure apps:
  to provide IPC since it does dynamic permission grant to other apps on case by case basis.
 3)Don't store sensitive information using external storage.
 4)Using SSL
-In a typical SSL usage scenario, a server is configured with a certificate containing a public key as well as a matching private key. As part of the handshake between an SSL client and server, the server proves it has the private key by signing its certificate with�public-key cryptography.
-�In a public key encryption system, any person can encrypt a message using the public key of the receiver, but such a message can be decrypted only with the receiver's private key.�
+In a typical SSL usage scenario, a server is configured with a certificate containing a public key as well as a matching private key.
+As part of the handshake between an SSL client and server, the server proves it has the private key by signing its certificate
+with�public-key cryptography.
+�In a public key encryption system, any person can encrypt a message using the public key of the receiver, but such a message
+can be decrypted only with the receiver's private key.�
 5) Using Device Policy Manager. We can perform screen lock.
 
 

@@ -21,7 +21,9 @@ public class Activity_B extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_a);
+        setContentView(R.layout.activity_b);
+
+        System.out.println(">>>>>>>>>>>>>   Activity B : Single Top Launch Mode Failed <<<<<<<<<<<<<  ");
 
         findViewById(R.id.but_b).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,16 @@ public class Activity_B extends AppCompatActivity {
                 startActivity(obj);
             }
         });
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+
+        String data = intent.getStringExtra("Test");
+
+        System.out.println(">>>>>>>>>>>>>   Activity B : Single Top Launch Mode Successfull <<<<<<<<<<<<<  "+ data);
+        //super.onNewIntent(intent);
 
     }
 

@@ -1,6 +1,5 @@
-package test.practice.android_intent.lifecycleactivity;
+package test.practice.android_lifecycle.lifecycleactivity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,8 +18,8 @@ import android.widget.Button;
 
 import test.practice.R;
 import test.practice.Utils;
-import test.practice.android_intent.SqliteTest;
-import test.practice.android_intent.lifecyclefragments.FragmentOne;
+import test.practice.android_lifecycle.SqliteTest;
+import test.practice.android_lifecycle.lifecyclefragments.FragmentOne;
 
 /**
  * Created by parasmani.sharma on 11/10/2017.

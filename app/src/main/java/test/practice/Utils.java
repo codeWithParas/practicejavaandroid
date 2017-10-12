@@ -8,7 +8,8 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import test.practice.android_intent.lifecyclefragments.Fragmenttwo;
+import test.practice.android_lifecycle.lifecyclefragments.Fragmenttwo;
+
 
 /**
  * Created by Parasmani Sharma on 9/24/2017.

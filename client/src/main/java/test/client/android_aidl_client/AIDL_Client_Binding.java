@@ -58,6 +58,17 @@ public class AIDL_Client_Binding extends AppCompatActivity {
          * */
 
 
+        /*
+        * BIND_AUTO_CREATE :
+        * Flag for {@link #bindService}: automatically create the service as long
+        * as the binding exists.  Note that while this will create the service,
+        * its {@link android.app.Service#onStartCommand}
+        * method will still only be called due to an
+        * explicit call to {@link #startService}.  Even without that, though,
+        * this still provides you with access to the service object while the
+        * service is created.
+        * */
+
         findViewById(R.id.btnBind).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
