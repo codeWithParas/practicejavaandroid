@@ -62,9 +62,7 @@ public class Synchronization {
     * */
 
 
-
-    public static void main(String arg[])
-    {
+    public static void main(String arg[]) {
         /*
         * Check class level lock and object level lock by using two different object of display();
         * */
@@ -85,71 +83,61 @@ public class Synchronization {
 }
 
 
-class Display
-{
+class Display {
     /*
     * use static here to get class level lock
     * */
 
-  public /*static*/ synchronized void display(String threadName)
-  {
+    public /*static*/ synchronized void display(String threadName) {
 
-      for(int i=0; i<=5; i++)
-      {
-          System.out.println("Display Method Executed By " + threadName);
-          try {
-              Thread.sleep(2000);
-          } catch (InterruptedException e) {
-              e.printStackTrace();
-          }
-      }
-  }
+        for (int i = 0; i <= 5; i++) {
+            System.out.println("Display Method Executed By " + threadName);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-  public void display_2()
-  {
-      System.out.println("display_2");
-  }
+    public void display_2() {
+        System.out.println("display_2");
+    }
 
 }
 
-class Mythread1 extends Thread
-{
+class Mythread1 extends Thread {
     Display d;
 
     public Mythread1(Display d) {
         this.d = d;
     }
 
-    public void run()
-    {
+    public void run() {
         d.display("Mythread 1");
     }
 }
 
-class Mythread2 extends Thread
-{
+class Mythread2 extends Thread {
     Display d;
 
     public Mythread2(Display d) {
         this.d = d;
     }
 
-    public void run()
-    {
+    public void run() {
         d.display("Mythread 2");
     }
 }
 
-class Mythread3 extends Thread
-{
+class Mythread3 extends Thread {
     Display d;
 
     public Mythread3(Display d) {
         this.d = d;
     }
 
-    public void run()
-    {
+    public void run() {
         d.display_2();
     }
 }

@@ -9,7 +9,7 @@ refer : https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/13367-3
 
 b) we should use SSL layer protocols
 
-c) we should use incripted data.
+c) we should use incrypted data.
 
 d) Finger Print
 
