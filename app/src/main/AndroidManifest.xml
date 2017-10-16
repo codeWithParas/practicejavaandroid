@@ -34,7 +34,7 @@
 
         <!--change this affinity value-->
         <activity android:name=".android_launchmodes.Activity_B"
-            android:launchMode="singleInstance"
+            android:launchMode="singleTask"
             android:taskAffinity="com.some.new.task"/>
         <activity android:name=".android_launchmodes.Activity_C"/>
         <activity android:name=".android_intent.Intent_Example"/>
