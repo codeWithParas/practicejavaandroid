@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/client" />
             <option value="$PROJECT_DIR$/javapractice" />
+            <option value="$PROJECT_DIR$/zafarpractice" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,1 +1,1 @@
-include ':app', ':javapractice', ':client'
+include ':app', ':javapractice', ':client',':zafarpractice'
