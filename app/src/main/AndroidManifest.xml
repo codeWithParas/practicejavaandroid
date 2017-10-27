@@ -39,6 +39,7 @@
         <activity android:name=".android_launchmodes.Activity_C"/>
         <activity android:name=".android_intent.Intent_Example"/>
         <activity android:name=".android_intent.PendingIntent_Example"/>
+        <activity android:name=".android_design.Android_Parallax_Tab"/>
 
 
 
