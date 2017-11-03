@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="test.practice">
+
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <!-- android : required = "false" Google Play will then permit users to download your app even
+    if their device doesn’t have a fingerprint sensor.-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/App_Name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="test.practice.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--android:label="singleTop launchMode"
+            android:launchMode="singleTop"-->
+        <activity
+            android:name=".android_lifecycle.lifecycleactivity.FirstActivity"
+            />
+        <activity android:name=".android_lifecycle.lifecycleactivity.Second"/>
+        <activity android:name="test.practice.android_parcelable.FirstActivity"/>
+        <activity android:name="test.practice.android_parcelable.SecondActivity"/>
+        <activity android:name=".android_security.FingerPrintActivity"/>
+        <activity android:name="test.practice.android_broadcast.Android_BroadCast_Server"/>
+        <activity android:name=".android_launchmodes.Activity_A"/>
+
+        <!--change this affinity value-->
+        <!--android:taskAffinity="com.some.new.task"-->
+        <activity android:name=".android_launchmodes.Activity_B"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.some.new.task"
+            />
+        <activity android:name=".android_launchmodes.Activity_C"/>
+        <activity android:name=".android_launchmodes.Activity_D"/>
+        <activity android:name=".android_intent.Intent_Example"/>
+        <activity android:name=".android_intent.PendingIntent_Example"/>
+        <activity android:name=".android_design.Android_Parallax_Tab"/>
+
+
+
+
+        <!--Content Provider Server-->
+        <activity android:name=".android_cp.ContentProvider_Server"/>
+        <provider
+            android:name=".android_cp.MyContentProvider"
+            android:enabled="true"
+            android:multiprocess="true"
+            android:exported="true"
+            android:authorities="paras.server.MyContentProvider">
+        </provider>
+
+
+        <!--Registering BroadCast Receiver through Manifest-->
+        <receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="test.server.broadcast.receiver" />
+            </intent-filter>
+        </receiver>
+
+
+        <!--Registring binding service for AIDL-->
+        <service android:name=".android_aidl.BindingService" >
+            <intent-filter>
+                <action android:name="android.test.server.BindingService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
