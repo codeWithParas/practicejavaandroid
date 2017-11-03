@@ -38,7 +38,7 @@ c) when finish() called from onCreate().
   A...onStart method.........main..
   A...onResume method........main..
   A...onPostResume method....main..
-  (Switch to B activity)
+  (Switching to B activity)
   A..onPause method..........main..
   B..2..onCreate method......(finish called from here)
   A....onResume method........main..
@@ -163,7 +163,7 @@ Note :
 2)Remove top level activities that are already present in stack.
 
 Before : Task 1 : A -> B(singleTask) -> C -> D -> (if B is called again then)
-After  : Task 1 : A -> B (C & D popped up from stack)
+After  : Task 2 : A -> B (C & D popped up from stack)
 
 ******As according to official documentation : for singleTask :
 1) The system creates new task and instantiate the activity at the root of new task.
@@ -195,14 +195,54 @@ Ans : For that we need to assign diiferent value to affinity in manifest of sing
 
 So now we need to understand singleTask in two ways : (1) with taskAffinity (2) without taskAffinity ?
 
+With taskAffinity the working remain the same as in without taskAffinity. The difference only created is that it will create a new task in case of taskAffinity.
+ So the condition below holds true :
+
+Before : Task 1 : A -> B(singleTask) -> C -> D -> (if B is called again then)
+After  : Task 2 (or 2 if taskAffinity is given) : A -> B (C & D popped up from stack)
 
 
-d) single instance :  single instance is same like singleTask but the only difference is it will not allow other activity
- instances in the new task that was created for Activity B if activity B assigned as singleInstance including affinity.
+
+d) single instance :
+
+single instance is same like singleTask but the only difference is it will not allow other activity
+ instances in the new task that was created for Activity B if activity B assigned as singleInstance including affinity then w.r.t this
+ activity only new task will be created.
  But the popping operation goes same.
 
+if taskAffinity is not given :
+
+Before : Task 1 : A -> B( Task 2 assigned becouse B is singleInstance) -> C -> D -> (if B is called again from D then)
+After  : Task 1 : A -> C -> D -> (if B is called again from D then)
+After  : Task 2 : B (called from D, same instance of B will be used)
+After  : Task 2 : B (if back button is pressed then open D then C then A)
+
+or (if taskAffinity is given) :
+
+Before : Task 1 : A -> B(singleInstance) -> (for B new task will be created)
+Result : i.e ->
+Before : Task 1 : A -> ____no B here___ -> (for B new task will be created)
+After  : Task 2 : B -> C (if B calls C then C will be open in task 1)
+Result : i.e ->
+After  : Task 2 : B -> ____no C here___ -> (for C task 1 will be used)
+After  : Task 2 : A -> C (if B calls C then C will be open in task 1 after A inside stack of task 1 only, not in task 2)
+
+againAfter  : Task 1 : C -> B (if C calls B since B is in other task so it will reuse same instance of B)
+Result : i.e ->
+After  : Task 1 : A -> C  -> ( C will not popped out)
+After  : Task 2 : B ( no new instance of B will be created again)
 
 
+Difference between singleTask and singleInstance :
+
+1) for singleTask activity new task will be created but no other activities allowed in this task. All other activities will be created
+in default task.
+1) for singleInstance activity new task will be created also other activities allowed in this task. All other activities will be created
+in this task.
+
+2) for singleTask popping operation will be used if singleTask activity called again from other activity over it. All the top
+activities above it will be removed from the stack.
+2) for singleInstance no popping operation will be used .
 
 ***********************************************************************************************************
 
@@ -213,6 +253,10 @@ A.4) Intent-Filter : (Justify Incoming Type Event For The Component)
 
 It set the state of android component so that its incoming event receiving can be modified in order to accept various categories of incoming event.
 Incoming event here can be : receiving type of broadcast, receive url to view on browser, receive email.
+3 things :
+action name
+category
+data
 
 
 
@@ -245,6 +289,13 @@ onViewDestroy
 onDestroy
 onDetach
 
+Example :
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction tran = manager.beginTransaction();
+                tran.add(R.id.lytMain, new Fragmenttwo(), new Fragmenttwo().getClass().getName());
+                tran.addToBackStack(new Fragmenttwo().getClass().getName());
+                tran.commit();
+
 
 
 
@@ -258,7 +309,7 @@ C.1) Content Provider :
 
 a)Component of android.
 b)used to store data in Sqlilte.
-c)usefull in interprocess communication.
+c)recommended technique for interprocess communication.
 d)by using getContentResolver() method we pass the perticular URI to insert data from.
 e)used to provide data to outside app by returning cursor.
 

@@ -53,6 +53,13 @@
         android:text="Show BroadCast Reiceived" />
 
 
+    <Button
+        android:id="@+id/txt_parallax_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android Parallax Tab" />
+
+
 
 
 
