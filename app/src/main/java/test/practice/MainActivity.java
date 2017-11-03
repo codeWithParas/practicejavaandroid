@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_cp.ContentProvider_Server;
+import test.practice.android_design.Android_Parallax_Tab;
 import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
@@ -155,6 +156,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, PendingIntent_Example.class);
+                startActivity(intent);
+            }
+        });
+
+
+        /*
+        * Android Design
+        * */
+
+        findViewById(R.id.txt_parallax_tab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Android_Parallax_Tab.class);
                 startActivity(intent);
             }
         });

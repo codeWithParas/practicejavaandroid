@@ -23,7 +23,7 @@ public class Activity_B extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b);
 
-        System.out.println(">>>>>>>>>>>>>   Activity B : Single Top Launch Mode Failed <<<<<<<<<<<<<  ");
+        //System.out.println(">>>>>>>>>>>>>   Activity B : Single Top Launch Mode Failed <<<<<<<<<<<<<  ");
 
         findViewById(R.id.but_b).setOnClickListener(new View.OnClickListener() {
             @Override

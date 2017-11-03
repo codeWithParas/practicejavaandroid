@@ -33,10 +33,13 @@
         <activity android:name=".android_launchmodes.Activity_A"/>
 
         <!--change this affinity value-->
+        <!--android:taskAffinity="com.some.new.task"-->
         <activity android:name=".android_launchmodes.Activity_B"
             android:launchMode="singleTask"
-            android:taskAffinity="com.some.new.task"/>
+            android:taskAffinity="com.some.new.task"
+            />
         <activity android:name=".android_launchmodes.Activity_C"/>
+        <activity android:name=".android_launchmodes.Activity_D"/>
         <activity android:name=".android_intent.Intent_Example"/>
         <activity android:name=".android_intent.PendingIntent_Example"/>
         <activity android:name=".android_design.Android_Parallax_Tab"/>
