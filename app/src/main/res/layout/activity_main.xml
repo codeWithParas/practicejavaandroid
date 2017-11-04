@@ -14,11 +14,24 @@
         />
 
     <Button
+        android:id="@+id/txt_check_lifecycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check Android LifeCycle"
+        />
+
+    <Button
         android:id="@+id/txt_check_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check Android Intent"
         />
+
+    <Button
+        android:id="@+id/txt_check_pandingintent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check Pending Intent" />
 
 
     <Button
@@ -38,6 +51,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Show BroadCast Reiceived" />
+
+
+    <Button
+        android:id="@+id/txt_parallax_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android Parallax Tab" />
+
+
+    <Button
+        android:id="@+id/txt_volley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android Volley Test" />
+
+
+
 
 
 

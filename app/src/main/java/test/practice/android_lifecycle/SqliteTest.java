@@ -1,4 +1,4 @@
-package test.practice.android_intent;
+package test.practice.android_lifecycle;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

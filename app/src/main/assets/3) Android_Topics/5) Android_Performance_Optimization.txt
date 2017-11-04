@@ -2,6 +2,7 @@ Android Performance Tips :
 
 A)  Tips for optimize :
 
+..CDN (content delivery netwrk) : optimize api data response if large amount of data is fetched.( Provider like : Amazon)
 ..proguard
 ..lint
 ..Relative layout
@@ -17,7 +18,7 @@ B)There are two basic rules for writing efficient code:
 3) Avoid Creating Unnecessary Objects or Avoiding Memory Leaks
 
 As you allocate more objects in your app, you will force a periodic garbage collection, creating little "hiccups" in the user experience.
-1)Ex.- If you have a method returning a string, and you know that its result will always be appended to a StringBuffer anyway, change your signature and implementation so that the function does the append directly, instead of creating a short-lived temporary object.
+1)Ex.- If you have a method returning a string, and you know that its result will always be appended to aï¿½StringBufferï¿½anyway, change your signature and implementation so that the function does the append directly, instead of creating a short-lived temporary object.
 Accessing object fields is much slower than accessing local variables. Instead of writing:
 for (int i = 0; i < this.mCount; i++)
       dumpItem(this.mItems[i]);
@@ -35,40 +36,40 @@ It's also usually a good idea to create a local variable if you're going to be a
 
 2) Use Enhanced For Loop Syntax
 
-The enhanced for loop (also sometimes known as "for-each" loop) can be used for collections that implement the Iterable interface and for arrays. 
+The enhancedï¿½forï¿½loop (also sometimes known as "for-each" loop) can be used for collections that implement theï¿½Iterableï¿½interface and for arrays.ï¿½
 There are several alternatives for iterating through an array:
 static class Foo {
-    int mSplat;
+ï¿½ ï¿½ int mSplat;
 }
 
 Foo[] mArray = ...
 
 public void zero() {
-    int sum = 0;
-    for (int i = 0; i < mArray.length; ++i) {
-        sum += mArray[i].mSplat;
-    }
+ï¿½ ï¿½ int sum = 0;
+ï¿½ ï¿½ for (int i = 0; i < mArray.length; ++i) {
+ï¿½ ï¿½ ï¿½ ï¿½ sum += mArray[i].mSplat;
+ï¿½ ï¿½ }
 }
 
 public void one() {
-    int sum = 0;
-    Foo[] localArray = mArray;
-    int len = localArray.length;
+ï¿½ ï¿½ int sum = 0;
+ï¿½ ï¿½ Foo[] localArray = mArray;
+ï¿½ ï¿½ int len = localArray.length;
 
-    for (int i = 0; i < len; ++i) {
-        sum += localArray[i].mSplat;
-    }
+ï¿½ ï¿½ for (int i = 0; i < len; ++i) {
+ï¿½ ï¿½ ï¿½ ï¿½ sum += localArray[i].mSplat;
+ï¿½ ï¿½ }
 }
 
 public void two() {
-    int sum = 0;
-    for (Foo a : mArray) {
-        sum += a.mSplat;
-    }
+ï¿½ ï¿½ int sum = 0;
+ï¿½ ï¿½ for (Foo a : mArray) {
+ï¿½ ï¿½ ï¿½ ï¿½ sum += a.mSplat;
+ï¿½ ï¿½ }
 }
-zero() is slowest, because the JIT can't yet optimize away the cost of getting the array length once for every iteration through the loop.
-one() is faster. It pulls everything out into local variables, avoiding the lookups. Only the array length offers a performance benefit.
-two() is fastest for devices without a JIT, and indistinguishable from one() for devices with a JIT. 
+zero()ï¿½is slowest, because the JIT can't yet optimize away the cost of getting the array length once for every iteration through the loop.
+one()ï¿½is faster. It pulls everything out into local variables, avoiding the lookups. Only the array length offers a performance benefit.
+two()ï¿½is fastest for devices without a JIT, and indistinguishable fromï¿½one()ï¿½for devices with a JIT.ï¿½
 
 
 3)Avoid Using Floating Point : Use Integer as possible

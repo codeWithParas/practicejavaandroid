@@ -1,4 +1,4 @@
-package test.practice.android_intent.lifecyclefragments;
+package test.practice.android_lifecycle.lifecyclefragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import test.practice.R;
-import test.practice.android_intent.lifecycleactivity.FirstActivity;
+import test.practice.android_lifecycle.lifecycleactivity.FirstActivity;
 
 /**
  * Created by parasmani.sharma on 10/12/2016.

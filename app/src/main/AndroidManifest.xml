@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="test.practice">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <!-- android : required = "false" Google Play will then permit users to download your app even
     if their device doesn’t have a fingerprint sensor.-->
 
     <application
+        android:name=".android_volley.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/App_Name"
@@ -23,17 +25,27 @@
         <!--android:label="singleTop launchMode"
             android:launchMode="singleTop"-->
         <activity
-            android:name=".android_intent.lifecycleactivity.FirstActivity"
+            android:name=".android_lifecycle.lifecycleactivity.FirstActivity"
             />
-        <activity android:name=".android_intent.lifecycleactivity.Second"/>
+        <activity android:name=".android_lifecycle.lifecycleactivity.Second"/>
         <activity android:name="test.practice.android_parcelable.FirstActivity"/>
         <activity android:name="test.practice.android_parcelable.SecondActivity"/>
         <activity android:name=".android_security.FingerPrintActivity"/>
         <activity android:name="test.practice.android_broadcast.Android_BroadCast_Server"/>
         <activity android:name=".android_launchmodes.Activity_A"/>
+
+        <!--change this affinity value-->
+        <!--android:taskAffinity="com.some.new.task"-->
         <activity android:name=".android_launchmodes.Activity_B"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTask"
+            android:taskAffinity="com.some.new.task"
+            />
         <activity android:name=".android_launchmodes.Activity_C"/>
+        <activity android:name=".android_launchmodes.Activity_D"/>
+        <activity android:name=".android_intent.Intent_Example"/>
+        <activity android:name=".android_intent.PendingIntent_Example"/>
+        <activity android:name=".android_design.Android_Parallax_Tab"/>
+        <activity android:name=".android_volley.Volley_Test"/>
 
 
 

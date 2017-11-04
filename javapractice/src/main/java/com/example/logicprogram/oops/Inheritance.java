@@ -4,6 +4,10 @@ package com.example.logicprogram.oops;
  * Created by parasmani.sharma on 25/07/2017.
  */
 
+/*
+* Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another.
+* */
+
 class Parent
 {
     int a = 10;

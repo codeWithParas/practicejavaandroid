@@ -9,7 +9,11 @@ import android.widget.Button;
 
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_cp.ContentProvider_Server;
+import test.practice.android_design.Android_Parallax_Tab;
+import test.practice.android_intent.Intent_Example;
+import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
+import test.practice.android_volley.Volley_Test;
 import test.practice.model.Student;
 import test.practice.android_parcelable.FirstActivity;
 
@@ -67,10 +71,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new Asyncc().execute();
 
-                /*Intent intent = new Intent(MainActivity.this, Android_BroadCast_Server.class);
-                startActivity(intent);*/
+                /*
+                * check if Async work after finish call
+                * Ans : Working
+                * */
+
+                //new Asyncc().execute();
+
+                Intent intent = new Intent(MainActivity.this, Android_BroadCast_Server.class);
+                startActivity(intent);
 
 
             }
@@ -93,25 +103,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        /*
-        * Intent
-        * */
 
-        findViewById(R.id.txt_check_intent).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this, test.practice.android_intent.lifecycleactivity.FirstActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
         /*
         * IActivity LAunch modes
         * */
 
-        findViewById(R.id.txt_check_intent).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.txt_check_launch).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -121,7 +120,73 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+         /*
+        * IActivity Life Cycle
+        * */
 
+        findViewById(R.id.txt_check_lifecycle).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, test.practice.android_lifecycle.lifecycleactivity.FirstActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        /*
+        * Intent
+        * */
+
+        findViewById(R.id.txt_check_intent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Intent_Example.class);
+                startActivity(intent);
+            }
+        });
+
+
+        /*
+        * Pending Intent
+        * */
+
+        findViewById(R.id.txt_check_pandingintent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, PendingIntent_Example.class);
+                startActivity(intent);
+            }
+        });
+
+
+        /*
+        * Android Design
+        * */
+
+        findViewById(R.id.txt_parallax_tab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Android_Parallax_Tab.class);
+                startActivity(intent);
+            }
+        });
+
+
+        /*
+        * Volley Test
+        * */
+
+        findViewById(R.id.txt_volley).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Volley_Test.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -133,13 +198,18 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Object doInBackground(Object[] params) {
 
-            for(int i = 0 ; i<100; i++)
+            finish();
+
+            for(int i = 0 ; i<10; i++)
             {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+
+
+                }
                 System.out.println("Async is running " + i);
             }
-
-
-            finish();
 
             return null;
         }

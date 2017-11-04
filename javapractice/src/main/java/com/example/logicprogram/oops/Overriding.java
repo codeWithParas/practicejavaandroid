@@ -43,12 +43,12 @@ class ChildClass extends ParentClass
         System.out.println("ChildClass class constructor");
     }
 
-    /*public void method()
+    public void method()
     {
 
         //super.method();
         System.out.println("ChildClass Class method");
-    }*/
+    }
 
    /* public void run()
     {
