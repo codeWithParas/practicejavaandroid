@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="test.practice">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <!-- android : required = "false" Google Play will then permit users to download your app even
     if their device doesn’t have a fingerprint sensor.-->
 
     <application
+        android:name=".android_volley.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/App_Name"
@@ -43,6 +45,7 @@
         <activity android:name=".android_intent.Intent_Example"/>
         <activity android:name=".android_intent.PendingIntent_Example"/>
         <activity android:name=".android_design.Android_Parallax_Tab"/>
+        <activity android:name=".android_volley.Volley_Test"/>
 
 
 
