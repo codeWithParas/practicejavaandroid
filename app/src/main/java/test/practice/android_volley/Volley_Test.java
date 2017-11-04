@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.Cache;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -23,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,6 +60,17 @@ public class Volley_Test extends AppCompatActivity {
 
         netwrk_img = (NetworkImageView) findViewById(R.id.netwrk_img_view);
         txt_result = (TextView) findViewById(R.id.txt_result);
+        findViewById(R.id.but_volley_catch).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pDialog.show();
+                //Like below you can check for a cached response of an URL before making a network call.
+                checkCatchedResponse();
+
+                requestPrioritisation();
+            }
+        });
+
         findViewById(R.id.but_volley).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,10 +82,132 @@ public class Volley_Test extends AppCompatActivity {
                 //stringRequest();
                 //addingPostParameters();
                 //addingRequestHeader();
-                makingImageRequest();
+                //makingImageRequest();
 
             }
         });
+
+    }
+
+    private void requestPrioritisation() {
+
+        /*
+        * If you are making multiple request at the same time, you can prioritize the requests those you want be executed first.
+        * The priory can be Normal, Low, Immediate and High.
+        * */
+
+        final Request.Priority priority = Request.Priority.HIGH;
+
+        StringRequest strReq = new StringRequest(Request.Method.GET,
+                url, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d("Response  :", response.toString());
+                txt_result.setText(response.toString());
+                pDialog.dismiss();
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("Error  : ", "Error: " + error.getMessage());
+                pDialog.dismiss();
+            }
+        }) {
+            @Override
+            public Priority getPriority() {
+                return priority;
+            }
+
+        };
+    }
+
+    private void setTextView(String data)
+    {
+        if(txt_result.getText().length() > 1)
+        {
+            txt_result.setText(txt_result.getText().toString() + "\n" + data);
+        }else {
+            txt_result.setText(data);
+        }
+
+    }
+
+    private void checkCatchedResponse() {
+
+        /*
+        *
+        * 1) Loading request from cache :
+        * Like below you can check for a cached response of an URL before making a network call.
+        * */
+
+        /*Cache cache = AppController.getInstance().getRequestQueue().getCache();
+        Cache.Entry entry = cache.get(url);
+        if(entry != null){
+            try {
+                String data = new String(entry.data, "UTF-8");
+                txt_result.setText(data.toString());
+                // handle data, like converting it to xml, json, bitmap etc.,
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+        // Cached response doesn't exists. Make network call here
+         }*/
+
+
+         /*
+         * 2) Invalidate cache :
+         * Invalidate means we are invalidating the cached data instead of deleting it. Volley will still uses the cached object
+         * until the new data received from server. Once it receives the response from the server it will override the older cached
+         * response.
+         * */
+
+        //AppController.getInstance().getRequestQueue().getCache().invalidate(url, true);
+
+
+        /*
+        * 3) Turning off cache :
+        * If you want disable the cache for a particular url, you can use setShouldCache() method as below.
+        * */
+
+        // lets suppose we have string request :
+        //StringRequest stringReq = new StringRequest(....);
+
+        // disable cache
+        //stringReq.setShouldCache(false);
+
+
+        /*
+        * 4) Deleting cache for particular URL :
+        * Use remove() to delete cache of an URL.
+        * */
+        //AppController.getInstance().getRequestQueue().getCache().remove(url);
+
+
+        /*
+        * 5) Deleting all the cache :
+        * Followoing will delete the cache for all the URLs.
+        * */
+
+        AppController.getInstance().getRequestQueue().getCache().clear();
+
+
+
+        /*
+        *
+        * 6) Missing! Making XML request
+        * As of now volley doesn’t provided any native classes to make XML requests, but this can be achieved by building a
+        * custom xml wrapper class by utilizing volley’s customization capabilities. The part of writing xml parser using
+        * volley will be covered in upcoming tutorial.
+        * */
+
+
+
+        pDialog.dismiss();
 
     }
 
@@ -237,7 +372,7 @@ public class Volley_Test extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("Response ", response.toString());
-                        txt_result.setText(response.toString());
+                        setTextView(response.toString());
                         pDialog.hide();
                     }
                 }, new Response.ErrorListener() {
