@@ -13,6 +13,7 @@ import test.practice.android_design.Android_Parallax_Tab;
 import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
+import test.practice.android_volley.Volley_Test;
 import test.practice.model.Student;
 import test.practice.android_parcelable.FirstActivity;
 
@@ -175,6 +176,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        /*
+        * Volley Test
+        * */
+
+        findViewById(R.id.txt_volley).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Volley_Test.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

@@ -404,7 +404,7 @@ c) Bound :
 A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface
 that allows components to interact with the service, send requests, receive results, and even do so across processes with
 interprocess communication (IPC). A bound service runs only as long as another application component is bound to it.
-Multiple components can bind to the service at once, but when all of them unbind, the service is destroyed.
+Note : Multiple components can bind to the service at once, but when all of them unbind, the service is destroyed.
 
 ***Broadcasts that require a signature permission are exempted from this restriction, since these broadcasts are only sent
 to apps that are signed with the same certificate, not to all the apps on the device.
@@ -520,16 +520,25 @@ this.registerReceiver(br, filter);
 Note: To register for local broadcasts, call LocalBroadcastManager.registerReceiver(BroadcastReceiver, IntentFilter) instead.
 
 To stop receiving broadcasts, call unregisterReceiver(android.content.BroadcastReceiver). Be sure to unregister the receiver when you no longer need it or the context is no longer valid.
-***Be mindful of where you register and unregister the receiver, for example, if you register a receiver in onCreate(Bundle) using the activity's context, you should unregister it in onDestroy() to prevent leaking the receiver out of the activity context. If you register a receiver in onResume(), you should unregister it in onPause() to prevent registering it multiple times (If you don't want to receive broadcasts when paused, and this can cut down on unnecessary system overhead). Do not unregister in onSaveInstanceState(Bundle), because this isn't called if the user moves back in the history stack.
+***Be mindful of where you register and unregister the receiver, for example, if you register a receiver in onCreate(Bundle) using the activity's context, you should unregister it
+in onDestroy() to prevent leaking the receiver out of the activity context. If you register a receiver in onResume(), you should unregister it in onPause() to prevent
+registering it multiple times (If you don't want to receive broadcasts when paused, and this can cut down on unnecessary system overhead).
+Do not unregister in onSaveInstanceState(Bundle), because this isn't called if the user moves back in the history stack.
+
 
 E.2.2) Sending broadcasts :
 
 
 Android provides three ways for apps to send broadcast:
 
-The sendOrderedBroadcast(Intent, String) method sends broadcasts to one receiver at a time. As each receiver executes in turn, it can propagate a result to the next receiver, or it can completely abort the broadcast so that it won't be passed to other receivers. The order receivers run in can be controlled with the android:priority attribute of the matching intent-filter; receivers with the same priority will be run in an arbitrary order.
-The sendBroadcast(Intent) method sends broadcasts to all receivers in an undefined order. This is called a Normal Broadcast. This is more efficient, but means that receivers cannot read results from other receivers, propagate data received from the broadcast, or abort the broadcast.
-The LocalBroadcastManager.sendBroadcast method sends broadcasts to receivers that are in the same app as the sender. If you don't need to send broadcasts across apps, use local broadcasts. The implementation is much more efficient (no interprocess communication needed) and you don't need to worry about any security issues related to other apps being able to receive or send your broadcasts.
+The sendOrderedBroadcast(Intent, String) method sends broadcasts to one receiver at a time. As each receiver executes in turn, it can propagate a result to the next receiver,
+or it can completely abort the broadcast so that it won't be passed to other receivers. The order receivers run in can be controlled with the android:priority attribute of the
+matching intent-filter; receivers with the same priority will be run in an arbitrary order.
+The sendBroadcast(Intent) method sends broadcasts to all receivers in an undefined order. This is called a Normal Broadcast. This is more efficient, but means that receivers
+cannot read results from other receivers, propagate data received from the broadcast, or abort the broadcast.
+The LocalBroadcastManager.sendBroadcast method sends broadcasts to receivers that are in the same app as the sender. If you don't need to send broadcasts across apps, use
+local broadcasts. The implementation is much more efficient (no interprocess communication needed) and you don't need to worry about any security issues related to other
+apps being able to receive or send your broadcasts.
 The following code snippet demonstrates how to send a broadcast by creating an Intent and calling sendBroadcast(Intent).
 
 Intent intent = new Intent();

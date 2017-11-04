@@ -60,6 +60,13 @@
         android:text="Android Parallax Tab" />
 
 
+    <Button
+        android:id="@+id/txt_volley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android Volley Test" />
+
+
 
 
 
