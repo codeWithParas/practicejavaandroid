@@ -21,7 +21,7 @@ public class Synchronization {
     *   Case 1: Without Synchronization : If two threads(t1 & t2) acting on same object(d1) then -> Irregular O/P
     *   Case 2: Using Synchronization : If two threads(t1 & t2) acting on same object(d1) then -> Regular O/P
     *
-    *   Explanation : Case 1 : When method display() is Synchronized and only one object is available.
+    *   Explanation : Case 2 : When method display() is Synchronized and only one object is available.
     *                 --> then t1 starts : get the object lock First
     *                     execute -->  synchronized display() method
     *                     t1 execution finished.
@@ -33,7 +33,7 @@ public class Synchronization {
     *
     *                     Output : Regular  (Expected)
     *
-    *                 Case 2 : When method display() is not Synchronized
+    *                 Case 1 : When method display() is not Synchronized
     *                 (or vice-versa : Thread Scheduler dependent)
     *                 --> t1 starts : start execution
     *                 --> t2 starts : start execution
@@ -62,7 +62,9 @@ public class Synchronization {
     * */
 
 
-    public static void main(String arg[]) {
+
+    public static void main(String arg[])
+    {
         /*
         * Check class level lock and object level lock by using two different object of display();
         * */
@@ -83,61 +85,71 @@ public class Synchronization {
 }
 
 
-class Display {
+class Display
+{
     /*
     * use static here to get class level lock
     * */
 
-    public /*static*/ synchronized void display(String threadName) {
+  public /*static*/ synchronized void display(String threadName)
+  {
 
-        for (int i = 0; i <= 5; i++) {
-            System.out.println("Display Method Executed By " + threadName);
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+      for(int i=0; i<=3; i++)
+      {
+          System.out.println("Display Method Executed By " + threadName);
+          try {
+              Thread.sleep(2000);
+          } catch (InterruptedException e) {
+              e.printStackTrace();
+          }
+      }
+  }
 
-    public void display_2() {
-        System.out.println("display_2");
-    }
+  public void display_2()
+  {
+      System.out.println("display_2");
+  }
 
 }
 
-class Mythread1 extends Thread {
+class Mythread1 extends Thread
+{
     Display d;
 
     public Mythread1(Display d) {
         this.d = d;
     }
 
-    public void run() {
+    public void run()
+    {
         d.display("Mythread 1");
     }
 }
 
-class Mythread2 extends Thread {
+class Mythread2 extends Thread
+{
     Display d;
 
     public Mythread2(Display d) {
         this.d = d;
     }
 
-    public void run() {
+    public void run()
+    {
         d.display("Mythread 2");
     }
 }
 
-class Mythread3 extends Thread {
+class Mythread3 extends Thread
+{
     Display d;
 
     public Mythread3(Display d) {
         this.d = d;
     }
 
-    public void run() {
+    public void run()
+    {
         d.display_2();
     }
 }
