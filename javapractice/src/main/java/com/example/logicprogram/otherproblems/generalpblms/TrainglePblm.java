@@ -19,13 +19,13 @@ public class TrainglePblm {
 
     }
 
-    private void drawTriangle(int size) {
+    /*private void drawTriangle(int size) {
 
         for (int i = 1; i <= size; i++) {
             for (int j = size; j >= i; j--) {
                 System.out.print(" ");
             }
-            for (int k = 1; k <= i/*(2 * i - 1)*/; k++) {
+            for (int k = 1; k <= i*//*(2 * i - 1)*//*; k++) {
                 System.out.print(i);
                 System.out.print(" ");
             }
@@ -36,16 +36,16 @@ public class TrainglePblm {
             for (int j = size; j >= i; j--) {
                 System.out.print(" ");
             }
-            for (int k = 1; k <= i/*(2 * i - 1)*/; k++) {
+            for (int k = 1; k <= i*//*(2 * i - 1)*//*; k++) {
                 System.out.print(i);
                 System.out.print(" ");
             }
             System.out.println("");
         }
-    }
+    }*/
 
 
-    /*private void drawTriangle(int size) {
+    private void drawTriangle(int size) {
 
         for(int i=1; i<=size; i++)
         {
@@ -61,7 +61,7 @@ public class TrainglePblm {
         }
 
 
-    }*/
+    }
 
 
 

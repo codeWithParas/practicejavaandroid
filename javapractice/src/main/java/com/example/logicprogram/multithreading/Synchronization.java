@@ -21,7 +21,7 @@ public class Synchronization {
     *   Case 1: Without Synchronization : If two threads(t1 & t2) acting on same object(d1) then -> Irregular O/P
     *   Case 2: Using Synchronization : If two threads(t1 & t2) acting on same object(d1) then -> Regular O/P
     *
-    *   Explanation : Case 1 : When method display() is Synchronized and only one object is available.
+    *   Explanation : Case 2 : When method display() is Synchronized and only one object is available.
     *                 --> then t1 starts : get the object lock First
     *                     execute -->  synchronized display() method
     *                     t1 execution finished.
@@ -33,7 +33,7 @@ public class Synchronization {
     *
     *                     Output : Regular  (Expected)
     *
-    *                 Case 2 : When method display() is not Synchronized
+    *                 Case 1 : When method display() is not Synchronized
     *                 (or vice-versa : Thread Scheduler dependent)
     *                 --> t1 starts : start execution
     *                 --> t2 starts : start execution
@@ -94,7 +94,7 @@ class Display
   public /*static*/ synchronized void display(String threadName)
   {
 
-      for(int i=0; i<=5; i++)
+      for(int i=0; i<=3; i++)
       {
           System.out.println("Display Method Executed By " + threadName);
           try {
@@ -152,4 +152,4 @@ class Mythread3 extends Thread
     {
         d.display_2();
     }
-}
+} 
