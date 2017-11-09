@@ -66,6 +66,12 @@
         android:layout_height="wrap_content"
         android:text="Android Volley Test" />
 
+    <Button
+        android:id="@+id/txt_design"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android Design Test" />
+
 
 
 

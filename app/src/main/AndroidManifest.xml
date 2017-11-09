@@ -47,6 +47,8 @@
         <activity android:name=".android_design.Android_Parallax_Tab"/>
         <activity android:name=".android_volley.Volley_Test"/>
 
+        <!--Android Design Activity-->
+        <activity android:name=".android_design.FabHideActivity"/>
 
 
 

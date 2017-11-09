@@ -19,6 +19,18 @@ public class Utils {
 
     public static String dataBroadCast;
 
+
+    public static int getToolbarHeight(Context context) {
+        int height = (int) context.getResources().getDimension(R.dimen.abc_action_bar_default_height_material);
+        return height;
+    }
+
+    public static int getStatusBarHeight(Context context) {
+        int height = (int) context.getResources().getDimension(R.dimen.statusbar_size);
+        return height;
+    }
+
+
     public static void moveToFragment(Activity activity, Fragment fragment, Object data, int viewType) {
         //Utils.DEBUG("moveToFragment() called: " + fragment);
         System.out.print("....moveToFragment........>>>>>>>>>>>>");
