@@ -10,6 +10,7 @@ import android.widget.Button;
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_cp.ContentProvider_Server;
 import test.practice.android_design.Android_Parallax_Tab;
+import test.practice.android_design.FabHideActivity;
 import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
@@ -184,6 +185,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Volley_Test.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
+        * Android Design
+        * */
+
+        findViewById(R.id.txt_design).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FabHideActivity.class);
                 startActivity(intent);
             }
         });
