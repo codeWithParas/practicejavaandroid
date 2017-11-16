@@ -1,81 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:scrollbars="vertical"
     tools:context="test.practice.MainActivity">
 
-    <Button
-        android:id="@+id/txt_check_launch"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check Android Launch Modes"
-        />
-
-    <Button
-        android:id="@+id/txt_check_lifecycle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check Android LifeCycle"
-        />
-
-    <Button
-        android:id="@+id/txt_check_intent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check Android Intent"
-        />
-
-    <Button
-        android:id="@+id/txt_check_pandingintent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check Pending Intent" />
+        android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/txt_check_cp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check Cotent Provider" />
+        <Button
+            android:id="@+id/txt_check_launch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Android Launch Modes" />
 
-    <Button
-        android:id="@+id/txt_checkparcelable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check Parcelable" />
+        <Button
+            android:id="@+id/txt_check_lifecycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Android LifeCycle" />
 
-    <Button
-        android:id="@+id/txt_check_broadcast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show BroadCast Reiceived" />
+        <Button
+            android:id="@+id/txt_check_intent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Android Intent" />
 
-
-    <Button
-        android:id="@+id/txt_parallax_tab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Android Parallax Tab" />
-
-
-    <Button
-        android:id="@+id/txt_volley"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Android Volley Test" />
-
-    <Button
-        android:id="@+id/txt_design"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Android Design Test" />
+        <Button
+            android:id="@+id/txt_check_pandingintent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Pending Intent" />
 
 
+        <Button
+            android:id="@+id/txt_check_cp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Cotent Provider" />
+
+        <Button
+            android:id="@+id/txt_checkparcelable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Parcelable" />
+
+        <Button
+            android:id="@+id/txt_check_broadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show BroadCast Reiceived" />
 
 
+        <Button
+            android:id="@+id/txt_parallax_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Parallax Tab" />
 
 
+        <Button
+            android:id="@+id/txt_volley"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Volley Test" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/txt_design"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Design Test" />
+
+
+        <Button
+            android:id="@+id/txt_recyclertxt_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android RecyclerView" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

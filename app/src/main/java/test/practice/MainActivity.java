@@ -14,6 +14,7 @@ import test.practice.android_design.FabHideActivity;
 import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
+import test.practice.android_recyclerview.RecyclerViewActivity;
 import test.practice.android_volley.Volley_Test;
 import test.practice.model.Student;
 import test.practice.android_parcelable.FirstActivity;
@@ -197,6 +198,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FabHideActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        /*
+        *
+        * Recycler View
+        * */
+
+        findViewById(R.id.txt_recyclertxt_recycler).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                 startActivity(intent);
             }
         });

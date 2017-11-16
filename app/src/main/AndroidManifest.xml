@@ -50,6 +50,9 @@
         <!--Android Design Activity-->
         <activity android:name=".android_design.FabHideActivity"/>
 
+        <!--RecyclerView-->
+        <activity android:name=".android_recyclerview.RecyclerViewActivity"/>
+
 
 
         <!--Content Provider Server-->
