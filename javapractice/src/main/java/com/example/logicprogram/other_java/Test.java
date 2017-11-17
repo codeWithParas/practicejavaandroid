@@ -7,6 +7,9 @@ package com.example.logicprogram.other_java;
 public class Test {
 
 
-    //public
+    public static final void main(String args[])
+    {
+        System.out.println("Testing Main");
+    }
 
 }
