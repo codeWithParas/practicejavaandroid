@@ -12,4 +12,9 @@ public class Test {
         System.out.println("Testing Main");
     }
 
+    public void m()
+    {
+
+    }
+
 }
