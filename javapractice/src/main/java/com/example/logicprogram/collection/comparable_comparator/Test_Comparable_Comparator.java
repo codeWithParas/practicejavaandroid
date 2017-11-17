@@ -33,7 +33,7 @@ public class Test_Comparable_Comparator {
         }
 
 
-        //comparable_Implementation(list);
+        comparable_Implementation(list);
 
 
 
@@ -42,7 +42,7 @@ public class Test_Comparable_Comparator {
         /**************--Comparator--*************************/
 
         /*
-        * Why we use comparator ? In which scenerio we go with coparator() interface ?
+        * Why we use comparator ? In which scenerio we go with comparator() interface ?
         *
         * Ans : Please Understand Clearly
         * Consider two bussiness logic case first -> A & Second -> B
@@ -120,8 +120,7 @@ public class Test_Comparable_Comparator {
 
 
         /*
-        * Hence by using Collection.sort(arraylist) we cant provide custom sorting , only default sorting
-        * for arraylist case.
+        * Hence by using Collection.sort(arraylist) we cant provide custom sorting , only default sorting for arraylist case.
         * But using Treeset we can provide custom sorting.
         *
         * */
