@@ -29,8 +29,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import test.practice.R;
-import test.practice.android_parser.ParseManager;
-import test.practice.android_volley.model.MainObjectResponse;
 
 /**
  * Created by parasmani.sharma on 04/11/2017.
@@ -374,10 +372,7 @@ public class Volley_Test extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("Response ", response.toString());
-
-                        MainObjectResponse utosearchresultHome = ParseManager.getInstance().fromJSON(response, MainObjectResponse.class);
-
-                        setTextView(utosearchresultHome.getEmail()+"\n"+utosearchresultHome.getName());
+                        setTextView(response.toString());
                         pDialog.hide();
                     }
                 }, new Response.ErrorListener() {
