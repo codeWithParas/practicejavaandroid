@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_cp.ContentProvider_Server;
 import test.practice.android_design.Android_Parallax_Tab;
@@ -212,6 +213,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+         /*
+        *
+        * Animation
+        * */
+
+        findViewById(R.id.txt_animation).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AndroidAnimationActivity.class);
                 startActivity(intent);
             }
         });

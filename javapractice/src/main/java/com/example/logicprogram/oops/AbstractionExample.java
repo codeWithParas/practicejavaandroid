@@ -21,6 +21,22 @@ import java.util.Scanner;
 * our AIDl_Test_Cover project(considered Interface in this case). By this we can analyze that a pipeline will create for communication between both
 * Client and Server(acts like mirror - which uses shared memory concept on same device for communication between two
 * Apps using IBinder Interface of Android OS).
+*
+* By refering & anylising below program we can assume a ery good example of ATM Machine.
+* A very good example : ATM machine : If You insert any type of bank card it will redirect you to the desire card related bank server and
+* you can withrawal and deposite money . So the ATM machine is providing abstraction at this level by connecting with numbers of bank.
+*
+* BankServer (SBI       BOB        Punjab        etc.)
+*               \        |           |            /
+*                \       |           |           /
+*                 -------------------------------
+*                               |
+*                               |
+*                          ATM Machine (Provide Bank Abstraction Level)
+*                               |
+*                               |
+*                       User Input ATM Card
+*
 * */
 
 class SBI extends Bank

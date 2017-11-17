@@ -8,16 +8,27 @@ package com.example.logicprogram.oops;
 * Interface cannot be instantiated.
 * */
 
-public interface InterfaceTest {
+class Server implements InterfaceTest
+{
+    public int add(int a, int b)
+    {
+        return a+b;
+    }
 }
 
-class Test{
+
+
+public interface InterfaceTest {
+
+    public int add(int a, int b);
+
+}
+
+class Client{
 
     public static void main(String arg[])
     {
-
-        //InterfaceTest obj = new InterfaceTest();
-
+        //Server
 
     }
 

@@ -5,7 +5,11 @@ package com.example.logicprogram.oops;
  */
 
 /*
-* Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another.
+* Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another class.
+* Types :
+* 1) Single Level
+* 2) Multilevel
+*
 * */
 
 class Parent

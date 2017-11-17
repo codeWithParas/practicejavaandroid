@@ -85,6 +85,12 @@
             android:layout_height="wrap_content"
             android:text="Android RecyclerView" />
 
+        <Button
+            android:id="@+id/txt_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Animation" />
+
 
     </LinearLayout>
 
