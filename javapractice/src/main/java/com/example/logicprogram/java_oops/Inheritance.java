@@ -18,17 +18,17 @@ class Parent
 
     public void m()
     {
-        System.out.print("Parent a : " + a);
+        System.out.println("Parent a : " + a);
     }
 }
 
 class Child extends Parent
 {
     int a = 20 ;
-    public void m()
+    /*public void m()
     {
         System.out.print("\nChild a : " + a);
-    }
+    }*/
 }
 
 public class Inheritance {

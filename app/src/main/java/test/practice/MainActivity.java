@@ -12,6 +12,7 @@ import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_cp.ContentProvider_Server;
 import test.practice.android_design.Android_Parallax_Tab;
 import test.practice.android_design.FabHideActivity;
+import test.practice.android_handler.Handler_Example;
 import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
@@ -227,6 +228,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AndroidAnimationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
+        *
+        * Handler
+        * */
+
+        findViewById(R.id.txt_handler).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Handler_Example.class);
                 startActivity(intent);
             }
         });

@@ -160,7 +160,7 @@ b) single top : If activity is on top of Stack don't create new instance.
 c) single task :
 Note :
 1)The same instance will be used again.
-2)Remove top level activities that are already present in stack.
+2)Remove toaap level activities that are already present in stack.
 
 Before : Task 1 : A -> B(singleTask) -> C -> D -> (if B is called again then)
 After  : Task 2 : A -> B (C & D popped up from stack)

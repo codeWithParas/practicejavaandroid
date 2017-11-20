@@ -4,6 +4,10 @@ package com.example.logicprogram.java_exception_handling;
  * Created by parasmani.sharma on 17/11/2017.
  */
 
+/*
+* finally without try block cannot be used. Try block is must for finally block to run.
+* */
+
 public class First_ExceptionHandling {
 
     public static void main(String args[])

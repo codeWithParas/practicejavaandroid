@@ -1,4 +1,4 @@
-package com.example.logicprogram.java_multithreading;
+package com.example.logicprogram.java_multithreading.synchronization;
 
 /**
  * Created by parasmani.sharma on 31/05/2017.

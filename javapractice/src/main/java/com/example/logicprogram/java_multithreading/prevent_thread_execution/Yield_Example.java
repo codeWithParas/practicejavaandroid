@@ -1,4 +1,4 @@
-package com.example.logicprogram.java_multithreading;
+package com.example.logicprogram.java_multithreading.prevent_thread_execution;
 
 /**
  * Created by Parasmani Sharma on 10/12/2017.

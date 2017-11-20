@@ -13,7 +13,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/App_Name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme1">
         <activity android:name="test.practice.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,6 +56,10 @@
         <!--Animation-->
         <activity android:name=".android_animation.animate_transition.AndroidAnimationActivity"/>
 
+
+        <!--Handler-->
+        <activity android:name=".android_handler.Handler_Example"/>
+        <activity android:name=".android_handler.Handler_MsgQueue_Example"/>
 
         <!--Content Provider Server-->
         <activity android:name=".android_cp.ContentProvider_Server"/>

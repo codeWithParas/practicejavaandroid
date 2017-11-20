@@ -10,6 +10,8 @@ public class Test {
     public static final void main(String args[])
     {
         System.out.println("Testing Main");
+        Test obj = new Test();
+        obj.m();
     }
 
     public void m()
