@@ -1,4 +1,4 @@
-package com.example.logicprogram.java_basics;
+package com.example.logicprogram.java_basics.java_conditional;
 
 /**
  * Created by parasmani.sharma on 17/11/2017.

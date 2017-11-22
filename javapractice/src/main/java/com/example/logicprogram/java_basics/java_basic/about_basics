@@ -1,0 +1,80 @@
+1)Classes and Objects
+
+http://skillgun.com/java/classes-and-objects/tutorial
+
+Class : It is a blue print type from which individual objects are generated.
+Object : Any real world entity that has some state(data) behaviour(functionality);
+
+
+2) Memory Architecture of JRE:
+
+Code Segment : Stores your code
+Data Segment : stores static/class variables
+Stack Segment : local variables
+Heap Segment : contain instanse variable/ new object
+
+
+3) Types of Variables
+
+a) Local Variables : Property of Function : Life time within that block or function
+b) Instance Variables : Property of Object : Life time is as long as Object is alive
+c) Class/static variables : Property of Class : Life time through out the program execution
+
+Example :
+
+class Demo
+{
+ int a = 0 ; (Instance Variable - > Property of Object : Life time is as long as Object is alive)
+ static int b; (Class Variable -> Property of Class : Life time through out the program execution)
+
+ publiv void method(int a)  //(local variable)
+ {
+    int v = 0; (local variable)
+    Demo d = new Demo();  (local variable -> Property of Function : Life time within that block or function)
+ }
+}
+
+
+4) Constructor :
+
+Refer : http://skillgun.com/java/constructors/tutorial
+*
+* Constructors :
+* 1) Can be private used in singleton pattern
+* 2) Constructors not have any return type
+* 3) Having a return type for constructor will not give any pblm but then it will act like a normal method.
+*
+ Life Cycle of Constructor :
+* a)Constructor will be called only after creating the object.
+* b)"new" operator will create the object , not the constructor.
+* c) Constructor are used to initialize the objects, and to initialize the instance variable.
+*
+* Note : If you make private constructor then we cannot craete objects of that class from outside world(class).
+
+Shadowing : Basically,  Constructor are used to initialize the objects, and to initialize the instance variable.
+* But if instance variable are same as local variable that we have passed with constructor. Then Shadowing will occur that will not
+make use of new values that we have passed infact the default values of instance variable will be used.
+* Local variable is same as instance variable;
+* In this kind of scenerio local variable has given high priority than instance variable.
+
+*What is the purpose of object ? Creating OBject or initialising instance variable ?
+*Ans : Constructor is used to only initialize the object, e.i initialize the instance variable of the object.
+      It is not a good practice to initialize static variables from the constructor.
+      Since constructor are used to initialize the object, so it will called only after creating of the object, it is
+      not the constructor but the "new" operator that will create the object in java.
+
+* Constructor can be parametrized and can be overloaded (virtual polymorphism : static polymorphism).
+
+* We can call constructor from other constructor in same class by using "this()" function call in the first line .
+
+
+5) How many ways we can initialize instance variable ?
+Ans : a) you can initialize inside constructor (issue : StackOverFlow Occur)
+      b) you can initialize in static block
+      c) you can initialize outside constructor but no conditional logic should be present.
+
+
+
+
+
+
