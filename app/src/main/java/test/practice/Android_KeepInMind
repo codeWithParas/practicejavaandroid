@@ -1,0 +1,36 @@
+ANR :
+
+1)Occurs : Due to heavy processing or lack of available resousrce.
+Preventions : Therefore, any method that runs in the UI thread should do as little work as possible on that thread.
+In particular, activities should do as little as possible to set up in key life-cycle methods such as onCreate() and onResume().
+Potentially long running operations such as network or database operations, or computationally expensive calculations such as
+resizing bitmaps should be done in a worker thread (or in the case of databases operations, via an asynchronous request).
+
+2)Generally, the system displays an ANR if an application cannot respond to user input. For example, if an application blocks
+on some I/O operation (frequently a network access) on the UI thread so the system can't process incoming user input events.
+Or perhaps the app spends too much time building an elaborate in-memory structure or computing the next move in a game on the
+UI thread.
+
+3)In any situation in which your app performs a potentially lengthy operation, you should not perform the work on the UI thread,
+but instead create a worker thread and do most of the work there. This keeps the UI thread (which drives the user interface event
+loop) running and prevents the system from concluding that your code has frozen. Because such threading usually is accomplished
+at the class level, you can think of responsiveness as a class problem.
+
+4)In Android, application responsiveness is monitored by the Activity Manager and Window Manager system services.
+Android will display the ANR dialog for a particular application when it detects one of the following conditions:
+   a)No response to an input event (such as key press or screen touch events) within 5 seconds.
+   b)A BroadcastReceiver hasn't finished executing within 10 seconds.
+
+   Solution Using : AsyncTask  (Well Its Fine)
+5)So, Although it's more complicated than AsyncTask, you might want to instead create your own Thread or HandlerThread class.
+If you do, you should set the thread priority to "background" priority by calling Process.setThreadPriority() and
+passing THREAD_PRIORITY_BACKGROUND. If you don't set the thread to a lower priority this way, then the thread could
+still slow down your app because it operates at the same priority as the UI thread by default.
+
+
+   Solution Using : Handler  (Ok good to go for any more Custom level) Becouse you can manage message w.r.t time.
+6)If you implement Thread or HandlerThread, be sure that your UI thread does not block while waiting for the worker thread
+to complete?do not call Thread.wait() or Thread.sleep() on MainThread. Instead of blocking while waiting for a worker thread to complete,
+your main thread should provide a Handler for the other threads to post back to upon completion. Designing your application
+in this way will allow your app's UI thread to remain responsive to input and thus avoid ANR dialogs caused by the 5 second
+input event timeout.

@@ -31,9 +31,28 @@
         <activity android:name="test.practice.android_parcelable.FirstActivity"/>
         <activity android:name="test.practice.android_parcelable.SecondActivity"/>
         <activity android:name=".android_security.FingerPrintActivity"/>
-        <activity android:name="test.practice.android_broadcast.Android_BroadCast_Server"/>
-        <activity android:name=".android_launchmodes.Activity_A"/>
 
+        <!--BroadCast Receiver-->
+        <activity
+            android:name="test.practice.android_broadcast.Android_BroadCast_Server"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="test.server.broadcast.receiver" />
+            </intent-filter>
+        </activity>
+        <!--Registering BroadCast Receiver through Manifest-->
+        <!--<receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="test.server.broadcast.receiver" />
+            </intent-filter>
+        </receiver>-->
+
+
+        <!--Launch Modes-->
+        <activity android:name=".android_launchmodes.Activity_A"/>
         <!--change this affinity value-->
         <!--android:taskAffinity="com.some.new.task"-->
         <activity android:name=".android_launchmodes.Activity_B"
@@ -59,7 +78,8 @@
 
         <!--Handler-->
         <activity android:name=".android_handler.Handler_Example"/>
-        <activity android:name=".android_handler.Handler_MsgQueue_Example"/>
+        <activity android:name=".android_handler.SendMsg_ThreadToMain"/>
+        <activity android:name=".android_handler.SendMsg_ThreadToThread"/>
 
         <!--Content Provider Server-->
         <activity android:name=".android_cp.ContentProvider_Server"/>
@@ -70,16 +90,6 @@
             android:exported="true"
             android:authorities="paras.server.MyContentProvider">
         </provider>
-
-
-        <!--Registering BroadCast Receiver through Manifest-->
-        <receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="test.server.broadcast.receiver" />
-            </intent-filter>
-        </receiver>
 
 
         <!--Registring binding service for AIDL-->

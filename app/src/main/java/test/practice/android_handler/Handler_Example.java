@@ -1,7 +1,6 @@
 package test.practice.android_handler;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +22,15 @@ public class Handler_Example extends AppCompatActivity {
         findViewById(R.id.handler_msg).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Handler_Example.this, Handler_MsgQueue_Example.class);
+                Intent intent = new Intent(Handler_Example.this, SendMsg_ThreadToMain.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.handler_msg_thread).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Handler_Example.this, SendMsg_ThreadToThread.class);
                 startActivity(intent);
             }
         });

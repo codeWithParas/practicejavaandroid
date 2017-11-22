@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".android_handler.Handler_MsgQueue_Example"
+    tools:context=".android_handler.SendMsg_ThreadToMain"
     android:theme="@style/AppTheme1">
 
 

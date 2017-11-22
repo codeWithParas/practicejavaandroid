@@ -18,8 +18,8 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
         i.putExtra("data",intent.getStringExtra("KeyName").toString());
         context.startActivity(intent);*/
 
-        Utils.dataBroadCast = intent.getExtras().get("KeyName").toString();
-        System.out.println("Received BroadCast Order : " + intent.getExtras().get("KeyName").toString());
+        /*Utils.dataBroadCast = intent.getExtras().get("KeyName").toString();
+        System.out.println("Received BroadCast Order : " + intent.getExtras().get("KeyName").toString());*/
         //Toast.makeText(context,"Received : " +intent.getStringExtra("KeyName").toString(), Toast.LENGTH_SHORT).show();
 
     }

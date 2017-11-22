@@ -2,12 +2,19 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppTheme1">
+    android:theme="@style/AppTheme1"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/handler_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Handler Msg Queue"/>
+        android:text="Send Handler Msg from Thread to Main"/>
+
+    <Button
+        android:id="@+id/handler_msg_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Handler Msg from Thread To Same Thread"/>
 
 </LinearLayout>

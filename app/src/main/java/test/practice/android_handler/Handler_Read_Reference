@@ -1,0 +1,92 @@
+
+Refer : https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
+
+
+
+
+This Article covers Android Looper, Handler, and HandlerThread. These are among the building blocks of Android OS.
+In my own experience, I have used them in a very limited context until recently. My use case involved sending tasks to the main/ui thread, primarily to update the UI from any other thread. The other aspects of the multi-threaded operation were handled through alternate ways like ThreadPoolExecutor, IntentService, and AsyncTask.
+MultiThreading and task running are old subjects. Java itself has java.util.concurrent package and Fork/Join framework to facilitate it. Several libraries have been written to streamline asynchronous operations. RxJava is the most popular library today for reactive programming and designing an asynchronous application.
+So, why am I writing about the old school?
+Looper, Handler, and HandlerThread are the Android?s way of solving the problems of asynchronous programming. They are not old school, but a neat structure on which a complex android framework is built.
+For new developers, it?s highly recommended to understand the principles behind them and experienced one?s should revisit this topic to recollect the minor details.
+Use Cases:
+The main thread in Android is built with a Looper and Handlers. So, the understanding of it is essential to create an unblocked responsive UI.
+The developers writing libraries cannot afford to use third party libraries because of the library size. So, for them, the best option is to utilize the existing available resource. Writing own solution for it may not always get that level of efficiency and optimization.
+The same argument can also be made for companies/individuals shipping out SDKs. The clients can have varied implementations, but all of them will share the common android framework APIs.
+Understanding them fully will enhance the capacity to follow the Android SDK and package classes in general.
+Let?s start the exploration/revision with a questionnaire.
+I expect the reader to have the basic understanding of java threads. If you need, then get a quick overview of java Thread and Runnable.
+What is the problem with java thread?
+Java threads are one-time use only and die after executing its run method.
+Can we improve upon it?
+The Thread is a double edged sword. We can speed up the execution by distributing the tasks among threads of execution, but can also slow it down when threads are in excess. Thread creation in itself is an overhead. So, the best option is to have an optimum number of threads and reuse them for tasks execution.
+Model for thread reusability:
+The thread is kept alive, in a loop via it?s run() method.
+The task is executed serially by that thread and is maintained in a queue (MessageQueue).
+The thread must be terminated when done.
+What is the Android?s way of doing it?
+The above model is implemented in the Android via Looper, Handler, and HandlerThread. The System can be visualized to be a vehicle as in the article?s cover.
+MessageQueue is a queue that has tasks called messages which should be processed.
+Handler enqueues task in the MessageQueue using Looper and also executes them when the task comes out of the MessageQueue.
+Looper is a worker that keeps a thread alive, loops through MessageQueue and sends messages to the corresponding handler to process.
+Finally Thread gets terminated by calling Looper?s quit() method.
+One thread can have only one unique Looper and can have many unique Handlers associated with it.
+Creating Looper and MessageQueue for a Thread:
+A thread gets a Looper and MessageQueue by calling Looper.prepare() after its running. Looper.prepare() identifies the calling thread, creates a Looper and MessageQueue object and associate the thread with them in ThreadLocal storage class. Looper.loop() must be called to start the associated looper. Similarly, the looper must be terminated explicitly through looper.quit().
+class LooperThread extends Thread {
+      public Handler mHandler;
+
+      public void run() {
+          Looper.prepare();
+
+          mHandler = new Handler() {
+              public void handleMessage(Message msg) {
+                 // process incoming messages here
+                 // this will run in non-ui/background thread
+              }
+          };
+
+          Looper.loop();
+      }
+  }
+
+
+
+  /*
+  * What is the problem with java thread?
+  * Java threads are one-time use only and die after executing its run method.
+  * Can we improve upon it?
+  * The Thread is a double edged sword. We can speed up the execution by distributing the tasks among threads of execution,
+  * but can also slow it down when threads are in excess. Thread creation in itself is an overhead. So, the best option is to
+  * have an optimum number of threads and reuse them for tasks execution.
+  *
+  * So Note Important Point : Android Handlers basically provide a working thread (runs internally) called looper. That loops the
+  * message queue .So this helps to increase the normal thread capability to work as a reusable component that works by its own
+  * without explicitly calling again and again that generally we cant do with normal thread execution. So that makes some sense when you try
+  * to update your android view for example - as in case of progressBar.
+  *
+  *
+  * The main thread in Android is built with a Looper and Handlers.
+  * A Handler allows you to send and process Message and Runnable objects associated with a thread's MessageQueue.
+  * Each Handler instance is associated with a single thread and that thread's message queue. When you create a new Handler,
+  * it is bound to the thread / message queue of the thread that is creating it -- from that point on, it will deliver
+  * messages and runnables to that message queue and execute them as they come out of the message queue.
+  * There are two main uses for a Handler:
+  *                              (1) to schedule messages and runnables to be executed as some point in the future;
+  *                          and (2) to enqueue an action to be performed on a different thread than your own.
+  *
+  * About Looper : https://developer.android.com/reference/android/os/Looper.html
+  * Class used to run a message loop for a thread. Threads by default do not have a message loop associated with them; to
+  * create one, call prepare() in the thread that is to run the loop, and then loop() to have it process messages until the
+  * loop is stopped.
+  * Most interaction with a message loop is through the Handler class.
+  *
+  *
+  * Talk About Handler, Looper, HandlerThread : https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
+  *
+  * Looper is a worker that keeps a thread alive, loops through MessageQueue and sends messages to the corresponding
+  * handler to process.
+  *
+  *
+  * */

@@ -9,7 +9,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:textSize="20sp"
-        android:text="Send BroadCast"/>
+        android:text="BroadCast is Registered from here inside onCreate Method\nThe same broadcast then received by same activiy class."/>
 
+
+    <Button
+        android:id="@+id/send_broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send YOur broadcast"
+        android:layout_gravity="center"/>
 
 </LinearLayout>
