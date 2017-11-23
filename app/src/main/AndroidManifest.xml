@@ -3,6 +3,12 @@
     package="test.practice">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--Allows applications to connect to paired bluetooth devices.-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <!--Allows applications to discover and pair bluetooth devices.-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <!-- android : required = "false" Google Play will then permit users to download your app even
     if their device doesn’t have a fingerprint sensor.-->
@@ -61,10 +67,14 @@
             />
         <activity android:name=".android_launchmodes.Activity_C"/>
         <activity android:name=".android_launchmodes.Activity_D"/>
+
         <activity android:name=".android_intent.Intent_Example"/>
         <activity android:name=".android_intent.PendingIntent_Example"/>
         <activity android:name=".android_design.Android_Parallax_Tab"/>
         <activity android:name=".android_volley.Volley_Test"/>
+
+        <!--Bluetooth-->
+        <activity android:name=".android_bluetooth.Bluetooth_Activity"/>
 
         <!--Android Design Activity-->
         <activity android:name=".android_design.FabHideActivity"/>

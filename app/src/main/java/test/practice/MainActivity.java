@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
+import test.practice.android_bluetooth.Bluetooth_Activity;
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_cp.ContentProvider_Server;
 import test.practice.android_design.Android_Parallax_Tab;
@@ -241,6 +242,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Handler_Example.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
+        *
+        * Bluetooth
+        * */
+
+        findViewById(R.id.txt_bluetooth).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Bluetooth_Activity.class);
                 startActivity(intent);
             }
         });

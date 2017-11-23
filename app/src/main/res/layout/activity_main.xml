@@ -98,6 +98,14 @@
             android:text="Android Handler" />
 
 
+
+        <Button
+            android:id="@+id/txt_bluetooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Bluetooth" />
+
+
     </LinearLayout>
 
 
