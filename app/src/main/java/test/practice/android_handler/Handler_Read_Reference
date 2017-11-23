@@ -63,8 +63,8 @@ class LooperThread extends Thread {
   *
   * So Note Important Point : Android Handlers basically provide a working thread (runs internally) called looper. That loops the
   * message queue .So this helps to increase the normal thread capability to work as a reusable component that works by its own
-  * without explicitly calling again and again that generally we cant do with normal thread execution. So that makes some sense when you try
-  * to update your android view for example - as in case of progressBar.
+  * without explicitly calling(or referencing) again and again that generally we cant do with normal thread execution. So that
+  * makes some sense when you try to update your android view for example - as in case of progressBar.
   *
   *
   * The main thread in Android is built with a Looper and Handlers.

@@ -9,6 +9,14 @@ class Overriding
 {
     /*
     * it is an dynamic polymorphic process in which overriding of method decided at the time of runtime.
+    * runtime polymorphism cannot be achieved by data members , Only in case of methods.
+    *
+    *
+    * Static vs Dynamic binding :
+    * Static binding is done during compile-time while dynamic binding is done during run-time.
+    * private, final and static methods and variables uses static binding and bonded by compiler while overridden
+    * methods are bonded during runtime based upon type of runtime object
+    *
     * */
 
     public static void main(String args[])
