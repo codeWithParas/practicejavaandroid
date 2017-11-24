@@ -21,11 +21,11 @@ public class DeadLock_Test extends Thread {
     public void method()
     {
         this.start();
-        a.m1(b);
+        a.m1(b);                   // run by main thread
     }
     public void run()
     {
-        b.m2(a);
+        b.m2(a);                   // run by other thread
     }
     public static void main(String args[])
     {
@@ -41,7 +41,16 @@ class A
     {
         System.out.println("Inside A m1 method");
         try {
+
+            /*
+            * sleep() method will not release any object lock on current thread.
+            * */
             sleep(3000);
+
+            /*
+            * Case : if b.wait is called then thread A will release the B object lock.
+            * Hence, thread A object becomes independent and so locked by B thread to call a.disp() successfully;
+            * */
             //b.wait();
         } catch (InterruptedException e) {
             e.printStackTrace();
