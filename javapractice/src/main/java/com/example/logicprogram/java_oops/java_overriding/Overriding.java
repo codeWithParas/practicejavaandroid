@@ -1,4 +1,4 @@
-package com.example.logicprogram.java_oops;
+package com.example.logicprogram.java_oops.java_overriding;
 
 /**
  * Created by parasmani.sharma on 10/05/2017.

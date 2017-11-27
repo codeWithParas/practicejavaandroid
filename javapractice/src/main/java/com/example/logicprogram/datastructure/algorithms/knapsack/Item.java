@@ -1,4 +1,4 @@
-package com.example.logicprogram.datastructure.Knapsack;
+package com.example.logicprogram.datastructure.algorithms.knapsack;
 
 /**
  * Created by parasmani.sharma on 24/05/2017.

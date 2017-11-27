@@ -1,4 +1,4 @@
-package com.example.logicprogram.datastructure.tsp;
+package com.example.logicprogram.datastructure.algorithms.tsp;
 
 /**
  * Created by parasmani.sharma on 23/05/2017.

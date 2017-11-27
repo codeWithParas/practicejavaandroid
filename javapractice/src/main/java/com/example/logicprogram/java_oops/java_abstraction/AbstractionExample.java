@@ -1,4 +1,4 @@
-package com.example.logicprogram.java_oops;
+package com.example.logicprogram.java_oops.java_abstraction;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.example.logicprogram.datastructure.tsp;
+package com.example.logicprogram.datastructure.algorithms.tsp;
 
 import java.util.ArrayList;
 import java.util.Arrays;

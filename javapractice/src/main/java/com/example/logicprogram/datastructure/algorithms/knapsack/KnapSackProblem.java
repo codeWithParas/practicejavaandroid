@@ -1,4 +1,4 @@
-package com.example.logicprogram.datastructure.Knapsack;
+package com.example.logicprogram.datastructure.algorithms.knapsack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
