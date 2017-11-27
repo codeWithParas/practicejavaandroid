@@ -19,6 +19,14 @@ f) Using Device Policy Manager. We can perform screen lock.
 
 g) use local broadcast as possible. Registering broadcast through context is the bast practice.
 
+h) Controlling Session TimeOut at two level separately
+   1) At Backend Level
+   2) At Android Level
+            a)Use onUserInteraction() method inside activity.
+            b)Get present time when user touch or perform any event and save that time in sharedpreference.
+            c)Then on next touch event get the time. And find elapsed time by calculating the difference between both the time.
+            d)Hence Timeout Occurs. If time is more than certain time limit then call Logout API .
+
 
 
 

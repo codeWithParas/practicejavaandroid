@@ -85,6 +85,9 @@
         <!--Animation-->
         <activity android:name=".android_animation.animate_transition.AndroidAnimationActivity"/>
 
+        <!--Android Session-->
+        <activity android:name=".android_session.Android_SessionMgmt"/>
+
 
         <!--Handler-->
         <activity android:name=".android_handler.Handler_Example"/>

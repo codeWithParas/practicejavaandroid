@@ -10,6 +10,8 @@ class SingletonPattern
     public static void main(String args[])
     {
         Singleton obj = Singleton.getInstance();
+        Singleton obj1 = Singleton.getInstance();
+        Singleton obj2 = Singleton.getInstance();
     }
 
 
@@ -32,11 +34,25 @@ class Singleton
 
     }
 
+    /*
+    * here :
+    * static is used to provide class level lock.
+    * synchronised is used for thread safety.
+    * */
     public static synchronized Singleton getInstance()
     {
         if(singleton == null)
+        {
+            System.out.print("Object is Initialized inside singleton class\n");
             singleton = new Singleton();
-        return singleton;
+            return singleton;
+        }
+        else
+        {
+            System.out.println("Object was already initialized.");
+            return singleton;
+        }
+
     }
 
 }

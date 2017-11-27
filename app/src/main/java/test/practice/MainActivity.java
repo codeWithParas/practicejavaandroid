@@ -18,6 +18,7 @@ import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
 import test.practice.android_recyclerview.RecyclerViewActivity;
+import test.practice.android_session.Android_SessionMgmt;
 import test.practice.android_volley.Volley_Test;
 import test.practice.model.Student;
 import test.practice.android_parcelable.FirstActivity;
@@ -255,6 +256,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Bluetooth_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
+        *
+        * Session Mgmt
+        * */
+
+        findViewById(R.id.txt_session).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Android_SessionMgmt.class);
                 startActivity(intent);
             }
         });
