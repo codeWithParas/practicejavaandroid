@@ -1,4 +1,4 @@
-package test.practice.android_design.adapter;
+package test.practice.android_animation.parallax_tab.adapter;
 
 /**
  * Created by parasmani.sharma on 08/11/2017.

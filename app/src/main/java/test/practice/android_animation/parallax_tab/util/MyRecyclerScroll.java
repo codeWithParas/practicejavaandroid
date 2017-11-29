@@ -1,4 +1,4 @@
-package test.practice.android_design.util;
+package test.practice.android_animation.parallax_tab.util;
 
 import android.support.v7.widget.RecyclerView;
 

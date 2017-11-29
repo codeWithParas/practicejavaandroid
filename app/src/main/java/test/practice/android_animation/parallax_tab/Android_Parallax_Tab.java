@@ -1,4 +1,4 @@
-package test.practice.android_design;
+package test.practice.android_animation.parallax_tab;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

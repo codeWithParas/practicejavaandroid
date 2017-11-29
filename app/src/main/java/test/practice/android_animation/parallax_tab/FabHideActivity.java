@@ -1,4 +1,4 @@
-package test.practice.android_design;
+package test.practice.android_animation.parallax_tab;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -32,9 +32,9 @@ import java.util.List;
 
 import test.practice.R;
 import test.practice.Utils;
-import test.practice.android_design.adapter.SimpleRecyclerAdapter;
-import test.practice.android_design.util.MyRecyclerScroll;
-import test.practice.android_design.util.VersionModel;
+import test.practice.android_animation.parallax_tab.adapter.SimpleRecyclerAdapter;
+import test.practice.android_animation.parallax_tab.util.MyRecyclerScroll;
+import test.practice.android_animation.parallax_tab.util.VersionModel;
 
 /**
  * Created by parasmani.sharma on 08/11/2017.
