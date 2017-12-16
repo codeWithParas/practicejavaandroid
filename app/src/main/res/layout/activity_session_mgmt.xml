@@ -9,4 +9,10 @@
         android:layout_height="wrap_content"
         android:text="Press Button"/>
 
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is an example of userInteraction method call. if any user interact with any widget on screen then after some time we can set time constraint and identify its event for session handling w.r.t time."/>
+
 </LinearLayout>

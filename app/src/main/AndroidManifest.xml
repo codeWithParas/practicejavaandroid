@@ -8,6 +8,9 @@
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <!--Allows applications to discover and pair bluetooth devices.-->
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!--If you want to declare that your app is available to BLE-capable
+    devices only, include the following in your app's manifest: android:required="true"-->
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
 
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <!-- android : required = "false" Google Play will then permit users to download your app even
@@ -112,6 +115,10 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>
+
+
+        <!--Android Calender-->
+        <activity android:name=".android_calender.CalDroid_CalenderActivity"/>
 
     </application>
 

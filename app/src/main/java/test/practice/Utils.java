@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import java.util.Locale;
+
 import test.practice.android_lifecycle.lifecyclefragments.Fragmenttwo;
 
 
@@ -18,6 +20,10 @@ import test.practice.android_lifecycle.lifecyclefragments.Fragmenttwo;
 public class Utils {
 
     public static String dataBroadCast;
+
+    public static Locale getLocalForCommunication() {
+        return new Locale("en_US");
+    }
 
 
     public static int getToolbarHeight(Context context) {

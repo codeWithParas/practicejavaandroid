@@ -3,6 +3,7 @@ package test.practice.android_session;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import test.practice.R;
 
@@ -32,7 +33,8 @@ public class Android_SessionMgmt extends AppCompatActivity {
 
     @Override
     public void onUserInteraction() {
-        System.out.println("           User Interacted             ");
         super.onUserInteraction();
+        System.out.println("           User Interacted : Control session            ");
+        Toast.makeText(Android_SessionMgmt.this, "User Interacted : Control session", Toast.LENGTH_SHORT).show();
     }
 }

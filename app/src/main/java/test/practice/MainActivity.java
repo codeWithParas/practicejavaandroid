@@ -10,6 +10,7 @@ import android.widget.Button;
 import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
 import test.practice.android_bluetooth.Bluetooth_Activity;
 import test.practice.android_broadcast.Android_BroadCast_Server;
+import test.practice.android_calender.CalDroid_CalenderActivity;
 import test.practice.android_cp.ContentProvider_Server;
 import test.practice.android_animation.parallax_tab.Android_Parallax_Tab;
 import test.practice.android_animation.parallax_tab.FabHideActivity;
@@ -269,6 +270,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Android_SessionMgmt.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+         /*
+        *
+        * Android Calender
+        * */
+
+        findViewById(R.id.txt_calender).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CalDroid_CalenderActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Checking BLE Devices Connection"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/but_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch On"/>
+
+    <Button
+        android:id="@+id/but_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch Off"/>
+
+    <Button
+        android:id="@+id/but_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan BLE Devices"
+        android:onClick="scanLE"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
