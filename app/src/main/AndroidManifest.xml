@@ -62,7 +62,7 @@
         <!--change this affinity value-->
         <!--android:taskAffinity="com.some.new.task"-->
         <activity android:name=".android_launchmodes.Activity_B"
-            android:launchMode="singleTask"
+            android:launchMode="singleInstance"
             android:taskAffinity="com.some.new.task"
             />
         <activity android:name=".android_launchmodes.Activity_C"/>
