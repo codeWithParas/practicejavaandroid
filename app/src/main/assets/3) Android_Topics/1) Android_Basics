@@ -225,7 +225,7 @@ Before : Task 1 : A -> ____no B here___ -> (for B new task will be created)
 After  : Task 2 : B -> C (if B calls C then C will be open in task 1)
 Result : i.e ->
 After  : Task 2 : B -> ____no C here___ -> (for C task 1 will be used)
-After  : Task 2 : A -> C (if B calls C then C will be open in task 1 after A inside stack of task 1 only, not in task 2)
+After  : Task 1 : A -> C (if B calls C then C will be open in task 1 after A inside stack of task 1 only, not in task 2)
 
 againAfter  : Task 1 : C -> B (if C calls B since B is in other task so it will reuse same instance of B)
 Result : i.e ->
@@ -235,12 +235,13 @@ After  : Task 2 : B ( no new instance of B will be created again)
 
 Difference between singleTask and singleInstance :
 
-1) for singleTask activity new task will be created but no other activities allowed in this task. All other activities will be created
+1) for singleTask activity new task will be created also other activities allowed in this task. All other activities will be created
+in this task
+2) for singleInstance activity new task will be created but no other activities allowed in this task. All other activities will be created
 in default task.
-1) for singleInstance activity new task will be created also other activities allowed in this task. All other activities will be created
-in this task.
 
-2) for singleTask popping operation will be used if singleTask activity called again from other activity over it. All the top
+
+1) for singleTask popping operation will be used if singleTask activity called again from other activity over it. All the top
 activities above it will be removed from the stack.
 2) for singleInstance no popping operation will be used .
 
@@ -270,7 +271,7 @@ data
 
 B.1 ) Fragments :
 
-1)Fragments are reusable component of android .
+1)Fragments are reusable component of android (as in inheritance we have reusability concept).
 2)Fragments are light weight.
 3)Used in case to optimize app and make app light-weight.
 
