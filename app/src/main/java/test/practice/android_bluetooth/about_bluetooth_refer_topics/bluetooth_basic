@@ -1,0 +1,118 @@
+
+HOW IT WORKS ?
+
+Read this Link : https://www.pubnub.com/blog/2015-04-14-building-android-beacon-android-ibeacon-tutorial-overview/
+Link : https://www.bluetooth.com/what-is-bluetooth-technology/how-it-works
+
+1) About Working groups and communities :
+
+        Working Groups & Committees : Link : https://www.bluetooth.com/membership-working-groups/working-groups/working-groups-committees
+
+        The Bluetooth® Core Specification defines the technology building blocks that developers use to create the interoperable devices
+        that make up the thriving Bluetooth ecosystem. The Bluetooth specification is overseen by the Bluetooth Special Interest Group (SIG)
+        and is regularly updated and enhanced by Bluetooth SIG Working Groups to meet evolving technology and market needs.
+
+        There are three types of groups at the SIG:
+
+        Working groups — responsible for developing new and enhanced Bluetooth® specifications and enhance already adopted ones.
+                          Open to Associate and Promoter members.
+        Expert groups  — act as advisors to working groups while providing expertise and guidance. Open to all members
+        Study groups   — develop guidance documentation to enable new usage models which may lead to development of new specifications.
+                          Open to all members.
+
+2)
+Bluetooth is the foundation for transformative wireless connectivity
+
+Bluetooth® is a low-power wireless connectivity technology used to stream audio, transfer data and broadcast information between devices.
+There are two flavors of Bluetooth technology : Refer : bluetooth_topology.png attached.
+
+     1) Basic Rate/Enhanced Data Rate (BR/EDR) and
+
+               Point-to-Point
+               Bluetooth BR/EDR enables continuous wireless connections and uses a point-to-point (P2P) network topology to establish
+               one-to-one (1:1) device communications. Bluetooth BR/EDR audio streaming is ideal for wireless speakers, headsets and
+               hands-free in-car systems.
+
+     2) Low Energy (LE).
+
+               Bluetooth LE enables short-burst wireless connections and uses multiple network topologies, including point-to-point,
+               broadcast and mesh.
+
+                   Point-to-Point
+                   Point-to-point (P2P) is a network topology used to create one-to-one (1:1) device communications. Bluetooth LE P2P
+                   topology is ideal for data transfers and well suited for connected device products, such as fitness trackers and health
+                   monitors.
+
+                   Broadcast
+                   Broadcast is a network topology that establishes one-to-many (1:m) device communications. Bluetooth LE broadcast
+                   topology optimizes localized information sharing, making it ideal for beacon solutions, such as point-of-interest (PoI)
+                   information and item and way-finding services.
+
+                   Mesh
+                   Mesh is a network topology for many-to-many (m:m) device communications. Bluetooth LE mesh topology creates large-scale
+                   device networks tailor-made for building automation, sensor network, asset tracking and any solution where multiple
+                   devices need to reliably and securely communicate with one another.
+
+3) About Beacons Connectivity :
+Link Refer  : https://www.pubnub.com/blog/2015-04-14-building-android-beacon-android-ibeacon-tutorial-overview/
+
+Questoin : What a Beacon’s Advertisement Looks Like ?
+Answer : According to the Bluetooth core specification, a beacon advertises a data package called the Scan Response Data.
+
+    Mesh Networking Specifications : Link : https://www.bluetooth.com/specifications/mesh-specifications
+    W.R.T Attached PDF file doc :
+
+    1) Mesh system architecture : Layered Architecture
+
+            MODEL LAYER
+
+            FOUNDATION MODEL LAYER
+
+            ACCESS LAYER
+
+            UPPER TRANSPORT LAYER
+
+            LOWER TRANSPORT LAYER
+
+            NETWORK LAYER
+
+            BEARER LAYER
+
+            BLUETOOTH LOW ENERGY SPECIFICATION
+
+    2) Network and subnets
+
+    A mesh network consists of nodes sharing four common resources:
+
+    •NETWORK ADDRESS used to identify source and destination of messages (see Section 3.4.2);
+    •NETWORK KEYS used to secure and authenticate messages at the network layer (see Section 3.8.6.3);
+    •APPLICATION KEYS used to secure and authenticate messages at the access layer (see Section 3.8.6.2); and
+    •an IV INDEX used to extend the lifetime of the network (see Section 3.8.4).
+
+     There is one special subnet called the primary subnet, which is based on the primary NetKey.  Nodes on the primary subnet participate
+     in the IV Update procedure, while nodes on other subnets only propagate the IV Index updates to those subnets.
+
+
+    3) Provisioning (Page 227 of 331)
+
+    Provisioning is a process of adding an unprovisioned device to a mesh network, managed by a Provisioner. A Provisioner provides
+    the unprovisioned device with provisioning data that allows it to become a mesh node. The provisioning data includes a network key,
+    the current IV Index, and the unicast address for each element.
+    A Provisioner is typically a smart phone or other mobile computing device. Although only a single Provisioner is required on a
+    network to do provisioning, multiple Provisioners may be used. The method to share cached data and coordinate across multiple
+    Provisioners is implementation specific.
+    To provision a device, the provisioning bearer must be established between a Provisioner and a device. A device can be identified
+    to a Provisioner by its Device UUID and other supplementary information that may also be provided.
+    After the provisioning bearer is established, the Provisioner establishes a shared secret with the device using an Elliptic Curve
+    Diffie-Hellman (ECDH) protocol. It then authenticates the device using OOB information that is specific to that device. Such
+    OOB information may include a public key of the device, a long secret, the requirement to input a value into the device, or the
+    requirement to output a value on that device. Such OOB information also enables the authentication of that device. Once the
+    device has been authenticated, the provisioning data is transmitted to the device encrypted with a key derived from that
+    shared secret. The device key is derived from the ECDHSecret and ProvisioningSalt.
+
+
+
+
+
+
+
