@@ -22,7 +22,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/App_Name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme1">
+        android:theme="@style/AppTheme">
         <activity android:name="test.practice.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +39,7 @@
         <activity android:name=".android_lifecycle.lifecycleactivity.Second"/>
         <activity android:name="test.practice.android_parcelable.FirstActivity"/>
         <activity android:name="test.practice.android_parcelable.SecondActivity"/>
-        <activity android:name=".android_security.FingerPrintActivity"/>
+        <activity android:name=".android_security.fingerprint_security.FingerPrintActivity"/>
 
         <!--BroadCast Receiver-->
         <activity
@@ -77,7 +77,10 @@
         <activity android:name=".android_volley.Volley_Test"/>
 
         <!--Bluetooth-->
-        <activity android:name=".android_bluetooth.Bluetooth_Activity"/>
+        <activity android:name=".android_bluetooth.BluetoothMainActivity"/>
+        <activity android:name=".android_bluetooth.bluetooth_chat_example.BLEDeviceListActivity"/>
+        <activity android:name=".android_bluetooth.bluetooth_connection_example.Check_BLE_Connection_Exm1"/>
+        <activity android:name=".android_bluetooth.bluetooth_connection_example.Check_BLE_Connection_Exm2"/>
 
         <!--Android Design Activity-->
         <activity android:name=".android_animation.parallax_tab.FabHideActivity"/>

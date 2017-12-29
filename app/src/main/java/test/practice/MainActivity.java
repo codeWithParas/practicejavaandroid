@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
-import test.practice.android_bluetooth.Bluetooth_Activity;
+import test.practice.android_bluetooth.BluetoothMainActivity;
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_calender.CalDroid_CalenderActivity;
 import test.practice.android_cp.ContentProvider_Server;
@@ -256,7 +256,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.txt_bluetooth).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Bluetooth_Activity.class);
+                //Intent intent = new Intent(MainActivity.this, Check_BLE_Connection_Exm1.class);
+                Intent intent = new Intent(MainActivity.this, BluetoothMainActivity.class);
                 startActivity(intent);
             }
         });

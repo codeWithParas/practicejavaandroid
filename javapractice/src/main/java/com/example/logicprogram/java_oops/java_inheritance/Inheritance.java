@@ -36,19 +36,16 @@ package com.example.logicprogram.java_oops.java_inheritance;
 *
 * */
 
-class Parent
-{
+class Parent {
     int a = 10;
 
-    public void m()
-    {
+    public void m() {
         System.out.println("Parent a : " + a);
     }
 }
 
-class Child extends Parent
-{
-    int a = 20 ;
+class Child extends Parent {
+    int a = 20;
     /*public void m()
     {
         System.out.print("\nChild a : " + a);
@@ -57,8 +54,7 @@ class Child extends Parent
 
 public class Inheritance {
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         /*Parent p  = new Child();
         int a = p.a;
         System.out.print("Main a : " + a);
