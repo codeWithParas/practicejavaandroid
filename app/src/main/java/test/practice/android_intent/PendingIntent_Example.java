@@ -36,7 +36,7 @@ public class PendingIntent_Example extends AppCompatActivity {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setSmallIcon(android.R.drawable.ic_dialog_alert);
 
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.journaldev.com/"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.techobytes.com/"));
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         builder.setContentIntent(pendingIntent);
