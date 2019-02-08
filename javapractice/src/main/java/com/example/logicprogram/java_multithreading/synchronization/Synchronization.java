@@ -70,10 +70,10 @@ public class Synchronization {
         * */
 
         Display d1 = new Display();
-        //Display d2 = new Display();
+        Display d2 = new Display();
         //Display d3 = new Display();
         Mythread1 t1 = new Mythread1(d1);
-        Mythread2 t2 = new Mythread2(d1);
+        Mythread2 t2 = new Mythread2(d2);
         //Mythread3 t3 = new Mythread3(d3);
         t1.start();
         t2.start();
