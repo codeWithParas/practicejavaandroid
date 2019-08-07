@@ -1,4 +1,4 @@
-package com.example.logicprogram.design_pattern.singleton;
+package com.example.logicprogram.design_pattern.a_creational_pattern.singleton;
 
 /**
  * Created by parasmani.sharma on 01/11/2017.

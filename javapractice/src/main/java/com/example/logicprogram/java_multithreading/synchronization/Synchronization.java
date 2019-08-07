@@ -22,7 +22,7 @@ public class Synchronization {
     *   Case 2: Using Synchronization : If two threads(t1 & t2) acting on same object(d1) then -> Regular O/P
     *
     *   Explanation : Case 2 : When method display() is Synchronized and only one object is available.
-    *                 --> then t1 starts : get the object lock First
+    *                 --> then t1 starts : get the object lock A_FactoryMethod
     *                     execute -->  synchronized display() method
     *                     t1 execution finished.
     *                     t1 Releases Object Lock.
@@ -91,7 +91,17 @@ class Display
     * use static here to get class level lock
     * */
 
-  public /*static*/ synchronized void display(String threadName)
+    /*
+    * The below concept used in Singleton pattern : static is used to provide double security check.
+    * By using both "static synchronized" the 2 security check is :-
+    *           1) synchronizd : Thread Safety
+    *           2) static (class level lock): Making methods and variable common for different created objects
+    *           of the class. So in method display_2() : the value of n will be used by both objects d1 and d2.
+    *           So, t1(d1) -> n = 10 and t2(d2) => n=11 ; (static case)
+    *               t1(d1) -> n = 10 and t2(d2) => n=10 ; (non static case)
+    * */
+
+  public static synchronized void display(String threadName)
   {
 
       for(int i=0; i<=3; i++)
@@ -105,9 +115,12 @@ class Display
       }
   }
 
-  public void display_2()
+    static int n =10;
+  public static synchronized void display_2()
   {
-      System.out.println("display_2");
+
+      System.out.println(n);
+      n++;
   }
 
 }
@@ -122,7 +135,8 @@ class Mythread1 extends Thread
 
     public void run()
     {
-        d.display("Mythread 1");
+        //d.display("Mythread 1");
+        d.display_2();
     }
 }
 
@@ -136,7 +150,8 @@ class Mythread2 extends Thread
 
     public void run()
     {
-        d.display("Mythread 2");
+        //d.display("Mythread 2");
+        d.display_2();
     }
 }
 
@@ -150,6 +165,6 @@ class Mythread3 extends Thread
 
     public void run()
     {
-        d.display_2();
+        d.display("Mythread 3");
     }
 }

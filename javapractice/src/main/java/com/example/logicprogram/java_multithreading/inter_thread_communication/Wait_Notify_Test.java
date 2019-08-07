@@ -35,9 +35,6 @@ class Calculate extends Thread
 
             this.notify();
         }
-
-
-
     }
 
 }

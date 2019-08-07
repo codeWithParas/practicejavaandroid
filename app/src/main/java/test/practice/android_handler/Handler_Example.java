@@ -19,6 +19,15 @@ public class Handler_Example extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler_example);
 
+        findViewById(R.id.handler_thread).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent intent = new Intent(Handler_Example.this, SendMsg_ThreadToMain.class);
+                startActivity(intent);*/
+                HandlerTest handlerTest = HandlerTest.create();
+            }
+        });
+
         findViewById(R.id.handler_msg).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

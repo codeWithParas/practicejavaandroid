@@ -12,3 +12,93 @@ Further sections specify the details of loading (§12.2), linking (§12.3), and 
 The chapter continues with a specification of the procedures for creation of new class instances (§12.5);
 and finalization of class instances (§12.6). It concludes by describing the unloading of classes (§12.7)
 and the procedure followed when a program exits (§12.8).
+
+
+//Read below points
+
+1.The initial attempt to execute the method main of class Test discovers that the class Test is not loaded - that is,
+that the Java Virtual Machine does not currently contain a binary representation for this class. T
+he Java Virtual Machine then uses a class loader to attempt to find such a binary representation.
+
+
+IN BRIEF :----->>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+When object is created in java then these 6 step will be happens one by one---
+1.JVM allocates 8 bytes of memory for the reference variable & assign default value as null.
+2.JVM will verify whether class loading is done or not,if class is already loaded then it will ignore or else it will
+perform class loading.
+3.At the time of class loading ,if any static variable are there then it will allocating memory.
+4.By using new operator,object memory will e created inside heap memory.
+5.At the time of object creation,if any instance variables are there then those will allocate memory inside object Memory.
+6.It will assign object memory address to the reference variable which is created first.
+
+
+IN_DEPTH : PLease Read this points :-------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+LINK : Object Lifecycle (LINK : https://en.wikibooks.org/wiki/Java_Programming/Object_Lifecycle)
+
+A) ~~~~~~Load the Class Test ##############################################
+
+1.Before a Java object can be created the class byte code must be loaded from the file system (with .class extension) to memory.
+This process of locating the byte code for a given class name and converting that code into a Java class instance is known as
+class loading. There is one class created for each type of Java class.
+
+
+Java Virtual Machine uses a class loader to attempt to find such a binary representation.
+
+
+      |----------------------------------|
+      | (FILE SYSTEM)   .class byteCdde  |    ------>loading into MEMORY-------->>> (binary representation) [HEAP MEMORY]
+      |----------------------------------|
+
+      When an object from the MyObject class is created for the first time, the JVM searches the file system for the definition
+      of the class, that is the Java byte code. The file has the extension of *.class. The CLASSPATH environment variable
+      contains locations where Java classes are stored.
+
+2.All objects in Java programs are created on heap memory. An object is created based on its class. You can consider a class as
+a blueprint, template, or a description how to create an object. When an object is created, memory is allocated to hold the
+object properties. An object reference pointing to that memory location is also created. To use the object in the future,
+that object reference has to be stored as a local variable or as an object member variable.
+
+      [Stack Memory] Holds Reference ------------------> [Heap Memory] Holds Data Memory Of Object Created
+
+3.The Java Virtual Machine (JVM) keeps track of the usage of object references. If there are no more reference to the object,
+the object can not be used any more and becomes garbage.
+
+
+B) ~~~~~~~~~~~~~~~~~~~~~Link Test (Verify, Prepare, (Optionally) Resolve) ################################################
+
+1.After Test(class) is loaded, it must be initialized before main can be invoked.
+
+2.And Test, like all (class or interface) types, must be #### linked #### before it is initialized.
+Linking involves verification, preparation, and (optionally) resolution.
+
+2.a ## Verification : Verification checks that the loaded representation of Test is well-formed, with a proper symbol table.
+Verification also checks that the code that implements Test obeys the semantic requirements of the Java programming
+language and the Java Virtual Machine. If a problem is detected during verification, then an error is thrown.
+2.b ## Preparation : Preparation involves allocation of static storage and any data structures that are used internally
+by the implementation of the Java Virtual Machine, such as method tables.
+2.c ## Resolution : Resolution is the process of checking symbolic references from Test to other classes and interfaces,
+by loading the other classes and interfaces that are mentioned and checking that the references are correct.
+(Ex : ArrayList<Student>)
+
+C) ~~~~~~~~~~~~~~~~~~~~~~Initialize Test (Execute Initializers) ##################################################
+
+1.In our continuing example, the Java Virtual Machine is still trying to execute the method main of class Test.
+2.Initialization consists of execution of any class variable initializers and static initializers of the class Test,
+in textual order. But before Test can be initialized, its direct superclass must be initialized, as well as the direct
+superclass of its direct superclass, and so on, recursively. In the simplest case, Test has Object as its implicit direct
+superclass; if class Object has not yet been initialized, then it must be initialized before Test is initialized.
+Class Object has no superclass, so the recursion terminates here.
+3.If class Test has another class Super as its superclass, then Super must be initialized before Test.
+This requires loading, verifying, and preparing Super if this has not already been done and, depending on the implementation,
+may also involve resolving the symbolic references from Super and so on, recursively.
+
+Superclasses Are Initialized Before Subclasses
+Only The Class That Declares static Field Is Initialized
+Interface Initialization Does Not Initialize Superinterfaces
+
+D) ~~~~~~~~~~~~~~~~~~~~~~Invoke Test.main
+
+1. Finally, after completion of the initialization for class Test (during which other consequential loading, linking, and
+initializing may have occurred), the method main of Test is invoked.
+

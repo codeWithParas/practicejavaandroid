@@ -1,0 +1,6 @@
+
+
+What is strategy pattern ?
+
+It can be used in the cases when Super class (Animal) failed to give support for every inherited class
+in a meaningful way.(pblm : when we add capabilbity to fly)

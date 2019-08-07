@@ -1,4 +1,4 @@
-package com.example.logicprogram.design_pattern.class_instantiation;
+package com.example.logicprogram.design_pattern.x_class_instantiation;
 
 /**
  * Created by parasmani.sharma on 01/11/2017.

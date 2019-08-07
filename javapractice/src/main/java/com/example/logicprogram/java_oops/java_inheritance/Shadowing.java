@@ -7,9 +7,9 @@ package com.example.logicprogram.java_oops.java_inheritance;
 /*
 * Refer : http://www.geeksforgeeks.org/g-fact-63/
 * In Java, if name of a derived class static function is same as base class static function then the derived class static
-* function shadows (or conceals) the base class static function. For example, the following Java code prints “A.fun()”
+* function shadows (or conceals) the base class static function. For example, the following Java code prints ?A.fun()?
 *
-* Note :If we make both A.fun() and B.fun() as non-static then the above program would print “B.fun()”.
+* Note :If we make both A.fun() and B.fun() as non-static then the above program would print ?B.fun()?.
 *
 * */
 
