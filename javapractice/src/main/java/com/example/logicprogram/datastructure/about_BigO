@@ -1,0 +1,12 @@
+
+Big-O : Big Order
+
+1) O of 1 "O(1)" indicates there is one step regards of number of data element.
+2) O of N "O(N)" indicates there is one step for each data element.
+3) What about binary search where number of steps increases at a rate different than data element?
+Neither O(1) or O(N) is sufficient. So we have O(logN) used to describe binary searches.
+
+Why use Big-O Notation ?
+> Describe worst-case scenerio.
+> Describe execution time.
+> Professionalize your development.

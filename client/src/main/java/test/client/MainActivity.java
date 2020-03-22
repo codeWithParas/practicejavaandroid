@@ -37,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 intent.setAction("test.server.broadcast.receiver");
                 intent.putExtra("KeyName","paras");
                 intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+                //intent.setComponent(
+                        //new ComponentName("test.practice","test.practice.MyBroadCastReceiver"));
                 intent.setComponent(
-                        new ComponentName("test.practice","test.practice.MyBroadCastReceiver"));
+                        new ComponentName("test.practice","test.practice.android_broadcast.MyBroadCastReceiver"));
                 sendBroadcast(intent);
 
                 Toast.makeText(MainActivity.this, "BroadCast is send.",Toast.LENGTH_SHORT).show();

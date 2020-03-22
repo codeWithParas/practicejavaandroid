@@ -1,0 +1,36 @@
+
+Link : https://www.youtube.com/watch?v=RcIsb9iFKH8
+
+Abstract Class :
+
+Act as an boundary between implemenatation method and its functionality.
+It is used to exchange the functionality between the concrete class members and abstract classs methods.
+
+Why we need ?
+1) Default Functionality for all classes.
+2) Template
+3) Code re-usability
+4) Separate method definition
+5) Loose coupling
+6) Dynamic method resolution.
+
+Rules
+1) It cannot b instantiated
+2) It can have final methods
+3) Declared using abstract keyword
+4) It can have abstract and non abstract methods.
+5) It can have constructors and static methods.
+
+Achieve Abstraction
+1) Implementing an Abstract class
+2) Implementing an interface
+
+Difference Abstract and Interface
+1) Abstract class has static, non static, final, non final variables.
+   Interface has Static and final variables only.
+2) Abstract class can implement an interface.
+   Interface will not implement the Abstract class.
+3) Abstract class can extends Java Classes and Interfaces
+   Interface can extend only an Interface.
+4) Members can be Private and Protected in an abstract class.
+   Members are Public by default in an Interface.

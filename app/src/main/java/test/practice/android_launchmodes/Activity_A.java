@@ -10,6 +10,7 @@ import test.practice.R;
 
 /**
  * Created by parasmani.sharma on 11/10/2017.
+ * Refer : https://medium.com/@iammert/android-launchmode-visualized-8843fc833dbe
  */
 
 public class Activity_A extends AppCompatActivity {

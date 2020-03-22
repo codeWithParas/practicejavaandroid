@@ -16,7 +16,7 @@
         android:id="@+id/but_a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to A Activity"/>
+        android:text="Go to D Activity"/>
 
 
 </LinearLayout>

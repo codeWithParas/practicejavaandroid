@@ -11,6 +11,8 @@ package com.example.logicprogram.java_oops.java_inheritance;
 *
 * Note :If we make both A.fun() and B.fun() as non-static then the above program would print ?B.fun()?.
 *
+* Conclusion : Avoid static use in program to avoid shadowing problem.
+*
 * */
 
 

@@ -117,7 +117,7 @@ public class Test_Comparable_Comparator {
 
 
         /*
-        * Hence by using Collection.sort(arraylist) we cant provide custom sorting , only default sorting for arraylist case.
+        * Hence by using Collection.sort(arraylist) we can't provide custom sorting , only default sorting for arraylist case.
         * But using Treeset we can provide custom sorting.
         *
         * */
