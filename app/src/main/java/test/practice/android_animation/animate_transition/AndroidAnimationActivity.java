@@ -9,13 +9,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 import test.practice.R;
 
 /**
  * Created by parasmani.sharma on 16/11/2017.
  */
 
-public class AndroidAnimationActivity extends AppCompatActivity{
+public class AndroidAnimationActivity extends AppCompatActivity {
 
     private ViewGroup transitionsContainer;
     private TextView text;

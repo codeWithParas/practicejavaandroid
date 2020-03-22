@@ -19,6 +19,7 @@ public class Activity_C extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c);
 
+        System.out.println("...onCreate method....C..");
         findViewById(R.id.but_a).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

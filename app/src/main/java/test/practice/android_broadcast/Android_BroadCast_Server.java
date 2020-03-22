@@ -30,6 +30,7 @@ public class Android_BroadCast_Server extends AppCompatActivity {
 
         }
     };
+    private TextView viewTxt;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,15 +38,23 @@ public class Android_BroadCast_Server extends AppCompatActivity {
         setContentView(R.layout.activity_broadcast_server);
 
         //Registering BroadCast Receiver through Manifest-->
-        //registerReceiver(receiver, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-        registerReceiver(receiver, new IntentFilter("test.server.broadcast.receiver"));
+        registerReceiver(receiver, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        //registerReceiver(receiver, new IntentFilter("test.server.broadcast.receiver"));
 
-        /*TextView viewTxt = (TextView) findViewById(R.id.txt_broadCast);
-        viewTxt.setText(Utils.dataBroadCast);*/
+        viewTxt = (TextView) findViewById(R.id.txt_broadCast);
+
+
+        findViewById(R.id.show_received).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewTxt.setText(Utils.dataBroadCast);
+            }
+        });
 
         findViewById(R.id.send_broadcast).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent("test.server.broadcast.receiver");
                 sendBroadcast(i);
             }

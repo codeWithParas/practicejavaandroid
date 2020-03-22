@@ -6,3 +6,15 @@ TO maintain performance through following ways :
 4) Use of Proguard
 5) Don't use Static variables. That may create strong reference after activity destroyed.
 6) Use parcelable interface for marshalling and un-marshalling the object.
+
+Android 9 brings the following text-related features to the platform:
+7) Precomputed Text: The PrecomputedText class improves text-rendering performance by enabling
+   you to compute and cache the required information ahead of time.
+   It also enables your app to perform text layout off the main thread.
+8) Magnifier: The Magnifier class is a platform widget that provides a magnifier API,
+   allowing for a consistent magnifier-feature experience across all apps.
+9) Smart Linkify: Android 9 enhances the TextClassifier class, which leverages machine
+   learning to identify some entities in selected text and suggest actions. For example,
+   TextClassifier can enable your app to detect that the user has selected a phone number.
+   Your app could then suggest that the user make a phone call using that number. The features
+   in TextClassifier replace the functionality of the Linkify class.

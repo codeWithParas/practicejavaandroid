@@ -9,7 +9,7 @@ import java.util.Scanner;
 /*
 * Abstraction :
 *
-* You can create Object of Abstract class but you cant create object of INterface.
+*
 * Why we use : To provide security at coding level we use abstraction.
 *
 * Best example to analyze and think when you talk about Parent-Server based interaction using Abstract.
@@ -103,9 +103,6 @@ abstract class Bank
     public abstract void failed();
 }
 
-
-
-
 public class AbstractionExample {
 
     public static void main(String arg[])
@@ -118,8 +115,6 @@ public class AbstractionExample {
         *
         * Suppose password is : 12345
         * */
-
-
 
         System.out.println("Enter Password to login in bank : " );
         Scanner scan = new Scanner(System.in);
@@ -153,10 +148,6 @@ public class AbstractionExample {
             Bank user1 = (Failed)obj;
             user1.failed();
         }
-
-
-
     }
-
 
 }

@@ -1,0 +1,20 @@
+Refer :
+https://developer.android.com/about/versions/pie/android-9.0#art-aot-dex
+
+New Topics :
+
+1) Indoor positioning with Wi-Fi RTT
+2) several enhancements to notifications
+3) Multi-camera support and camera updates
+4) ImageDecoder for drawables and bitmaps
+5) introduces the AnimatedImageDrawable class for drawing and displaying GIF and WebP animated images.
+6) HDR VP9 Video, HEIF image compression, and Media APIs
+7) Data cost sensitivity in JobScheduler
+8) Neural Networks API 1.1
+Refer : https://developer.android.com/ndk/guides/neuralnetworks/#runtime
+   NNAPI is meant to be called by machine learning libraries, frameworks, and tools that let developers
+   train their models off-device and deploy them on Android devices. Apps typically would not use NNAPI
+   directly, but would instead use higher-level machine learning frameworks. These frameworks in turn
+   could use NNAPI to perform hardware-accelerated inference operations on supported devices.
+9) Security enhancements
+10) Rotation of phone

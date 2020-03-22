@@ -75,6 +75,8 @@ public class SendMsg_ThreadToMain extends AppCompatActivity {
             public void handleMessage(Message msg) {
 
                 progressBar.setProgress(msg.arg1);
+
+                //success
             }
         };
     }
@@ -85,6 +87,8 @@ public class SendMsg_ThreadToMain extends AppCompatActivity {
         @Override
         public void run() {
 
+            //callback
+            //success, fail
             for (int i = 0; i < 100; i++) {
 
                 Message msg = new Message();

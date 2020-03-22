@@ -32,7 +32,7 @@ public class Polindrome {
         //Write code here
         /*
         * To find polindrome for array we need to pair digits for each loop iteration.
-        * LIke : First iteration condsider two digits
+        * LIke : A_FactoryMethod iteration condsider two digits
         *        Second ite8ration consider threee digits
         *        Fourth iteration consider four digits
         *      If any polindrom founds save that to temp variable

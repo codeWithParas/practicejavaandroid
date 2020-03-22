@@ -1,0 +1,84 @@
+
+Link : https://www.youtube.com/watch?v=lX0PzE0Dho0
+Lets Start :
+
+1)
+User user = getUser(id:56);
+BigDecimal tax = calculateTax(user);     <---------- passing data as arguement
+
+So in above case we are passing simple arguements to get the object "user" and this object is again passed to
+other methods. Most of our code is written like that, nothing new here.
+
+But sometimes we pass functionality as an arguement like as :
+Exampple :
+                ExecutorService threadPool = Executors.newFixedThreadPool(5);    //nThread : 5
+                Runnable calculateTax = new Runnable() {
+                    public void run() {
+                        // code to calculate tax
+                    }
+                };
+                threadPool.submit(calculateTax);     <----------- passing functionality as an arguement
+
+       Now above object "calculateTax" represent an functionality.
+       threadPool ExecutorService accept "Runnable & Callable Interfaces" using submit() method.
+       ***So "Runnable" is an Interface using which we can represent objects as functionality and not just data only.
+       And that is so Runnable is an functional interface.
+
+       Definition :
+       "Functional interfaces are interfaces which represent some functionality (instead of representing some data)."
+
+2)
+Some Functional Interfaces in Java 7 : All represent functionalities
+
+                public interface Runnable {
+                    void run();
+                }
+
+                public interface Callable<V> {
+                    V call() throws Exception;
+                }
+
+                public interface Comparator<T> {
+                    int compare(T obj1, T obj2);
+                }
+
+3)
+Feature or Characteristic of Functional Interface : "Functional Ineterface have single abstract method". Like above.
+
+Most Important Feature : Enables Lambdas in Java 8. Lets check below example :
+Using Comparator Interface :
+
+                Comparator<User> comparator = new Comparator<User>() {   <-------Anonymous Inner Class
+                    @Override
+                        public int compare(User u1, User u2) {
+                            return u1.getId().compareTo(u2.getId());
+                        }
+                };
+
+      ***Shorthand for above code(Functional Interfaces) also known as Lambdas :
+      i.e :
+                Comparator<User> comparator = (u1, u2) -> u1.getId().compareTo(u2.getId());
+
+      How does the compiler fill the gap ? (Interface name, Variable Types etc. ?)
+      Ans : Single abstract method makes the compiler job very easy to understand what is the input and output.
+
+4) New Functional Interfaces in Java 8 :
+So in addition to the existing interfaces Java 8 introduces new interfaces which can be used by anyone. i.e
+
+                 public interface Predicate<T> {
+                       boolean test(T t);
+                 }
+                 public interface Consumer<T> {
+                       void accept(T t);
+                 }
+                 public interface Supplier<T> {
+                       T get();
+                 }
+                 public interface Function<T, R> {
+                       R apply(T t);
+                 }
+
+        These interfaces are used very much in Java 8 especially in collection and streams.
+
+
+

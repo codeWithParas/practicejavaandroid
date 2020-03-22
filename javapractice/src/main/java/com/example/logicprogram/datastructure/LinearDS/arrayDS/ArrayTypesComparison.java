@@ -96,7 +96,7 @@ public class ArrayTypesComparison {
 
     private static void convertArrayListToArray() {
 
-        /*1) First and Major difference between Array and ArrayList in Java is that Array is a fixed length data structure
+        /*1) A_FactoryMethod and Major difference between Array and ArrayList in Java is that Array is a fixed length data structure
     while ArrayList is a variable length Collection class. You can not change length of Array once created in Java but ArrayList
     re-size itself when gets full depending upon capacity and load factor. Since ArrayList is internally backed by Array in Java,
     any resize operation in ArrayList will slow down performance as it involves creating new Array and copying content from old
@@ -140,7 +140,7 @@ public class ArrayTypesComparison {
                  * Object[] toArray() method of ArrayList class.
                  */
 
-        //First Step: convert ArrayList to an Object array.
+        //A_FactoryMethod Step: convert ArrayList to an Object array.
         Object[] objMnt = aListMonth.toArray();
 
         //Second Step: convert Object array to String array

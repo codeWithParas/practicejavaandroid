@@ -38,9 +38,9 @@ class Child_One extends Parent
     {
 
         Human h = new Human("Ram", 23);
-        Child_One ch  = new Child_One();
-        InterfaceTest interfaceTest1 = (InterfaceTest) ch;
-        interfaceTest1.onResponse(h);
+        InterfaceTest ch  = new Child_One();
+        //InterfaceTest interfaceTest1 = (InterfaceTest) ch;
+        ch.onResponse(h);
 
 
     }

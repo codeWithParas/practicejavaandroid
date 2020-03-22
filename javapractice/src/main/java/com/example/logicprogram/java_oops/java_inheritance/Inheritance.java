@@ -16,7 +16,7 @@ package com.example.logicprogram.java_oops.java_inheritance;
 * 4) Multiple (Through Interface)
 * 5) Hybrid (Though Interface)
 *
-* **Reusability: Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already
+* **Reusability: Inheritance supports the concept of “reusability”, :  when we want to create a new class and there is already
 * a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this,
 * we are reusing the fields and methods of the existing class.
 *
@@ -39,17 +39,19 @@ package com.example.logicprogram.java_oops.java_inheritance;
 class Parent {
     int a = 10;
 
-    public void m() {
-        System.out.println("Parent a : " + a);
+    public int m() {
+
+        return a;
     }
 }
 
 class Child extends Parent {
     int a = 20;
-    /*public void m()
+    public int m()
     {
-        System.out.print("\nChild a : " + a);
-    }*/
+        return a;
+        //System.out.print("\nChild a : " + a);
+    }
 }
 
 public class Inheritance {
@@ -61,7 +63,9 @@ public class Inheritance {
         p.m();*/
 
         Parent o = new Child();
-        o.m();
+        //o.m();
+        System.out.print("\nChild a : " + o.a);
+        System.out.print("\nChild a : " + o.m());
 
     }
 
