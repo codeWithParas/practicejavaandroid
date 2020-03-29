@@ -1,0 +1,61 @@
+JVM Working
+Refer Images and youtube link : https://www.youtube.com/watch?v=ZBJ0u9MaKtM
+
+
+Refer :
+
+https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-5.html
+
+A) About JVM : Refer : https://en.wikipedia.org/wiki/Java_virtual_machine
+
+   JVM  =    (JIT)
+            + Machine Instruction Provider (ByteCode Instruction as per CPU)
+            + Class Loader (Loading, Linking, Initialize)
+            + Bytecode Verifier
+            + JVM Heap (Used for dynamic memory allocation) (Refer : HotSpot Heap)
+            + Security (Automatic update functionality for JRE from Java 1.7)
+
+    1) In computing, just-in-time (JIT) compilation (also dynamic translation or run-time compilations)[1] is a way of executing computer code
+    that involves compilation during execution of a program – at run time – rather than before execution.[2] Most often, this consists of
+    source code or more commonly bytecode translation to machine code, which is then executed directly. A system implementing a JIT compiler
+    typically continuously analyses the code being executed and identifies parts of the code where the speedup gained from compilation
+    or recompilation would outweigh the overhead of compiling that code.
+
+    Refer : https://en.wikipedia.org/wiki/Just-in-time_compilation
+
+    JIT =  ahead-of-time compilation (AOT), and interpretation
+
+    (AOT compilation) is the act of compiling a higher-level programming language such as C or C++ , or an intermediate representation such
+     as Java bytecode
+
+B) JVM Execution Area (Run-Time Data Areas) :
+
+    Refer : https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html
+
+    pc Register
+    + JVM Stack [Stack w.r.t each thread contains frames (dynamic methods), Some known conditions : StackOverflowException, OutOfMemoryError]
+    + Heap [Shared among all JVM threads]
+    + Method Area [Shared among all JVM threads]
+    + Run-Time Constant Pool [A run-time constant pool is a per-class or per-interface run-time representation of the constant_pool table in a class file]
+
+
+
+
+In this chapter,
+§.1 describes how the Java Virtual Machine derives symbolic references from the binary representation of a class or interface.
+§.2 explains how the processes of loading, linking, and initialization are first initiated by the Java Virtual Machine.
+§.3 specifies how binary representations of classes and interfaces are loaded by class loaders and how classes and interfaces are created.
+	Linking is described in §5.4. §5.5 details how classes and interfaces are initialized. §5.6 introduces the notion of binding native methods. Finally,
+§.7 describes when a Java Virtual Machine exits.
+
+
+1) JVM derives symbolic references from the binary representation of a class or interface :->
+
+Using Constant Pool Table
+
+2) Java Virtual Machine Startup :->
+
+    a) The Java Virtual Machine starts up by creating an initial class, which is specified in an
+    implementation-dependent manner, using the bootstrap class loader.
+    b) he Java Virtual Machine then links the initial class, initializes it, and invokes the public class method void main(String[])
+    c)

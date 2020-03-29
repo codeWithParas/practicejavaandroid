@@ -2,9 +2,10 @@ package test.practice.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
 
 import java.util.Comparator;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by parasmani.sharma on 20/09/2017.

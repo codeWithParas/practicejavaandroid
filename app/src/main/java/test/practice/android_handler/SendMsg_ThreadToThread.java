@@ -2,16 +2,12 @@ package test.practice.android_handler;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Looper;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import test.practice.R;
-import test.practice.android_volley.AppController;
 
 /**
  * Created by Parasmani Sharma on 11/20/2017.

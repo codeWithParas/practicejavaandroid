@@ -2,10 +2,10 @@ package test.practice.android_bluetooth;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import test.practice.R;
 import test.practice.android_bluetooth.bluetooth_chat_example.BluetoothChatFragment;
 import test.practice.android_bluetooth.bluetooth_connection_example.Check_BLE_Connection_Exm2;

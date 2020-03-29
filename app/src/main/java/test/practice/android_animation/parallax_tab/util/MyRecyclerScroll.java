@@ -1,6 +1,7 @@
 package test.practice.android_animation.parallax_tab.util;
 
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by parasmani.sharma on 08/11/2017.

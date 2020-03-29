@@ -1,10 +1,7 @@
 package test.practice.android_volley;
 
 import android.app.ProgressDialog;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -28,6 +25,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import test.practice.R;
 import test.practice.android_parser.ParseManager;
 import test.practice.android_volley.model.MainObjectResponse;

@@ -1,8 +1,6 @@
 package test.practice.android_animation.animate_transition;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import test.practice.R;
 
 /**

@@ -7,12 +7,10 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AppCompatActivity;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import test.practice.R;
 
 /**
@@ -26,11 +24,11 @@ public class PendingIntent_Example extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pendingintent_activity);
 
-        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
 
     }
 
-    @OnClick(R.id.button)
+    //@OnClick(R.id.button)
     public void sendNotification() {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
@@ -51,7 +49,7 @@ public class PendingIntent_Example extends AppCompatActivity {
         notificationManager.notify(1, builder.build());
     }
 
-    @OnClick(R.id.button2)
+    //@OnClick(R.id.button2)
     public void cancelNotification() {
 
         String ns = Context.NOTIFICATION_SERVICE;

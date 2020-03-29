@@ -2,11 +2,11 @@ package test.practice;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
 import test.practice.android_bluetooth.BluetoothMainActivity;
 import test.practice.android_broadcast.Android_BroadCast_Server;

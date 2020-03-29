@@ -1,7 +1,6 @@
 package test.practice.android_recyclerview;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import androidx.recyclerview.widget.RecyclerView;
 import test.practice.R;
 import test.practice.android_recyclerview.model.DataValues;
 

@@ -3,13 +3,15 @@ package test.practice;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import java.util.Locale;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import test.practice.android_lifecycle.lifecyclefragments.Fragmenttwo;
 
 
@@ -46,8 +48,8 @@ public class Utils {
             return;
         }
 
-        android.support.v4.app.FragmentManager manager = ((FragmentActivity) activity).getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+        FragmentManager manager = ((FragmentActivity) activity).getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.lytMain, fragment, fragment.getClass().getName());
 
         Bundle bundle = new Bundle();

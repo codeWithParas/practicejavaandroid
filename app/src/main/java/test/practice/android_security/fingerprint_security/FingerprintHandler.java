@@ -7,8 +7,9 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.Manifest;
 import android.os.Build;
 import android.os.CancellationSignal;
-import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
 
 
 /**
