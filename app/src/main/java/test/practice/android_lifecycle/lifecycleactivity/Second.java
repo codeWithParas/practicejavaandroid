@@ -3,18 +3,18 @@ package test.practice.android_lifecycle.lifecycleactivity;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import test.practice.R;
 
 /**
  * Created by parasmani.sharma on 10/12/2016.
  */
-public class Second extends AppCompatActivity{
+public class Second extends AppCompatActivity {
 
     private Button but;
     private Button but_popup;

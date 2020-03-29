@@ -1,5 +1,9 @@
 apply plugin: 'java'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.javatuples:javatuples:1.2'
+
+    //security
+    implementation "androidx.security:security-crypto:1.0.0-alpha02"
 }

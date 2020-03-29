@@ -11,10 +11,11 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/client" />
             <option value="$PROJECT_DIR$/javapractice" />
-            <option value="$PROJECT_DIR$/zafarpractice" />
+            <option value="$PROJECT_DIR$/kotlinpractice" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

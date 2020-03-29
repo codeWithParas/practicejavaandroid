@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityManagerCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import java.util.List;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by parasmani.sharma on 12/10/2017.

@@ -3,10 +3,10 @@ package test.practice.android_handler;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import test.practice.R;
 import test.practice.android_volley.AppController;
 
@@ -75,6 +75,8 @@ public class SendMsg_ThreadToMain extends AppCompatActivity {
             public void handleMessage(Message msg) {
 
                 progressBar.setProgress(msg.arg1);
+
+                //success
             }
         };
     }
@@ -85,6 +87,8 @@ public class SendMsg_ThreadToMain extends AppCompatActivity {
         @Override
         public void run() {
 
+            //callback
+            //success, fail
             for (int i = 0; i < 100; i++) {
 
                 Message msg = new Message();

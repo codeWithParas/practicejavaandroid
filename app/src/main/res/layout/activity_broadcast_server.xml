@@ -13,6 +13,13 @@
 
 
     <Button
+        android:id="@+id/show_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show received broadcast"
+        android:layout_gravity="center"/>
+
+    <Button
         android:id="@+id/send_broadcast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

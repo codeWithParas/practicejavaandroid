@@ -1,0 +1,33 @@
+1) Refer reflection api
+youtube : https://www.youtube.com/watch?v=agnblS47F18
+
+2) Refer AbstractFactory : https://www.javatpoint.com/abstract-factory-pattern
+
+3) Refer Abstract Factory design pattern
+youtube : https://youtu.be/xbjAsdAK4xQ
+http://www.newthinktank.com/2012/09/abstract-factory-design-pattern/
+
+4) Abstract Factory design pattern :
+It is like a factory, but everything is encapsulaated.
+>The method that order the object.
+>The factories that build the pWroject.
+>The final object
+>The final objects contain objects that use the strategy pattern
+  > Composition: Objects class fields are objects
+
+What can you do with absract factory ?
+>Allows you to create families of related objects without specifying a concrete class
+>Use when you have many objets that can be added or changed dynamically during runtime
+>you can model anything you can imagine and have those objects interact through common interfaces
+>The Bad: Things can get complicated
+
+
+Example :
+
+      make a UFO     ------------->>>>                  |---FACTORY-------------|
+                                                        |      1)UFO            |
+                                                        |/|/|/|2)rOCKET         |
+                                                        |______3)bOSS ufo_______|
+
+
+Factory then makes abstract classes  (Refer Image)

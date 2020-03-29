@@ -1,14 +1,12 @@
 package test.client;
 
 import android.content.ComponentName;
-import android.content.ContentProviderClient;
 import android.content.Intent;
-import android.support.annotation.IntegerRes;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import test.client.android_CP_client.ContentProvider_Client;
 import test.client.android_aidl_client.AIDL_Client_Binding;
 
@@ -37,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
                 intent.setAction("test.server.broadcast.receiver");
                 intent.putExtra("KeyName","paras");
                 intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+                //intent.setComponent(
+                        //new ComponentName("test.practice","test.practice.MyBroadCastReceiver"));
                 intent.setComponent(
-                        new ComponentName("test.practice","test.practice.MyBroadCastReceiver"));
+                        new ComponentName("test.practice","test.practice.android_broadcast.MyBroadCastReceiver"));
                 sendBroadcast(intent);
 
                 Toast.makeText(MainActivity.this, "BroadCast is send.",Toast.LENGTH_SHORT).show();

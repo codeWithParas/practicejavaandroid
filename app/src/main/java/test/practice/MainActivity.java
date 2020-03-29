@@ -2,11 +2,11 @@ package test.practice;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
 import test.practice.android_bluetooth.BluetoothMainActivity;
 import test.practice.android_broadcast.Android_BroadCast_Server;
@@ -18,6 +18,7 @@ import test.practice.android_handler.Handler_Example;
 import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
+import test.practice.android_onSaveInstanceState.OnRestoreActivityTest;
 import test.practice.android_recyclerview.RecyclerViewActivity;
 import test.practice.android_session.Android_SessionMgmt;
 import test.practice.android_volley.Volley_Test;
@@ -34,32 +35,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /*
-        * 1)Container for a message (data and object references) that can
-        * be sent through an IBinder.  A Parcel can contain both flattened data
-        * that will be unflattened on the other side of the IPC
-        *
-        * 2)Parcel is <strong>not</strong> a general-purpose
-        * serialization mechanism.  This class (and the corresponding
-        * {@link Parcelable} API for placing arbitrary objects into a Parcel) is
-        * designed as a high-performance IPC transport.  As such, it is not
-        * appropriate to place any Parcel data in to persistent storage: changes
-        * in the underlying implementation of any of the data in the Parcel can
-        * render older data unreadable.
-        *
-        * 3) Usefull : Intent generally pass primitive type objects not custom objects.
-        * So in order to satisfy IPC between Activities via intent we can use Parcelable Interface for our object class.
-        *
-        * 4)In Parcelable, developers write custom code for marshaling and unmarshaling so
-        * it creates less garbage objects in comparison to Serialization. The performance of Parcelable
-        * over Serialization dramatically improves (around two times faster), because of this custom implementation.
-        *
-        * 5)Serialization is a marker interface, which implies the user cannot marshal the data according
-        * to their requirements. In Serialization, a marshaling operation is performed on a Java Virtual Machine (JVM)
-        * using the Java reflection API. This helps identify the Java objects member and behavior, but also ends up
-        * creating a lot of garbage objects. Due to this, the Serialization process is slow in comparison to Parcelable.
-        *
-        *
-        * */
+         * 1)Container for a message (data and object references) that can
+         * be sent through an IBinder.  A Parcel can contain both flattened data
+         * that will be unflattened on the other side of the IPC
+         *
+         * 2)Parcel is <strong>not</strong> a general-purpose
+         * serialization mechanism.  This class (and the corresponding
+         * {@link Parcelable} API for placing arbitrary objects into a Parcel) is
+         * designed as a high-performance IPC transport.  As such, it is not
+         * appropriate to place any Parcel data in to persistent storage: changes
+         * in the underlying implementation of any of the data in the Parcel can
+         * render older data unreadable.
+         *
+         * 3) Usefull : Intent generally pass primitive type objects not custom objects.
+         * So in order to satisfy IPC between Activities via intent we can use Parcelable Interface for our object class.
+         *
+         * 4)In Parcelable, developers write custom code for marshaling and unmarshaling so
+         * it creates less garbage objects in comparison to Serialization. The performance of Parcelable
+         * over Serialization dramatically improves (around two times faster), because of this custom implementation.
+         *
+         * 5)Serialization is a marker interface, which implies the user cannot marshal the data according
+         * to their requirements. In Serialization, a marshaling operation is performed on a Java Virtual Machine (JVM)
+         * using the Java reflection API. This helps identify the Java objects member and behavior, but also ends up
+         * creating a lot of garbage objects. Due to this, the Serialization process is slow in comparison to Parcelable.
+         *
+         *
+         * */
 
         final Student student = new Student("Boy1", 1);
 
@@ -80,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
 
                 /*
-                * check if Async work after finish call
-                * Ans : Working
-                * */
+                 * check if Async work after finish call
+                 * Ans : Working
+                 * */
 
                 //new Asyncc().execute();
 
@@ -95,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * Content provider
-        * */
+         * Content provider
+         * */
 
         findViewById(R.id.txt_check_cp).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * IActivity LAunch modes
-        * */
+         * IActivity LAunch modes
+         * */
 
         findViewById(R.id.txt_check_launch).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,9 +128,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-         /*
-        * IActivity Life Cycle
-        * */
+        /*
+         * IActivity Life Cycle
+         * */
 
         findViewById(R.id.txt_check_lifecycle).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,8 +143,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * Intent
-        * */
+         * Intent
+         * */
 
         findViewById(R.id.txt_check_intent).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,8 +157,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * Pending Intent
-        * */
+         * Pending Intent
+         * */
 
         findViewById(R.id.txt_check_pandingintent).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,8 +171,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * Android Design
-        * */
+         * Android Design
+         * */
 
         findViewById(R.id.txt_parallax_tab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,8 +185,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * Volley Test
-        * */
+         * Volley Test
+         * */
 
         findViewById(R.id.txt_volley).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,8 +197,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        * Android Design
-        * */
+         * Android Design
+         * */
 
         findViewById(R.id.txt_design).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,9 +210,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        *
-        * Recycler View
-        * */
+         *
+         * Recycler View
+         * */
 
         findViewById(R.id.txt_recyclertxt_recycler).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,10 +223,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-         /*
-        *
-        * Animation
-        * */
+        /*
+         *
+         * Animation
+         * */
 
         findViewById(R.id.txt_animation).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -236,9 +237,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        *
-        * Handler
-        * */
+         *
+         * Handler
+         * */
 
         findViewById(R.id.txt_handler).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -249,9 +250,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        *
-        * Bluetooth
-        * */
+         *
+         * Bluetooth
+         * */
 
         findViewById(R.id.txt_bluetooth).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -263,9 +264,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        *
-        * Session Mgmt
-        * */
+         *
+         * Session Mgmt
+         * */
 
         findViewById(R.id.txt_session).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -277,10 +278,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-         /*
-        *
-        * Android Calender
-        * */
+        /*
+         *
+         * Android Calender
+         * */
 
         findViewById(R.id.txt_calender).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -291,19 +292,31 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        /*
+         *
+         * txt_saveInstance
+         * */
+
+        findViewById(R.id.txt_saveInstance).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, OnRestoreActivityTest.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
 
-    class Asyncc extends AsyncTask
-    {
+    class Asyncc extends AsyncTask {
 
         @Override
         protected Object doInBackground(Object[] params) {
 
             finish();
 
-            for(int i = 0 ; i<10; i++)
-            {
+            for (int i = 0; i < 10; i++) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

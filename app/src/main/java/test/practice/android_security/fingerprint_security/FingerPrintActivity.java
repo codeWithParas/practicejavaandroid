@@ -1,8 +1,9 @@
 package test.practice.android_security.fingerprint_security;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import test.practice.R;
 import android.app.KeyguardManager;
 import android.content.pm.PackageManager;
@@ -12,7 +13,6 @@ import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyPermanentlyInvalidatedException;
 import android.security.keystore.KeyProperties;
-import android.support.v4.app.ActivityCompat;
 import android.widget.TextView;
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;

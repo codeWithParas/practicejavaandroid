@@ -39,7 +39,7 @@ public class FibonacciSeries {
         //or
 
         FibonacciSeries obj = new FibonacciSeries();
-        System.out.print("Number of elements in Fibonacci for entered number : " + obj.Fibonacci(number));
+        System.out.print("\n\nNumber of elements in Fibonacci for entered number : " + obj.Fibonacci(number));
 
     }
 

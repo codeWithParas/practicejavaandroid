@@ -3,9 +3,6 @@ package test.practice.android_calender;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -18,6 +15,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import test.practice.R;
 import test.practice.Utils;
 
@@ -95,7 +97,7 @@ public class CalDroid_CalenderActivity extends AppCompatActivity {
             @Override
             public void onSelectDate(Date date, View view) {
 
-                android.support.v4.app.FragmentManager manager = ((FragmentActivity)CalDroid_CalenderActivity.this).getSupportFragmentManager();
+                FragmentManager manager = ((FragmentActivity)CalDroid_CalenderActivity.this).getSupportFragmentManager();
                 manager.popBackStack();
 
             }
@@ -103,7 +105,7 @@ public class CalDroid_CalenderActivity extends AppCompatActivity {
 
         //caldroidFragment.refreshView();
 
-        android.support.v4.app.FragmentTransaction t = CalDroid_CalenderActivity.this.getSupportFragmentManager().beginTransaction();
+        FragmentTransaction t = CalDroid_CalenderActivity.this.getSupportFragmentManager().beginTransaction();
         t.add(R.id.lytMain, caldroidFragment, caldroidFragment.getClass().getName());
         t.addToBackStack(caldroidFragment.getClass().getName());
         t.commit();

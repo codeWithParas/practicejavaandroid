@@ -99,7 +99,7 @@ public class InterThreadCommunication {
 /*
 Lets understand how our produce and consume method works.
 
-First of all, use of synchronized block ensures that only one thread at a time runs.
+A_FactoryMethod of all, use of synchronized block ensures that only one thread at a time runs.
 Also since there is a sleep method just at the beginning of consume loop, the produce thread gets a kickstart.
 
 When the wait is called in produce method, it does two things.

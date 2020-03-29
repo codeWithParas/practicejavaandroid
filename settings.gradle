@@ -1,1 +1,1 @@
-include ':app', ':javapractice', ':client',':zafarpractice'
+include ':app', ':javapractice', ':client', ':kotlinpractice'

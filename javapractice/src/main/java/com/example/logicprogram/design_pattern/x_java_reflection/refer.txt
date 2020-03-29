@@ -1,0 +1,3 @@
+Refer using Abstract factory design pattern
+
+http://www.newthinktank.com/2012/09/abstract-factory-design-pattern/

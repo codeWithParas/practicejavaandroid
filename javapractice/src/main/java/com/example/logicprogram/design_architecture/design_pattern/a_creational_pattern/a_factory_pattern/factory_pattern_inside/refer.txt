@@ -1,0 +1,24 @@
+refer
+youtube : https://www.youtube.com/watch?v=ub0DXaeV6hA
+
+Example  : Consider we are designing a enemy ship shooting game in which enemy ships are
+generated randomly on the screen. So :
+
+What is Factory pattern?
+
+1)When a method returns one of several possile classes that shaRE A COMMON SUPER CLASS
+>create a new nemy in a game
+>random number gnerator picks a numbe assigned to a specific enemy
+>the factory return the enemy associated with that number
+2)The class is chosen at run time.
+
+So,
+When to use a factory pattern ?
+>when you want to hide the object creation from user.
+>when you dont know ahead of time what class object you need
+>when all of the potential classes are in the same subclass hierarchy
+>to centralize class selction code
+>when tou don't want the user to know every subclass.
+>to encapsulate object creation
+
+Example : Refere image : factorydesignpattern.png

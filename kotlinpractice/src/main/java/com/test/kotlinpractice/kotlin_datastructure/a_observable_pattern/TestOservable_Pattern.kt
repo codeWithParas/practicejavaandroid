@@ -1,0 +1,2 @@
+package com.test.kotlinpractice.kotlin_datastructure.a_observable_pattern
+

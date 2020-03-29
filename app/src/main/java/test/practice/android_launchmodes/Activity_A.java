@@ -2,14 +2,15 @@ package test.practice.android_launchmodes;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import test.practice.R;
 
 /**
  * Created by parasmani.sharma on 11/10/2017.
+ * Refer : https://medium.com/@iammert/android-launchmode-visualized-8843fc833dbe
  */
 
 public class Activity_A extends AppCompatActivity {

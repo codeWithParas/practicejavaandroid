@@ -51,23 +51,21 @@
             </intent-filter>
         </activity>
         <!--Registering BroadCast Receiver through Manifest-->
-        <!--<receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
+        <receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="test.server.broadcast.receiver" />
             </intent-filter>
-        </receiver>-->
+        </receiver>
 
 
         <!--Launch Modes-->
+        <!--Refer : https://medium.com/@iammert/android-launchmode-visualized-8843fc833dbe -->
         <activity android:name=".android_launchmodes.Activity_A"/>
-        <!--change this affinity value-->
+        <!--change this affinity value in Activity_B-->
         <!--android:taskAffinity="com.some.new.task"-->
-        <activity android:name=".android_launchmodes.Activity_B"
-            android:launchMode="singleInstance"
-            android:taskAffinity="com.some.new.task"
-            />
+        <activity android:name=".android_launchmodes.Activity_B" android:launchMode="singleInstance"/>
         <activity android:name=".android_launchmodes.Activity_C"/>
         <activity android:name=".android_launchmodes.Activity_D"/>
 
@@ -122,6 +120,7 @@
 
         <!--Android Calender-->
         <activity android:name=".android_calender.CalDroid_CalenderActivity"/>
+        <activity android:name=".android_onSaveInstanceState.OnRestoreActivityTest"/>
 
     </application>
 

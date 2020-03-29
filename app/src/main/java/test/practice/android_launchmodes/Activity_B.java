@@ -2,10 +2,10 @@ package test.practice.android_launchmodes;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import test.practice.R;
 
 /**
@@ -23,6 +23,7 @@ public class Activity_B extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b);
 
+        System.out.println("...onCreate method....B..");
         //System.out.println(">>>>>>>>>>>>>   Activity B : Single Top Launch Mode Failed <<<<<<<<<<<<<  ");
 
         findViewById(R.id.but_b).setOnClickListener(new View.OnClickListener() {
@@ -30,6 +31,9 @@ public class Activity_B extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent obj = new Intent(Activity_B.this, Activity_C.class);
+
+                //use : android:launchMode="singleTop" // same instance of activity B is used
+                //Intent obj = new Intent(Activity_B.this, Activity_B.class);
                 startActivity(obj);
             }
         });
