@@ -121,6 +121,7 @@
         <!--Android Calender-->
         <activity android:name=".android_calender.CalDroid_CalenderActivity"/>
         <activity android:name=".android_onSaveInstanceState.OnRestoreActivityTest"/>
+        <activity android:name=".android_aaa_kotlin_app.StartKotlinApp"/>
 
     </application>
 
