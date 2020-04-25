@@ -1,4 +1,4 @@
-package com.example.logicprogram.java_oops.java_interface.functional_interfaces.model;
+package com.example.logicprogram.java_oops.java_interface.functional_interfaces.predicate_interface.model;
 
 import java.util.ArrayList;
 

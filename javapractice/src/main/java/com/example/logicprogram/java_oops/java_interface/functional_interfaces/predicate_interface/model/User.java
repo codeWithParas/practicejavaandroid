@@ -1,6 +1,16 @@
-package com.example.logicprogram.java_oops.java_interface.functional_interfaces.model;
+package com.example.logicprogram.java_oops.java_interface.functional_interfaces.predicate_interface.model;
 
 public class User {
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public int balance;
 
     public String name;
     private boolean active;
@@ -36,5 +46,6 @@ public class User {
         this.id = id;
         this.name = name;
         this.active = isActive;
+        this.balance = 100;
     }
 }

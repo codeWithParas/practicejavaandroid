@@ -1,11 +1,11 @@
 package com.example.logicprogram.java_oops.java_interface.functional_interfaces.predicate_interface;
 
-import com.example.logicprogram.java_oops.java_interface.functional_interfaces.model.AllUsers;
-import com.example.logicprogram.java_oops.java_interface.functional_interfaces.model.User;
+import com.example.logicprogram.java_oops.java_interface.functional_interfaces.predicate_interface.model.AllUsers;
+import com.example.logicprogram.java_oops.java_interface.functional_interfaces.predicate_interface.model.User;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class PredicateInterfaceTest {
@@ -14,6 +14,16 @@ public class PredicateInterfaceTest {
 
     public static void main(String[] args) {
 
+        /*
+        * Question : Calculate tax of active users.
+        * Solution : Create Users
+        *           -> Filter Active Users Using : Predicate Interface
+        *           -> Calculate Tax Of Users Using : Consumer Interface
+        *           -> Check user is active using :  Function Interface
+        *           -> Add balance of first two users using : BinaryOperator Interface
+        *
+        * */
+
         createUsers();
         if(allUsers == null)
             return;
@@ -21,25 +31,25 @@ public class PredicateInterfaceTest {
         ArrayList<User> users = allUsers.getUsers();
 
         /*
-        * Predicate Interface use : This case b boolean : test() method will return true if User is not active.
+        * 1) Predicate Interface use : This case b boolean : test() method will return true if User is not active.
         * So remove all the users who are not active.
         * */
-        /*boolean b = users.removeIf(new Predicate<User>() {
+        boolean b = users.removeIf(new Predicate<User>() {
             @Override
             public boolean test(User user) {
+                // return the true state to remove from list of users.
                 return !user.isActive();
             }
-        });*/
-
+        });
         //using lambdas
         /*users.removeIf(user -> {
             return !user.isActive();
         });*/
 
-        users.removeIf(user -> !user.isActive());
+        //users.removeIf(user -> !user.isActive());
 
         /*
-        * Consumer Interface test
+        * 2) Consumer Interface test
         * */
 
         Consumer<User> consumer = new Consumer<User>() {
@@ -49,21 +59,21 @@ public class PredicateInterfaceTest {
             }
 
             private void calculateTax(User user) {
-
             }
         };
 
+        /*
+         * 3) Function Interface test : Function<InputTpe, OutputType>
+         * */
+        Function<User, Boolean> givesBoolean = user -> user.isActive();
+
         users.stream().forEach(user -> {
             //demo method
-            calculateTax();
+            consumer.accept(user);
+            Boolean isActive = givesBoolean.apply(user);
+            System.out.println("Tax is calculated for : " + user.getName() + " Active : " + isActive);
         });
 
-        for (User user : users) {
-            System.out.println(user.name);
-        }
-    }
-
-    private static void calculateTax() {
 
     }
 
