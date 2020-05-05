@@ -1,0 +1,5 @@
+
+
+Observable :  Entity (Network Call/ Data Repo) that can be observed by observer.
+Example : Data Change due to async network call at any time happen in future.
+This should be automatically get notifies on view layer.

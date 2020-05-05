@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import test.practice.android_aaa_kotlin_app.StartKotlinApp;
+import test.practice.android_aarchitecture.a_observable.observer.FragmentView;
 import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
 import test.practice.android_bluetooth.BluetoothMainActivity;
 import test.practice.android_broadcast.Android_BroadCast_Server;
@@ -311,6 +312,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, StartKotlinApp.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.but_Observable).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FragmentView.class);
                 startActivity(intent);
             }
         });
