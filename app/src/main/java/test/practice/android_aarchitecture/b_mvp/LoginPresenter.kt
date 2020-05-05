@@ -1,7 +1,6 @@
-package test.practice.android_aarchitecture_kotlin.b_mvp
+package test.practice.android_aarchitecture.b_mvp
 
 import android.os.Handler
-import java.util.*
 
 class LoginPresenter(val view: LoginView) {
 

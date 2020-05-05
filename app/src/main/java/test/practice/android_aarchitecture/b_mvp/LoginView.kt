@@ -1,4 +1,4 @@
-package test.practice.android_aarchitecture_kotlin.b_mvp
+package test.practice.android_aarchitecture.b_mvp
 
 interface LoginView {
 
