@@ -15,7 +15,7 @@ class MVPLoginActivity : AppCompatActivity(), LoginView
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mvp_login_activity)
 
-        loginButton.setOnClickListener(View.OnClickListener { presenter.performLogin() })
+        loginButton.setOnClickListener { presenter.performLogin() }
     }
 
     override fun getEmailAddress(): String {

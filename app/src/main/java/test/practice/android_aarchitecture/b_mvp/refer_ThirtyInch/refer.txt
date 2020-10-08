@@ -1,0 +1,14 @@
+Refer : https://medium.com/@passsy/thirtyinch-a-new-mvp-library-for-android-bd1a27262fd6
+Important
+
+What is ThirtyInch:
+The core implementation is very lightweight giving you a TiPresenter with a TiView interface which can be attached or detached.
+The TiPresenter can be described as an Object which lives during the whole lifetime of an Activity, even when the Activity gets recreated, moved into background and gets killed. When the Activity finishes the TiPresenter dies, too (onDestroy()).
+The TiPresenter has four lifecycle events.
+onCreate(): called once for the initialization, the view is currently not attached
+onAttachView(view): the View was attached and is visible to the user
+onDetachView(): the View will be detached after this call and is not visible to the user anymore
+onDestroy(): called once when the Activity/Fragment is completely destroyed and will never return again. Stop all your work!
+onAttachView(view) and onDetachView() are mapped to onStart() and onStop(), callbacks for onResume/onPause are not supported because those lifecycle events should be handled in the View layer.
+The TiPresenter is able to survive orientation changes allowing you to keep network requests running and hold your Model instead of serializing it in onSaveInstanceState.
+The TiPresenter can be attached to Activities and Fragments
