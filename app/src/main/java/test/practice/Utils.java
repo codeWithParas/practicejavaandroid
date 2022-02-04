@@ -22,6 +22,7 @@ import test.practice.android_lifecycle.lifecyclefragments.Fragmenttwo;
 
 public class Utils {
 
+
     /*From ST Test */
 
     public static String dataBroadCast;

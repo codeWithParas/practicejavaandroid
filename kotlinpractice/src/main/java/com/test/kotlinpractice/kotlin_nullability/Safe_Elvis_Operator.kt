@@ -1,6 +1,5 @@
 package com.test.kotlinpractice.kotlin_nullability
 
-import jdk.nashorn.internal.objects.Global.print
 
 fun main()
 {

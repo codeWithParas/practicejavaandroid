@@ -2,28 +2,48 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="test.practice">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!--Allows applications to connect to paired bluetooth devices.-->
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <!--Allows applications to discover and pair bluetooth devices.-->
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <!--If you want to declare that your app is available to BLE-capable
     devices only, include the following in your app's manifest: android:required="true"-->
-    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <!-- android : required = "false" Google Play will then permit users to download your app even
     if their device doesn’t have a fingerprint sensor.-->
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".android_volley.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/App_Name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name="test.practice.MainActivity">
+        <activity
+            android:name="test.practice.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,31 +71,33 @@
             </intent-filter>
         </activity>
         <!--Registering BroadCast Receiver through Manifest-->
-        <receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
+        <!--<receiver android:name="test.practice.android_broadcast.MyBroadCastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="test.server.broadcast.receiver" />
             </intent-filter>
-        </receiver>
+        </receiver>-->
 
 
         <!--Launch Modes-->
-        <!--Refer : https://medium.com/@iammert/android-launchmode-visualized-8843fc833dbe -->
-        <activity android:name=".android_launchmodes.Activity_A"/>
-        <!--change this affinity value in Activity_B-->
+        <activity android:name=".android_launchmodes.Activity_A" />
+        <!--change this affinity value-->
         <!--android:taskAffinity="com.some.new.task"-->
-        <activity android:name=".android_launchmodes.Activity_B" android:launchMode="singleInstance"/>
-        <activity android:name=".android_launchmodes.Activity_C"/>
-        <activity android:name=".android_launchmodes.Activity_D"/>
+        <activity
+            android:name=".android_launchmodes.Activity_B"
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.some.new.task" />
+        <activity android:name=".android_launchmodes.Activity_C" />
+        <activity android:name=".android_launchmodes.Activity_D" />
 
-        <activity android:name=".android_intent.Intent_Example"/>
-        <activity android:name=".android_intent.PendingIntent_Example"/>
-        <activity android:name=".android_animation.parallax_tab.Android_Parallax_Tab"/>
-        <activity android:name=".android_volley.Volley_Test"/>
+        <activity android:name=".android_intent.Intent_Example" />
+        <activity android:name=".android_intent.PendingIntent_Example" />
+        <activity android:name=".android_animation.parallax_tab.Android_Parallax_Tab" />
+        <activity android:name=".android_volley.Volley_Test" />
 
         <!--Bluetooth-->
-        <activity android:name=".android_bluetooth.BluetoothMainActivity"/>
+        <activity android:name=".android_bluetooth.BluetoothMainActivity" />
         <activity android:name=".android_bluetooth.bluetooth_chat_example.BLEDeviceListActivity"/>
         <activity android:name=".android_bluetooth.bluetooth_connection_example.Check_BLE_Connection_Exm1"/>
         <activity android:name=".android_bluetooth.bluetooth_connection_example.Check_BLE_Connection_Exm2"/>
@@ -105,24 +127,58 @@
             android:enabled="true"
             android:multiprocess="true"
             android:exported="true"
-            android:authorities="paras.server.MyContentProvider">
-        </provider>
+            android:authorities="paras.server.MyContentProvider"></provider>
 
 
         <!--Registring binding service for AIDL-->
-        <service android:name=".android_aidl.BindingService" >
+        <service
+            android:name=".android_aidl.BindingService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="android.test.server.BindingService"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.test.server.BindingService" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
 
 
         <!--Android Calender-->
-        <activity android:name=".android_calender.CalDroid_CalenderActivity"/>
-        <activity android:name=".android_onSaveInstanceState.OnRestoreActivityTest"/>
-        <activity android:name=".android_aaa_kotlin_app.StartKotlinApp"/>
-        <activity android:name=".android_aarchitecture.a_observable.observer.FragmentView"/>
+        <activity android:name=".android_calender.CalDroid_CalenderActivity" />
+        <activity android:name=".android_onSaveInstanceState.OnRestoreActivityTest" />
+
+        <!--Kotlin Android Activity-->
+        <activity android:name=".android_aaa_kotlin_app.StartKotlinApp" />
+        <activity android:name=".android_aarchitecture_kotlin.b_mvp.MVPLoginActivity" />
+
+        <!---->
+        <activity android:name=".android_spannable.NewLineSpannable" />
+
+        <service
+            android:name=".android_alarm_manager.MyIntentService"
+            android:enabled="true"
+            android:stopWithTask="false" />
+
+        <activity android:name=".android_alarm_manager.TestAlarmManager" />
+        <receiver android:name=".android_alarm_manager.MyBroadcastReceiver" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <activity android:name=".android_qrscanner.QRScanner" />
+        <activity android:name=".android_qrscanner.ScannedBarcodeActivity" />
+        <activity android:name=".location.TestLocation" />
+        <activity android:name=".loader.LoaderTest" />
+        <activity android:name=".android_media.PlayVideoActivity" />
+
+        <!--<provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>-->
 
     </application>
 
