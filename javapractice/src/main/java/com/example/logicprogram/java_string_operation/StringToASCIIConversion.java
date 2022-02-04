@@ -1,8 +1,6 @@
 package com.example.logicprogram.java_string_operation;
 
-import java.io.UnsupportedEncodingException;
-
-import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
+//import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
 
 public class StringToASCIIConversion {
 
@@ -29,11 +27,11 @@ public class StringToASCIIConversion {
         }
     }
 
-    public static byte[] hexToBytes(String hexString) {
+    /*public static byte[] hexToBytes(String hexString) {
         HexBinaryAdapter adapter = new HexBinaryAdapter();
         byte[] bytes = adapter.unmarshal(hexString);
         return bytes;
-    }
+    }*/
 
     public static String convertStringToHex(String str){
 

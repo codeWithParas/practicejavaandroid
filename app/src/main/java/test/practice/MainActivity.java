@@ -7,25 +7,31 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import test.practice.android_aaa_kotlin_app.StartKotlinApp;
-import test.practice.android_aarchitecture.a_observable.observer.FragmentView;
+import test.practice.android_aarchitecture_kotlin.b_mvp.MVPLoginActivity;
+import test.practice.android_alarm_manager.TestAlarmManager;
 import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
+import test.practice.android_animation.parallax_tab.Android_Parallax_Tab;
+import test.practice.android_animation.parallax_tab.FabHideActivity;
 import test.practice.android_bluetooth.BluetoothMainActivity;
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_calender.CalDroid_CalenderActivity;
 import test.practice.android_cp.ContentProvider_Server;
-import test.practice.android_animation.parallax_tab.Android_Parallax_Tab;
-import test.practice.android_animation.parallax_tab.FabHideActivity;
 import test.practice.android_handler.Handler_Example;
 import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
+import test.practice.android_media.PlayVideoActivity;
 import test.practice.android_onSaveInstanceState.OnRestoreActivityTest;
+import test.practice.android_parcelable.FirstActivity;
+import test.practice.android_qrscanner.ScannedBarcodeActivity;
 import test.practice.android_recyclerview.RecyclerViewActivity;
 import test.practice.android_session.Android_SessionMgmt;
+import test.practice.android_spannable.NewLineSpannable;
 import test.practice.android_volley.Volley_Test;
+import test.practice.loader.LoaderTest;
 import test.practice.model.Student;
-import test.practice.android_parcelable.FirstActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -308,7 +314,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        findViewById(R.id.but_movies).setOnClickListener(new View.OnClickListener() {
+        /*
+         *
+         * txt_kotlin
+         * */
+
+        findViewById(R.id.txt_kotlin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, StartKotlinApp.class);
@@ -316,10 +327,55 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.but_Observable).setOnClickListener(new View.OnClickListener() {
+        /*
+         *
+         * txt_kotlin mvp
+         * */
+
+        findViewById(R.id.txt_kotlin_mvp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FragmentView.class);
+                Intent intent = new Intent(MainActivity.this, MVPLoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.test_alarm).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestAlarmManager.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.txt_spannable).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NewLineSpannable.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.txt_qrscanner).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ScannedBarcodeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.test_location).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoaderTest.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.test_media).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PlayVideoActivity.class);
                 startActivity(intent);
             }
         });
