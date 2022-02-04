@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="practicejavaandroid/app" />
-      <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" group="practicejavaandroid/client" />
-      <module fileurl="file://$PROJECT_DIR$/javapractice/javapractice.iml" filepath="$PROJECT_DIR$/javapractice/javapractice.iml" group="practicejavaandroid/javapractice" />
-      <module fileurl="file://$PROJECT_DIR$/kotlinpractice/kotlinpractice.iml" filepath="$PROJECT_DIR$/kotlinpractice/kotlinpractice.iml" group="practicejavaandroid/kotlinpractice" />
-      <module fileurl="file://$PROJECT_DIR$/practicejavaandroid.iml" filepath="$PROJECT_DIR$/practicejavaandroid.iml" group="practicejavaandroid" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/practicejavaandroid.iml" filepath="$PROJECT_DIR$/.idea/modules/practicejavaandroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.iml" filepath="$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javapractice/practicejavaandroid.javapractice.iml" filepath="$PROJECT_DIR$/.idea/modules/javapractice/practicejavaandroid.javapractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlinpractice/practicejavaandroid.kotlinpractice.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlinpractice/practicejavaandroid.kotlinpractice.iml" />
     </modules>
   </component>
 </project>
