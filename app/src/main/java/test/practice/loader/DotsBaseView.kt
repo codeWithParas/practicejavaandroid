@@ -7,11 +7,11 @@ import test.practice.R
 
 abstract class DotsBaseView : AbstractLinearLayout {
 
-    var firstDotColor: Int = resources.getColor(R.color.loader_defalut)
+    var firstDotColor: Int = resources.getColor(R.color.caldroid_light_red)
 
-    var secondDotColor: Int = resources.getColor(R.color.loader_defalut)
+    var secondDotColor: Int = resources.getColor(R.color.caldroid_light_red)
 
-    var thirdDotColor: Int = resources.getColor(R.color.loader_defalut)
+    var thirdDotColor: Int = resources.getColor(R.color.caldroid_light_red)
 
     protected lateinit var firstCircle: CircleView
     protected lateinit var secondCircle: CircleView

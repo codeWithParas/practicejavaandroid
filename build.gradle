@@ -2,12 +2,13 @@
 /*apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'*/
 buildscript {
-    ext.kotlin_version = '1.5.31'
+    ext.kotlin_version = '1.5.30'
     repositories {
         mavenLocal()
         google()
         jcenter()
         maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://maven.google.com" }
 
     }
     dependencies {

@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <test.practice.loader.LazyBouncyLoader
+        <!--<test.practice.loader.LazyBouncyLoader
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_margin="20dp"
@@ -22,7 +22,7 @@
             app:lazyloader_interpolator="@android:anim/decelerate_interpolator"
             app:lazyloader_secondDelayDur="500"
             app:lazyloader_secondDotColor="#576b76"
-            app:lazyloader_thirdDotColor="#576b76" />
+            app:lazyloader_thirdDotColor="#576b76" />-->
 
         <ImageView
             android:id="@+id/imgView"
