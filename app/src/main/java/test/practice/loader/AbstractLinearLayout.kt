@@ -17,7 +17,7 @@ abstract class AbstractLinearLayout : LinearLayout, LoaderContract {
 
     var dotsDist: Int = 15
 
-    var dotsColor: Int = resources.getColor(R.color.loader_defalut)
+    var dotsColor: Int = resources.getColor(R.color.caldroid_light_red)
 
     abstract fun initView()
 

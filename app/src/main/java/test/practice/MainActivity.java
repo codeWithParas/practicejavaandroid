@@ -9,7 +9,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import test.practice.android_aaa_kotlin_app.StartKotlinApp;
-import test.practice.android_aarchitecture_kotlin.b_mvp.MVPLoginActivity;
 import test.practice.android_alarm_manager.TestAlarmManager;
 import test.practice.android_animation.animate_transition.AndroidAnimationActivity;
 import test.practice.android_animation.parallax_tab.Android_Parallax_Tab;
@@ -25,7 +24,6 @@ import test.practice.android_launchmodes.Activity_A;
 import test.practice.android_media.PlayVideoActivity;
 import test.practice.android_onSaveInstanceState.OnRestoreActivityTest;
 import test.practice.android_parcelable.FirstActivity;
-import test.practice.android_qrscanner.ScannedBarcodeActivity;
 import test.practice.android_recyclerview.RecyclerViewActivity;
 import test.practice.android_session.Android_SessionMgmt;
 import test.practice.android_spannable.NewLineSpannable;
@@ -335,8 +333,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.txt_kotlin_mvp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MVPLoginActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(MainActivity.this, MVPLoginActivity.class);
+                //startActivity(intent);
             }
         });
 
@@ -359,8 +357,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.txt_qrscanner).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ScannedBarcodeActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(MainActivity.this, ScannedBarcodeActivity.class);
+                //startActivity(intent);
             }
         });
 

@@ -53,15 +53,15 @@ class LazyBouncyLoader : DotsBaseView {
             typedArray.getDimensionPixelSize(R.styleable.LazyLoader_lazyloader_dotsDist, 15)
         this.firstDotColor = typedArray.getColor(
             R.styleable.LazyLoader_lazyloader_firstDotColor,
-            resources.getColor(R.color.loader_selected)
+            resources.getColor(R.color.caldroid_light_red)
         )
         this.secondDotColor = typedArray.getColor(
             R.styleable.LazyLoader_lazyloader_secondDotColor,
-            resources.getColor(R.color.loader_selected)
+            resources.getColor(R.color.caldroid_light_red)
         )
         this.thirdDotColor = typedArray.getColor(
             R.styleable.LazyLoader_lazyloader_thirdDotColor,
-            resources.getColor(R.color.loader_selected)
+            resources.getColor(R.color.caldroid_light_red)
         )
 
         this.animDuration = typedArray.getInt(R.styleable.LazyLoader_lazyloader_animDur, 500)

@@ -1,4 +1,5 @@
 package test.practice.android_qrscanner
+/*
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -11,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
-import com.google.android.gms.vision.Detector.Detections
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
 import kotlinx.android.synthetic.main.activity_scan_barcode.*
@@ -45,13 +45,15 @@ class ScannedBarcodeActivity : AppCompatActivity() {
         //initialiseDetectorsAndSources()
         //BarcodeDetector.Builder(context)
 
-        /*btnAction.setOnClickListener {
+        */
+/*btnAction.setOnClickListener {
             if (intentData.length > 0) {
                 if (isEmail) startActivity(Intent(this@ScannedBarcodeActivity, EmailActivity::class.java).putExtra("email_address", intentData)) else {
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(intentData)))
                 }
             }
-        }*/
+        }*//*
+
     }
 
     private fun initialiseDetectorsAndSources() {
@@ -99,7 +101,7 @@ class ScannedBarcodeActivity : AppCompatActivity() {
                 ).show()
             }
 
-            override fun receiveDetections(detections: Detections<Barcode>) {
+            override fun receiveDetections(detections: Detector.Detections<Barcode>) {
                 val barcodes = detections.detectedItems
                 if (barcodes.size() != 0) {
                     txtBarcodeValue!!.post {
@@ -130,4 +132,4 @@ class ScannedBarcodeActivity : AppCompatActivity() {
         super.onResume()
         initialiseDetectorsAndSources()
     }
-}
+}*/
