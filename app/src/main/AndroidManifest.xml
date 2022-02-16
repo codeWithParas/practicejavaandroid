@@ -32,8 +32,9 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <!--android:name=".android_volley.AppController"-->
     <application
-        android:name=".android_volley.AppController"
+        android:name=".android_aaa_kotlin_rxjava.LearningRxJavaApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/App_Name"
