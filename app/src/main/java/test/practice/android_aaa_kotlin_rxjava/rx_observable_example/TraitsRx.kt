@@ -24,7 +24,6 @@ object TraitsRx {
             //do some logic here
             val success = true
 
-
             if (success) {
                 //return a value // some sort of data coming from network request
                 single.onSuccess("nice work!")

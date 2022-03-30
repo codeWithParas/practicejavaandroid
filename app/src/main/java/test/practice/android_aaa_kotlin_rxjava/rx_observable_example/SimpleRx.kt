@@ -8,8 +8,8 @@ import io.reactivex.rxjava3.kotlin.toObservable
 import io.reactivex.subjects.BehaviorSubject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.yield
 import test.practice.android_aaa_kotlin_rxjava.common.disposedBy
 import java.util.concurrent.TimeUnit
 
@@ -99,7 +99,7 @@ object SimpleRx {
         // 1) onError : When some exception thrown then after that this will not work.
         var exception = IllegalArgumentException("Some Fake Error")
         //behaviorSubject.onError(exception)
-        behaviorSubject.onNext(50) // this will never show
+        behaviorSubject.onNext(50) // this will never show after error thrown
 
         // 2) onComplete :
         behaviorSubject.onComplete()
@@ -109,7 +109,7 @@ object SimpleRx {
 
     fun observableExample() {
         //Observables :  Normally we consume them but sometimes we need to create them for lil level stuffs like network, database, fileIO or anything that is long running and
-        // you want to know when the task is going to end thats when you going to use Observables.
+        // you want to know when the task is going to end that's when you going to use Observables.
         // Used in the case for chaining different network calls.
 
         //The Observable
@@ -119,11 +119,12 @@ object SimpleRx {
             println("~~~~~~Observable~~~~~~")
 
             //Do a work on background thread.
-            GlobalScope.launch(Dispatchers.Main) {
+            GlobalScope.launch(Dispatchers.IO) {
                 //mutating long running operation : ARTIFICIAL DELAY
                 println("Current Thread Name : " + Thread.currentThread().name)
                 observer.onNext("Some Value 10")
-                delay(8000)
+                //delay(8000)
+                yield()
                 println("Current Thread Name : " + Thread.currentThread().name)
                 observer.onNext("Some Value 20")
                 observer.onComplete()

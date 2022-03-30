@@ -4,9 +4,9 @@ fun main() {
 
     var a = 20;
     var b = 5
-    a += b
-    println("a+=b :" + a)
-    a -= b
+    //a += b
+    //println("a+=b :" + a)
+    //a -= b
     println("a-=b :" + a)
     a *= b
     println("a*=b :" + a)

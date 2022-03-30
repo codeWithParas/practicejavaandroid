@@ -25,9 +25,9 @@ class LearningRxJavaApplication : Application() {
 
         //setupDatabase()
 
-        //SimpleRx.relayExample()
-        //SimpleRx.subjectExample()
-        //SimpleRx.observableExample()
+        SimpleRx.relayExample()
+        SimpleRx.subjectExample()
+        SimpleRx.observableExample()
         SimpleRx.otherExamplesOfObservable()
     }
 

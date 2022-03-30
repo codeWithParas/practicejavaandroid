@@ -1,0 +1,244 @@
+DS
+
+1) What is data structure ?
+2) How program utilises data in main memory ?
+3) Static vs Dynamic Memory Allocation ?
+4) Size of memory segment = 64kb ?
+5) How many sections memory segment is divided ? (Heap, stack, code)
+FYI : Integer can take 2 byte or 4 bytes, it depends on compiler in c++.
+
+STACK AND HEAP
+6) How Stack and Heap memory used by program ? Explain with diagram ?
+7) Portion of memory given to the variables is called ------ ?
+8) Size of memory when decided at compile time is called ------- ?
+9) How Activation Record created in a memory w.r.t different functions in a program ?
+10) Which portion of segment memory activation records created ?
+11) What is organised or non-organised memory ?
+12) How heap memory used by program ?
+FYI : Heap memory treated as resource memory. Program cannot access heap memory directly.
+13) How many bytes pointer takes ? (It depends on variable size)
+14) How you can access heap memory in Java ? (Object)
+
+PHYSICAL AND LOGICAL DS
+15) What are physical ds ? (array, linked-list)
+16) What are logical ds ? (stack, queues, trees, graph, hash-table)
+17) What are linear and non-linear ds ? (linear - stack, queues) (non-linear - trees, hash-table)
+FYI : Logical ds implemented using physical ds.
+
+ADT
+18) ADT ?
+19) List ADT ?
+
+TIME & SPACE COMPLEXITY
+20) Calculate time complexity -- O(n^2)
+for() {
+   for(){}
+}
+
+FYI : 1+2+3......(n-3)+(n-2)+(n-1) = n(n-1)/2 -> sum of n natural numbers
+Ref : https://byjus.com/maths/sum-of-n-terms/
+21) Calculate time complexity of Sum of first n natural numbers using program ?
+
+FYI : Anything which is divided in every iteration then we consider this situation in log.
+22) Calculate time complexity of a list that is divided every time in a half ?
+List : A -> 2,3,4,5,6,7,8,9.....n
+for(i=n; i>1; i=i/2)
+{
+
+}
+or
+while(i>1)
+{
+	i=i/2;
+}
+Time Complexity = log_2 n
+
+23) Matrix time complexity ? If i = n, j= n
+Time Complexity = O(n^2)
+
+24) Time Complexity of binary tree ?
+
+25) Calculate time complexity of following program.
+
+		for(i=0; i<n; i++) {        ---------> n+1
+   			for(j=0; j<n; j++){		---------> n*(n+1)
+   				int x = i + j		---------> n*n
+   			}
+		}
+		Time Complexity = 2n^2 + 2n + 1 = O(n^2)
+
+RECURSION
+
+26) How many phases of recursion function ? Explain with program ? (Ascending & Descending)
+
+	void fun(int n)
+	{
+		if(n>0)
+		{
+			1.---calling state-----(Ascending) : when program starts (push in stack)
+			2. 	 fun(n-1)
+			3.---Returning state---(Descending) : when program go back (pops in stack)
+		}
+	}
+
+	Time Complexity = n+1 = O(n)
+
+27) Difference between loop and recursion ?
+28) How recursion uses stack ?
+29) Explain recursion relation with proper example by creating equations of 26-program ?
+
+FYI : Static variable created in code segment of memory which is global and re-used every time.
+
+30) Explain behaviour of static variables in recursion function ?
+31) Types of recursion ?
+32) Tail recursion ? (Operation perform at calling time when value pushed in stack. Nothing perform at returning time.)
+33) Head Recursion ? (Operation perform after calling time when stack is pop out. Everything perform at returning time.)
+34) Tree Recursion ? (A recursive function that is calling itself more than 1 time in a same iteration)
+35) In Tree Recursion prove Time Complexity = O(2^n) (Fibonacci) and Prove Space Complexity = O(n) ?
+36) What is Indirect Recursion ?
+fun A -> fun B -> fun C -> fun A
+37) What is Nested Recursion ? (When same function call is made inside fn param by itself.)
+Example ->
+			int fun(int n)
+			{
+				if(n>100)
+					return n-10;
+				else
+					return fun(fun(n+11));
+			}
+
+38) Using recursion find sum of First 'n' Natural Numbers ? Time Complexity ?
+FYI
+Using Recursion : O(n) and also Space is consumed more. (Use in mathematics)
+Using Loop : O(n)  (Generally use in program)
+Using Formula [n*(n+1)/2] : O(1)
+
+39) Finding Factorial of a Number ? (n! = 1*2*3*------*n) Multiplication of n natural no.
+FYI
+Using Recursion : O(n)
+Using Loop : O(n)
+	int i,fact=1;
+  	int number=5;
+  	for(i=1;i<=number;i++){
+      fact=fact*i;
+  	}
+
+
+40) Using recursion calculate exponent of any number ?
+FYI : Representation : 2^5 or pow(m, n)
+Using Recursion : O(n)
+		int pow(int m, int n)
+		{
+			if(n==0)
+				return 1;
+			else
+				return pow(m, n-1)*m
+		}
+
+Using Power Function : divide power by 2 :
+	Ex 1 : 2^8 = (2^2)^4
+	Ex 2 : 2^9 = 2*(2^2)^4    //check even and odd
+
+		int pow(int m, int n)
+		{
+			if(n==0)
+				return 1;
+			else if(n%2 == 0) //check even and odd
+				return pow(m*m, n/2)
+			else
+				return m*pow(m*m, n-1/2)
+		}
+
+41) Fibonacci Series : f(n) = 0	1 1	2 3	5 8	13
+	Using Recursion :
+
+	int fib(int n)
+	{
+	   if(n<=1) return n
+	   else fin(n-2)+fib(n-1)
+	}
+
+	Using Loop : ?
+
+STRING :
+IMPORTANT EXERCISE : https://www.geeksforgeeks.org/amazon-interview-experience-for-sde-1-full-time-referral-2020/?ref=lbp
+
+42) Reversing a string ? "python"
+Convert String to Array[] and then use any 2 approached
+	1 Approach : Double Array : Using another array and put all values from A[]
+	2 Approach : Single Array : for(i=0; i<j; i++, j--){ }
+
+
+43) Checking palindrom ? "madam"
+
+44) Finding duplicates in a string ?
+Solution :
+a) Compare with other letters : using loop
+b) Using HashTable or counting
+c) Using Bits
+
+43 c) Using Bits
+	Bitwise Operations
+	1) left shift << : shl
+	2) right shift >> : shr
+	3) zero fill left shift <<< : ushl
+	4) zero fill right shift >>> :  ushr
+	5) Bits ANDing(Masking) : Checking if bit is ON or OFF
+	6) Bits ORing (Merging) : Making any bit ON or OFF
+
+
+44) Linked List ?
+45) Calculate mid point of linked list using single iteration ? (Hint : use 2 pointers)
+46) Find intersecting point of two linked list ? (Hint : Traverse backward using stack.)
+
+47) Stack ?
+48) Implement Stack using Array ?
+49) Implement Stack using Linked List ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

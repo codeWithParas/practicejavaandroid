@@ -3,9 +3,11 @@ package com.test.kotlinpractice.kotlin_architecture_pattern.kotlin_observable_pa
 import com.test.kotlinpractice.kotlin_architecture_pattern.kotlin_observable_pattern.observer.ObserverOne
 import com.test.kotlinpractice.kotlin_architecture_pattern.kotlin_observable_pattern.observer.ObserverTwo
 
+// IMPORTANT Before starting : Please learn this first. This example designed and needs to be watched before learning any other example related to Observable-Subscriber Pattern.
 // Assume here the main method is like a compiler in android that allocate memory for all variables and classes(activity/fragments)
-fun main()
-{
+// Main thread here acting like a installer for app.
+
+fun main() {
     //init repository
     val dataRepository: SubjectActions = DataRepository("Myrepo", 1).getInstance()
     //register observers
@@ -19,7 +21,12 @@ fun main()
 
 
 /**
- * Thread : Assume this is like a Android main thread.
+ * Thread : Assume this is like a Android main thread (onAttach() inside presenter).
+ *
+ * Observable : An Entity (Network Call/ Data Repo) that gives data change intimation to the observer.
+ * Observable : An Entity (Network Call/ Data Repo) that can be observed by observer.
+ * Example : Data Change due to async network call at any time happen in future.
+ * This should be automatically get notifies on view layer.
  */
 class Observable(var dataRepository: SubjectActions) : Thread() {
     override fun run() {

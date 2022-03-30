@@ -5,6 +5,49 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class NewLineSpannable {
+    fun capitalizeString(name: String): String {
+        val initials = StringBuilder()
+        for (s in name.split(" ")) {
+            initials.append(s[0])
+        }
+        return initials.toString().uppercase(Locale.getDefault())
+    }
+
+    fun capitalizaEveryWord() {
+        // create a string
+        // create a string
+        var message = "everyone loves java"
+
+        // stores each characters to a char array
+
+        // stores each characters to a char array
+        val charArray = message.toCharArray()
+        var foundSpace = true
+
+        for (i in charArray.indices) {
+
+            // if the array element is a letter
+            if (Character.isLetter(charArray[i])) {
+
+                // check space is present before the letter
+                if (foundSpace) {
+
+                    // change the letter into uppercase
+                    charArray[i] = Character.toUpperCase(charArray[i])
+                    foundSpace = false
+                }
+            } else {
+                // if the new character is not character
+                foundSpace = true
+            }
+        }
+
+        // convert the char array to the string
+
+        // convert the char array to the string
+        message = String(charArray)
+        println("Message: $message")
+    }
 
     fun extractFloorFromWorkspaceId(fromWsTypeId: String) {
         val ids = fromWsTypeId.split('_').filterIndexed { index, value -> index != 2 }
@@ -66,7 +109,7 @@ fun main(vararg args: String) {
         print("\nTesting -> ${it.id}  ${it.name}")
     }
 
-    //print("\nTesting -> ${sorted.size}")
+    //print("\nTesting -> "+ capitalizeString(""))
 }
 
 class Student(i: Int, s: String) {
