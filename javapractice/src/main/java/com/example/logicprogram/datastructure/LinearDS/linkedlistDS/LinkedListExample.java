@@ -186,10 +186,6 @@ public class LinkedListExample
 
     }
 
-
-
-
-
     private void printNodeList() {
 
         Node n = head;
@@ -202,6 +198,4 @@ public class LinkedListExample
 
         System.out.print("\n\n");
     }
-
-
 }

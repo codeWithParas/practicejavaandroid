@@ -16,6 +16,7 @@ import test.practice.android_animation.parallax_tab.FabHideActivity;
 import test.practice.android_bluetooth.BluetoothMainActivity;
 import test.practice.android_broadcast.Android_BroadCast_Server;
 import test.practice.android_calender.CalDroid_CalenderActivity;
+import test.practice.android_coroutines.TestCoroutinesActivity;
 import test.practice.android_cp.ContentProvider_Server;
 import test.practice.android_handler.Handler_Example;
 import test.practice.android_intent.Intent_Example;
@@ -374,6 +375,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PlayVideoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.test_coroutine).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestCoroutinesActivity.class);
                 startActivity(intent);
             }
         });
