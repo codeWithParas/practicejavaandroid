@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="enabled" />
+
+    <declare-styleable name="DotsLoaderBaseView">
+        <attr name="loader_defaultColor" format="color" />
+        <attr name="loader_selectedColor" format="color" />
+        <attr name="loader_circleRadius" format="dimension" />
+        <attr name="loader_animDur" format="integer" />
+        <attr name="loader_showRunningShadow" format="boolean" />
+        <attr name="loader_firstShadowColor" format="color" />
+        <attr name="loader_secondShadowColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleView">
+        <attr name="circleRadius" format="dimension" />
+        <attr name="circleColor" format="color" />
+        <attr name="circleDrawOnlystroke" format="boolean" />
+        <attr name="circleStrokeWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LazyLoader">
+        <attr name="lazyloader_dotsRadius" format="dimension" />
+        <attr name="lazyloader_dotsDist" format="dimension" />
+        <attr name="lazyloader_firstDotColor" format="color" />
+        <attr name="lazyloader_secondDotColor" format="color" />
+        <attr name="lazyloader_thirdDotColor" format="color" />
+        <attr name="lazyloader_animDur" format="integer" />
+        <attr name="lazyloader_interpolator" format="reference" />
+        <attr name="lazyloader_firstDelayDur" format="integer" />
+        <attr name="lazyloader_secondDelayDur" format="integer" />
+    </declare-styleable>
+</resources>

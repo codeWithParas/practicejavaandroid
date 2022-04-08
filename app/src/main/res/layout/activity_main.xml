@@ -14,6 +14,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/test_media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Media" />
+
+        <Button
+            android:id="@+id/test_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Location permission" />
+
+        <Button
+            android:id="@+id/test_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Alarm Manager" />
 
         <Button
             android:id="@+id/txt_check_launch"
@@ -125,10 +142,28 @@
             android:text="OnSaveInstance Test" />
 
         <Button
-            android:id="@+id/but_movies"
+            android:id="@+id/txt_kotlin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OnSaveInstance Test" />
+            android:text="Android Kotlin" />
+
+        <Button
+            android:id="@+id/txt_kotlin_mvp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Kotlin MVP Test" />
+
+        <Button
+            android:id="@+id/txt_spannable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Spannable" />
+
+        <Button
+            android:id="@+id/txt_qrscanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android QR Scanner" />
 
         <Button
             android:id="@+id/but_Observable"

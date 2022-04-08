@@ -4,16 +4,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
 import test.practice.R;
 import test.practice.android_recyclerview.model.DataValues;
-import test.practice.android_recyclerview.model.ListData;
 
 /**
  * Created by parasmani.sharma on 16/11/2017.
@@ -46,12 +46,26 @@ public class RecyclerViewActivity extends AppCompatActivity {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, list, new RecyclerViewAdapter.IRecyclerViewHolderClicks() {
             @Override
             public void onClickRecyclerItem(View v, int position) {
-                Toast.makeText(RecyclerViewActivity.this, "Clicked : "+position, Toast.LENGTH_LONG).show();
+                Toast.makeText(RecyclerViewActivity.this, "Clicked : " + position, Toast.LENGTH_LONG).show();
             }
         });
 
+
         recyclerview.setAdapter(adapter);
 
+        /*recyclerview.addItemDecoration(new StickHeaderItemDecoration(
+                this,0,true, new StickHeaderItemDecoration.SectionCallback(){
+                    @NotNull
+                    @Override
+                    public String getSectionHeader(int position) {
+                        return list.get(position).getName().toString();
+                    }
+
+                    @Override
+                    public boolean isSection(int position) {
+                        return true;
+                    }
+                }));*/
 
 
     }

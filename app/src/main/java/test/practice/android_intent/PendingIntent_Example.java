@@ -11,6 +11,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+
 import test.practice.R;
 
 /**
@@ -44,8 +45,6 @@ public class PendingIntent_Example extends AppCompatActivity {
         builder.setSubText("Tap to view the website.");
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-
-        // Will display the notification in the notification bar
         notificationManager.notify(1, builder.build());
     }
 

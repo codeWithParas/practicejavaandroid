@@ -1,6 +1,6 @@
 package com.example.logicprogram.other_java;
 
-import com.google.crypto.tink.subtle.AesCmac;
+/*import com.google.crypto.tink.subtle.AesCmac;
 
 import java.security.GeneralSecurityException;
 import java.security.InvalidAlgorithmParameterException;
@@ -53,7 +53,7 @@ public class TestingAES {
 
             cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
             SecretKeySpec secretKeySpec = new SecretKeySpec(keyBytes, "AES");
-            cipher.init(Cipher.ENCRYPT_MODE, secretKey/*secretKeySpec*//*, parameterSpec*/);
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey*//*secretKeySpec*//**//*, parameterSpec*//*);
             //cipher.updateAAD(new byte[]{0x01});
 
             System.out.println(DatatypeConverter.printHexBinary(cipher.doFinal(bytesInput)));
@@ -73,13 +73,13 @@ public class TestingAES {
             e.printStackTrace();
         } catch (InvalidKeyException e) {
             e.printStackTrace();
-        } /*catch (InvalidAlgorithmParameterException e) {
+        } *//*catch (InvalidAlgorithmParameterException e) {
             e.printStackTrace();
-        }*/ catch (IllegalBlockSizeException e) {
+        }*//* catch (IllegalBlockSizeException e) {
             e.printStackTrace();
         } catch (BadPaddingException e) {
             e.printStackTrace();
         }
 
     }
-}
+}*/

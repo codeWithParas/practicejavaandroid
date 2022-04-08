@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import java.util.Locale;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import java.util.Locale;
+
 import test.practice.android_lifecycle.lifecyclefragments.Fragmenttwo;
 
 
@@ -21,7 +22,8 @@ import test.practice.android_lifecycle.lifecyclefragments.Fragmenttwo;
 
 public class Utils {
 
-    /*From ST Test*/
+
+    /*From ST Test */
 
     public static String dataBroadCast;
 
