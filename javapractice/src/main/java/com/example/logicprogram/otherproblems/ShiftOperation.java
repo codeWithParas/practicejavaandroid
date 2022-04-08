@@ -8,7 +8,10 @@ public class ShiftOperation {
         //(vid << 16) | mid
 
         int i = (48 << 16) | 0x0001;
-        System.out.println("Print : " + i);
+        //System.out.println("Print : " + i);
+
+        System.out.println(10 + 20 + "GeeksQuiz");
+        System.out.println("GeeksQuiz" + 10 + 20);
 
     }
 }

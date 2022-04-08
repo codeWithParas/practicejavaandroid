@@ -6,11 +6,13 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import test.practice.R;
 
 /**
  * Created by parasmani.sharma on 11/10/2017.
  * Refer : https://medium.com/@iammert/android-launchmode-visualized-8843fc833dbe
+ * https://www.youtube.com/watch?v=K6DxfVHLrY0&list=PLfuE3hOAeWhY8fkzCluHakmK9A3bJsGR0&index=4
  */
 
 public class Activity_A extends AppCompatActivity {

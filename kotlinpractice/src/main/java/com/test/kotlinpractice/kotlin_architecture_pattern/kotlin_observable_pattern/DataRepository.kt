@@ -27,6 +27,7 @@ class DataRepository(var name : String, var id : Int) : SubjectActions
     }
 
     override fun notifyObserever() {
+        // Run on main UI thread to update UI
         for (observer in observers) {
             observer.onDataSetChanged()
         }

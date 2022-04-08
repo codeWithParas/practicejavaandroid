@@ -1,0 +1,77 @@
+https://www.programiz.com/kotlin-programming/for-loop
+
+KOTLIN vs JAVA
+
+1) Kotlin we have Named Arguments.
+2) By default all classes are final so not possible to inherit. Use "open" keyword inorder to inherit any class.
+3) No STATIC keyword in kotlin. Use Companion object instead.
+
+
+https://www.geeksforgeeks.org/amazon-interview-experience-for-sde-1-full-time-referral-2020/?ref=lbp
+https://www.youtube.com/watch?v=Mo4vesaut8g
+arr[] = {a, b, b, d, e}
+
+for(int len = 0; len<=arr.size; len++)
+{
+
+	System.out.println(arr[len]);
+	for(int j = 1; j<=len+1; j++)
+	{
+		int k = len + j - 1
+		System.out.println(arr[len] + arr[j]);
+
+	}
+
+}
+
+3) Kotlin data class
+4) Kotlin Extension functions. (String.getAllWords())
+5) Companion object :  replacement of Static : Used to create singleton pattern
+6) Sealed Class : It is used to define a limited set of values.
+7) Kotlin Generics using lambda expressions.
+8) Higher Order Functions and Lambdas
+Functions are first class.
+We can store func in variable.
+We can pass func as arguments to other funcs.
+We can also return func from other func.
+
+9) Null Safety
+10) Elvis Operator (?:)  - replacement of if else statement
+val l = b?.length ?: -1
+11) not-null assertion operator (!!) - throws null if value is null
+12) Safe casts (as?) - Regular casts may result in a ClassCastException. Return null if the attempt was not successful
+
+
+
+//////////////////////
+fun String.getAllWords(): List<String> {
+    	return this.split(" ")
+	}
+
+	fun main(){
+    	val name = "Paras Mani Sharma"
+    	println(name.getAllWords())
+	}
+
+/////////////////////////////
+	fun<T> findElement(array: Array<T>, element:T, foundElement: (index: Int, element: T?) -> Unit) {
+    	for(i in array.indices){
+        	if(array[i] == element){
+            	foundElement(i, array[i])
+            	return
+        	}
+    	}
+    	foundElement(0, null)
+    	return
+	}
+
+	fun main() {
+   	 	findElement(arrayOf(1,2,3,4,5,6), 3) { index, element ->
+        	println("Index $index")
+        	println("Element $element")
+    	}
+    	findElement(arrayOf("1","2","3","4","5","6"), "3") { index, element ->
+        	println("Index $index")
+        	println("Element $element")
+    	}
+	}
