@@ -66,7 +66,7 @@ fun <T> findElement(array: Array<T>, element: T, foundElement: (index: Int, elem
             return
         }
     }
-    foundElement(0, null)
+    foundElement(-1, null)
     return
 }
 
@@ -88,4 +88,26 @@ fun main() {
         println("Index $index")
         println("Element $element")
     }
+
+    findItem(3, items = arrayOf(1, 2, 3, 4, 5, 6)) { index, element ->
+        println("Index $index")
+        println("Element $element")
+    }
+
+    findItem("Ram", items = arrayOf("Shyam", "Hari", "Gopal", "Radhe", "Ram", "Om")) { index, element ->
+        println("Index $index")
+        println("Element $element")
+    }
+}
+
+fun <T> findItem(itemX : T, items : Array<T>, foundItem : (position : Int, item : T?) -> Unit) {
+
+    for (i in items.indices) {
+        if(items[i] == itemX) {
+            foundItem(i, itemX)
+            return
+        }
+    }
+    foundItem(-1, null)
+    return
 }

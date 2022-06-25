@@ -26,6 +26,12 @@ val isEvenNoLambda = object : IntPredicate {
     }
 }
 
+// SAM : Used to create lambda functions.
+// Convert to lambda
+val isEvenWithLambdaTest = IntPredicate {
+    it % 2 == 0
+}
+
 fun main() {
     println("Is 7 even? - ${isEven.accept(7)}")
 }

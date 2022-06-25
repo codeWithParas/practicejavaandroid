@@ -1,5 +1,7 @@
 package com.test.kotlinpractice.kotlin_language.kotlin_basics
 
+import java.util.*
+
 class H_KotlinExtensionFunction {
 }
 
