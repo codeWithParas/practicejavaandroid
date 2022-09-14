@@ -22,6 +22,7 @@ import test.practice.android_handler.Handler_Example;
 import test.practice.android_intent.Intent_Example;
 import test.practice.android_intent.PendingIntent_Example;
 import test.practice.android_launchmodes.Activity_A;
+import test.practice.android_location.TestLocation;
 import test.practice.android_media.PlayVideoActivity;
 import test.practice.android_onSaveInstanceState.OnRestoreActivityTest;
 import test.practice.android_parcelable.FirstActivity;
@@ -364,6 +365,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.test_location).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(MainActivity.this, LoaderTest.class);
+                Intent intent = new Intent(MainActivity.this, TestLocation.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.test_loader).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LoaderTest.class);

@@ -7,7 +7,7 @@ class O_KotlinInlineFunctions {
 fun main() {
 
     inlineFunction {
-        println("Calling Inline Function")
+        println("Inline Function Called")
     }
 }
 
@@ -17,6 +17,7 @@ fun main() {
 // Check Bytecode of this program. Tools -> Kotlin -> Show kotlin bytecode
 
 inline fun inlineFunction(callback: () -> Unit) {
-    callback()
+
     println("Inside Inline Function")
+    callback()
 }
