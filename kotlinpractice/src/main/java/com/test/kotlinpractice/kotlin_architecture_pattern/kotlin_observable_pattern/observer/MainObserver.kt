@@ -2,6 +2,5 @@ package com.test.kotlinpractice.kotlin_architecture_pattern.kotlin_observable_pa
 
 open class MainObserver(var name : String)
 {
-    var observername = name
-    get
+    var observerName: String = name
 }

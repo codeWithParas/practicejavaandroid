@@ -19,5 +19,12 @@ class SampleTest {
 fun main() {
     //SampleTest().testOperator(100, 93)
 
-    println(202 % 50)
+    val a = false
+    val b = false
+    val c = false
+    val x = true
+    if (x && (a || b || c)) {
+        println("Test")
+    }
+    //println(202 % 50)
 }
