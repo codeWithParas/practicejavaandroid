@@ -23,7 +23,8 @@ fun <T> findElementA(array: Array<T>, element: T, foundElement: (index: Int, ele
 
 fun main() {
 
-    // Higher Order Function
+    // Represent : Higher Order Function : A language supports higher-order functions if its functions can accept other
+    // functions as arguments and produce functions as return values.
     // If callback is the last arguements then we can take out lambda outside of () brackets. This process called Trailing lambda.
     /*findElementA(arrayOf(1,2,3,4,5,6), 3, { index, element ->
 

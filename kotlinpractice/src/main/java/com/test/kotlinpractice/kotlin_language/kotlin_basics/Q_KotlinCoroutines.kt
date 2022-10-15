@@ -18,11 +18,14 @@ class Q_KotlinCoroutines {
 // Coroutines made up of suspending functions.
 // Important : Coroutines helps to implement functionality that can be suspended and later resumed at specific point without blocking the thread.
 
-fun main() {
+suspend fun main() {
     //Check execution in app
-    CoroutineScope(Dispatchers.IO).launch {
+    CoroutineScope(Dispatchers.Default).launch {
+        println("S ${Thread.currentThread().name}")
         task1()
     }
+
+    task1()
 }
 
 suspend fun task1() {

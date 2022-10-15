@@ -1,6 +1,7 @@
 package com.test.kotlinpractice.kotlin_language.kotlin_basics
 
-class KotlinConstructor(name: String) {
+class KotlinConstructor(name: String) // Primary Constructor
+{
     var firstProperty = "First property: $name".also(::println)
 
     init {
@@ -14,12 +15,14 @@ class KotlinConstructor(name: String) {
     }
 
     //Secondary Constructor
-    constructor() : this("name") {
+    constructor() : this("Sharma") {
+        // First will run properties and init blocks
+        // After that control comes here
         println("Secondary constructor executed")
     }
 }
 
 fun main() {
-    KotlinConstructor()   // Calling Secondary Constructor
     KotlinConstructor("Paras") // Calling Primary Constructor
+    KotlinConstructor()   // Calling Secondary Constructor
 }

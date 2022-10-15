@@ -1,15 +1,14 @@
-package test.practice.location
+package test.practice.android_location
 
+import android.Manifest
 import android.Manifest.permission.ACCESS_BACKGROUND_LOCATION
 import android.Manifest.permission.ACCESS_FINE_LOCATION
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
-import android.provider.Settings
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -18,6 +17,16 @@ import com.google.android.gms.location.*
 import test.practice.R
 
 class TestLocation : AppCompatActivity() {
+
+
+    /*
+    *
+    * IMPORTANT :
+    * API below 29 - shows single popup for FINE LOCATION
+    * API equal 29 - shows double popup option
+    * API above 29 - shows single popup for FINE LOCATION and setting page for background permission
+    *
+    * */
 
     private var fusedLocationProvider: FusedLocationProviderClient? = null
     private val locationRequest: LocationRequest = LocationRequest.create().apply {
@@ -49,7 +58,50 @@ class TestLocation : AppCompatActivity() {
 
         fusedLocationProvider = LocationServices.getFusedLocationProviderClient(this)
 
-        checkLocationPermission()
+        //checkLocationPermission()
+        testPermission()
+    }
+
+    private fun testPermission() {
+
+        val locationPermissionRequest = registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) { permissions ->
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                when {
+                    permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
+                        // Precise location access granted.
+                        Toast.makeText(
+                            this@TestLocation,
+                            "Fine Location Granted",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                    permissions.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
+                        // Only approximate location access granted.
+                        Toast.makeText(
+                            this@TestLocation,
+                            "Coarse Location Granted",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                    else -> {
+                        // No location access granted.
+                    }
+                }
+            }
+        }
+        // ...
+        // Before you perform the actual permission request, check whether your app
+        // already has the permissions, and whether your app needs to show a permission
+        // rationale dialog. For more details, see Request permissions.
+
+        locationPermissionRequest.launch(
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            )
+        )
     }
 
     override fun onResume() {
@@ -153,7 +205,8 @@ class TestLocation : AppCompatActivity() {
         permissions: Array<String>,
         grantResults: IntArray
     ) {
-        when (requestCode) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        /*when (requestCode) {
             MY_PERMISSIONS_REQUEST_LOCATION -> {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -230,7 +283,7 @@ class TestLocation : AppCompatActivity() {
                 return
 
             }
-        }
+        }*/
     }
 
     companion object {

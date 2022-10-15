@@ -17,8 +17,10 @@ class Manager1 private constructor() {
         // fun getInstance() { //not thread safe
         // fun getInstance() = synchronized(this) {
         operator fun invoke() = synchronized(this) {  // using invoke() operator
-            if (instance == null)
+            if (instance == null) {
+                println("Manager1 object created")
                 instance = Manager1()
+            }
             instance
         }
     }
@@ -39,6 +41,7 @@ fun main() {
     // println(Manager.getInstance())
 
     // We always have same instance of Manager
+    println(Manager1.invoke())
     println(Manager)
     Thread().run {
         // println(Manager.getInstance())

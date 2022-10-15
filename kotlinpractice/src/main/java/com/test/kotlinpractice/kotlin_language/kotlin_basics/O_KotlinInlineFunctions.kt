@@ -7,7 +7,7 @@ class O_KotlinInlineFunctions {
 fun main() {
 
     inlineFunction {
-        println("Calling Inline Function")
+        println("Inline Function Called")
     }
 }
 

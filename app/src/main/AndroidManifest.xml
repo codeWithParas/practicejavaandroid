@@ -167,7 +167,7 @@
 
         <activity android:name=".android_qrscanner.QRScanner" />
         <activity android:name=".android_qrscanner.ScannedBarcodeActivity" />
-        <activity android:name=".location.TestLocation" />
+        <activity android:name=".android_location.TestLocation" />
         <activity android:name=".loader.LoaderTest" />
         <activity android:name=".android_media.PlayVideoActivity" />
         <activity android:name=".android_coroutines.TestCoroutinesActivity" />

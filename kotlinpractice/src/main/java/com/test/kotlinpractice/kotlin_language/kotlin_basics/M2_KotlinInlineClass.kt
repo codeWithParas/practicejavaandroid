@@ -7,9 +7,13 @@ class M_KotlinInlineClass {
 // https://kotlinlang.org/docs/inline-classes.html#members
 
 // it is wrapper that holds desired value
+// inline class provide safety in parameter passing
 
 
+//@JvmInline
 inline class Width(val value: Long)
+
+//@JvmInline
 inline class Height(val value: Long)
 
 class Rectangle(width: Width, height: Height) {
@@ -23,6 +27,7 @@ class Rectangle(width: Width, height: Height) {
 fun main(array: Array<String>) {
     val width = Width(100L)
     val height = Height(50L)
+    // var shape = Rectangle(height, width)   // Not work with inline
     var shape = Rectangle(width, height)
     shape.printSpec()
 }

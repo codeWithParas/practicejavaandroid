@@ -19,6 +19,7 @@ class P_KotlinCoroutines {
 
 fun main() {
 
+
 }
 
 suspend fun fetchDataFromNetwork() {
