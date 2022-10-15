@@ -18,7 +18,7 @@ class L_KotlinGenerics {
     }
 }
 
-fun main1() {
+fun main() {
     val arrayUtil = ArrayUtil(arrayOf(1,2,3,4,5,6))
     arrayUtil.findElement(3) { index, element ->
         println("Index $index")
@@ -27,8 +27,7 @@ fun main1() {
 }*/
 
 // Converting above scenario to generic type
-/*
-class ArrayUtil<T>(private val array : Array<T>) {
+/*class ArrayUtil<T>(private val array : Array<T>) {
     fun findElement(element:T, foundElement: (index: Int, element: T?) -> Unit) {
         for(i in array.indices){
             if(array[i] == element){
@@ -70,13 +69,13 @@ fun <T> findElement(array: Array<T>, element: T, foundElement: (index: Int, elem
     return
 }
 
-fun main() {
+fun main1() {
 
     // Higher Order Function
     // If callback is the last arguements then we can take out lambda outside of () brackets. This process called Trailing lambda.
-    /*findElement(arrayOf(1,2,3,4,5,6), 3, { index, element ->
+    findElement(arrayOf(1,2,3,4,5,6), 3, { index, element ->
 
-    })*/
+    })
 
 
     // Trailed lambda

@@ -17,6 +17,7 @@ fun main() {
 // Check Bytecode of this program. Tools -> Kotlin -> Show kotlin bytecode
 
 inline fun inlineFunction(callback: () -> Unit) {
-    callback()
+    //callback()
     println("Inside Inline Function")
+    callback()
 }

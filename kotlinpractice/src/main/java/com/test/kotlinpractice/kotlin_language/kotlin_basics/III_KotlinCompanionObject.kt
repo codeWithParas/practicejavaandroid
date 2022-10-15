@@ -8,6 +8,7 @@ class III_KotlinCompanionObject {
 // Operator Invoke Functionality
 // Companion Object
 
+
 class Manager1 private constructor() {
 
     companion object {
@@ -34,7 +35,7 @@ object Manager {
 
 fun main() {
     // Manager1.getInstance()
-    // Manager1()
+     Manager1()
     // println(Manager.getInstance())
 
     // We always have same instance of Manager
