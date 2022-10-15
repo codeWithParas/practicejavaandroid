@@ -1,4 +1,4 @@
-package com.test.kotlinpractice.kotlin_language
+package com.test.kotlinpractice.kotlin_language.kotlin_basics
 
 class L_KotlinGenerics {
 }
@@ -18,7 +18,7 @@ class L_KotlinGenerics {
     }
 }
 
-fun main1() {
+fun main() {
     val arrayUtil = ArrayUtil(arrayOf(1,2,3,4,5,6))
     arrayUtil.findElement(3) { index, element ->
         println("Index $index")
@@ -27,7 +27,7 @@ fun main1() {
 }*/
 
 // Converting above scenario to generic type
-class ArrayUtil<T>(private val array : Array<T>) {
+/*class ArrayUtil<T>(private val array : Array<T>) {
     fun findElement(element:T, foundElement: (index: Int, element: T?) -> Unit) {
         for(i in array.indices){
             if(array[i] == element){
@@ -54,7 +54,7 @@ fun main2() {
         println("Element $element")
     }
 
-}
+}*/
 
 // Optimise more in above generic case
 
@@ -65,11 +65,11 @@ fun <T> findElement(array: Array<T>, element: T, foundElement: (index: Int, elem
             return
         }
     }
-    foundElement(0, null)
+    foundElement(-1, null)
     return
 }
 
-fun main() {
+fun main1() {
 
     // Represent : Higher Order Function : A language supports higher-order functions if its functions can accept other
     // functions as arguments and produce functions as return values.
@@ -88,4 +88,26 @@ fun main() {
         println("Index $index")
         println("Element $element")
     }
+
+    findItem(3, items = arrayOf(1, 2, 3, 4, 5, 6)) { index, element ->
+        println("Index $index")
+        println("Element $element")
+    }
+
+    findItem("Ram", items = arrayOf("Shyam", "Hari", "Gopal", "Radhe", "Ram", "Om")) { index, element ->
+        println("Index $index")
+        println("Element $element")
+    }
+}
+
+fun <T> findItem(itemX : T, items : Array<T>, foundItem : (position : Int, item : T?) -> Unit) {
+
+    for (i in items.indices) {
+        if(items[i] == itemX) {
+            foundItem(i, itemX)
+            return
+        }
+    }
+    foundItem(-1, null)
+    return
 }

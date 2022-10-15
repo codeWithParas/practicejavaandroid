@@ -1,4 +1,4 @@
-package com.test.kotlinpractice.kotlin_language
+package com.test.kotlinpractice.kotlin_language.kotlin_basics
 
 class KotlinInterfaces {
 }
@@ -16,7 +16,7 @@ class KotlinInterfaces {
 
 interface A {
     fun foo() {
-        print("A")
+        println("A Foo")
     }
 
     //abstract fun bar()
@@ -26,17 +26,17 @@ interface A {
 
 interface B {
     fun foo() {
-        print("B")
+        println("B Foo")
     }
 
     fun bar() {
-        print("bar")
+        println("B Bar")
     }
 }
 
 class C : A {
     override fun bar() {
-        print("bar")
+        println("C Bar")
     }
 }
 
@@ -50,4 +50,10 @@ class D : A, B {
         super.bar()
     }
 
+}
+
+fun main() {
+    val d = D()
+    d.foo()
+    d.bar()
 }

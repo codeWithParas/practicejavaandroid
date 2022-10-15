@@ -1,4 +1,4 @@
-package com.test.kotlinpractice.kotlin_language
+package com.test.kotlinpractice.kotlin_language.kotlin_basics
 
 class A_TestKotlinLooping {
 
@@ -37,8 +37,8 @@ fun main() {
         println(item)
 
     //Similar like arrays, you can iterate through a String with an index
-    val text = "Kotlin"
+    val text = "KOTLIN"
     for (item in text.indices) {
-        println(text[item])
+        print(text[item]+ "  ")
     }
 }

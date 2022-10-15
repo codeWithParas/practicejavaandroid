@@ -1,4 +1,4 @@
-package com.test.kotlinpractice.kotlin_language
+package com.test.kotlinpractice.kotlin_language.kotlin_basics
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

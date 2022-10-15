@@ -177,6 +177,12 @@
             android:layout_height="wrap_content"
             android:text="Android QR Scanner" />
 
+        <Button
+            android:id="@+id/but_Observable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Observable" />
+
 
     </LinearLayout>
 

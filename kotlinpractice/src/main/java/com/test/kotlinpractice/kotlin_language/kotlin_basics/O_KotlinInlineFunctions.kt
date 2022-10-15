@@ -1,4 +1,4 @@
-package com.test.kotlinpractice.kotlin_language
+package com.test.kotlinpractice.kotlin_language.kotlin_basics
 
 class O_KotlinInlineFunctions {
 }
@@ -17,7 +17,7 @@ fun main() {
 // Check Bytecode of this program. Tools -> Kotlin -> Show kotlin bytecode
 
 inline fun inlineFunction(callback: () -> Unit) {
-
+    //callback()
     println("Inside Inline Function")
     callback()
 }

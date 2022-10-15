@@ -1,4 +1,4 @@
-package com.test.kotlinpractice.kotlin_language
+package com.test.kotlinpractice.kotlin_language.kotlin_basics
 
 class F_KotlinSAM {
 }
@@ -24,6 +24,12 @@ val isEvenNoLambda = object : IntPredicate {
     override fun accept(i: Int): Boolean {
         return i % 2 == 0
     }
+}
+
+// SAM : Used to create lambda functions.
+// Convert to lambda
+val isEvenWithLambdaTest = IntPredicate {
+    it % 2 == 0
 }
 
 fun main() {
