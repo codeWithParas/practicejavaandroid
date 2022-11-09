@@ -12,6 +12,7 @@ public class HashTable {
     {
         Hashtable ht = new Hashtable();
         ht.put("key","object");
+
     }
 
 }

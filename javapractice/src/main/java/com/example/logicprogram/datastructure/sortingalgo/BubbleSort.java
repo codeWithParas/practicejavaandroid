@@ -10,9 +10,10 @@ public class BubbleSort {
     {
         int[] array = {21,23,34,32,1,3,8,2,5,9};
 
-        //int[] arr = bubbleSort(array);
-        int[] arr = bubbleSortIterator(array);
+        int[] arr = bubbleSort(array);
+        //int[] arr = bubbleSortIterator(array);
 
+        System.out.println("Increasing Order");
         for(int i=0; i<arr.length; i++)
         {
             System.out.print("\nElement : "+ arr[i]);
