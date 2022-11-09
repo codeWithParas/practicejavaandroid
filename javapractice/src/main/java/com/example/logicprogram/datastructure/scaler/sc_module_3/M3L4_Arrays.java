@@ -1,4 +1,4 @@
-package com.example.logicprogram.datastructure.sc_module_3;
+package com.example.logicprogram.datastructure.scaler.sc_module_3;
 
 public class M3L4_Arrays {
 

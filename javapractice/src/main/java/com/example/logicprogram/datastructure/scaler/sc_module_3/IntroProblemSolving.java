@@ -1,4 +1,4 @@
-package com.example.logicprogram.datastructure.sc_module_3;
+package com.example.logicprogram.datastructure.scaler.sc_module_3;
 
 import java.util.ArrayList;
 
