@@ -1,4 +1,4 @@
-package com.example.logicprogram.datastructure.scaler.sc_module_3;
+package com.example.logicprogram.datastructure.scaler.sc_M4;
 
 public class M3L12_InterviewQ {
 

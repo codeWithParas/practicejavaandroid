@@ -1,4 +1,4 @@
-package com.example.logicprogram.datastructure.scaler;
+package com.example.logicprogram.datastructure.scaler.sc_M5;
 
 public class M5L2_String {
 
