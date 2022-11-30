@@ -12,8 +12,16 @@ class TestCoroutinesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_quote_binding)
-        setContentView(R.layout.activity_a)
+        /*
+        * Test API
+        * */
+        setContentView(R.layout.activity_quote_binding)
+
+        /*
+        * Test Coroutines
+        * */
+
+        /*setContentView(R.layout.activity_a)
 
         CoroutineScope(Dispatchers.Main).launch {
             callAPI()
@@ -21,7 +29,7 @@ class TestCoroutinesActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch {
             updateUI()
-        }
+        }*/
     }
 }
 

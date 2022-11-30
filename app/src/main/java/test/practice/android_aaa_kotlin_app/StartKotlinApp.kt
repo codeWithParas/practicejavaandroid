@@ -18,8 +18,10 @@ import test.practice.R
 import test.practice.android_aaa_kotlin_app.adapter.RecyclerViewAdapter
 import test.practice.android_aaa_kotlin_app.model.MoviesData
 import test.practice.android_aaa_kotlin_app.model.MyName
+import test.practice.android_aaa_kotlin_app.model.WeatherData
 import test.practice.android_aaa_kotlin_app.network.ImageApi
 import test.practice.android_aaa_kotlin_app.network.MoviesApi
+import test.practice.android_aaa_kotlin_app.network.WeatherServiceApi
 import test.practice.databinding.ActivityKotlinBinding
 
 
@@ -81,10 +83,10 @@ public class StartKotlinApp : AppCompatActivity()
 
     private fun updateData() {
 
-        MoviesApi.moviesService.getMoviesData().enqueue(object : retrofit2.Callback<List<MoviesData>> {
+        /*MoviesApi.moviesService.getMoviesData().enqueue(object : retrofit2.Callback<WeatherData> {
             override fun onFailure(call: Call<List<MoviesData>>, t: Throwable) {
 
-                System.out.println(">> Response Output ")
+                System.out.println(">> Response onFailure Output ")
             }
 
             override fun onResponse(call: Call<List<MoviesData>>, response: Response<List<MoviesData>>) {
@@ -98,12 +100,37 @@ public class StartKotlinApp : AppCompatActivity()
                 initUI()
                 //recyclerViewAdapter.notifyDataSetChanged()
 
-                /*Handler().post(Runnable {
+                *//*Handler().post(Runnable {
                     updateImg()
-                })*/
+                })*//*
 
             }
-        })
+        })*/
+
+        WeatherServiceApi.weatherService.getWeatherData()
+            .enqueue(object : retrofit2.Callback<WeatherData> {
+                override fun onFailure(call: Call<WeatherData>, t: Throwable) {
+
+                    System.out.println(">> Response onFailure Output ")
+                }
+
+                override fun onResponse(call: Call<WeatherData>, response: Response<WeatherData>) {
+
+                    System.out.println(">> Response Output : " + response)
+
+                    //allMovieList = response.body()!!
+                    val moviesList = MoviesList(allMovieList)
+                    //val title = moviesList.list.get(0)
+                    //binding.myMovies = allMovieList.get(0)
+                    //initUI()
+                    //recyclerViewAdapter.notifyDataSetChanged()
+
+                    /*Handler().post(Runnable {
+                        updateImg()
+                    })*/
+
+                }
+            })
     }
 
     private fun updateImg() {
