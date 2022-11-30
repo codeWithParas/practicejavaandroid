@@ -4,9 +4,19 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/practicejavaandroid.iml" filepath="$PROJECT_DIR$/practicejavaandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.iml" filepath="$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.main.iml" filepath="$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/client/practicejavaandroid.client.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/javapractice/practicejavaandroid.javapractice.iml" filepath="$PROJECT_DIR$/.idea/modules/javapractice/practicejavaandroid.javapractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javapractice/practicejavaandroid.javapractice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/javapractice/practicejavaandroid.javapractice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javapractice/practicejavaandroid.javapractice.test.iml" filepath="$PROJECT_DIR$/.idea/modules/javapractice/practicejavaandroid.javapractice.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlinpractice/practicejavaandroid.kotlinpractice.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlinpractice/practicejavaandroid.kotlinpractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlinpractice/practicejavaandroid.kotlinpractice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlinpractice/practicejavaandroid.kotlinpractice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlinpractice/practicejavaandroid.kotlinpractice.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlinpractice/practicejavaandroid.kotlinpractice.test.iml" />
     </modules>
   </component>
 </project>
