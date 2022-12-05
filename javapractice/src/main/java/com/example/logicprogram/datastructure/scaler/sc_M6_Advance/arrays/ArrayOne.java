@@ -64,14 +64,15 @@ public class ArrayOne {
         }
 
         // 3) Rain water trapped (Using Prefix Max and Suffix Max)
+        System.out.println("\n\n");
         /*
          * Idea : Iterate for each index (i)
          * Step 1 : ---------------leftBlock = Prefix Max(pMax)-----------------> ith index <------------------rightBlock = Sufix Max (sMax)------------------------
          * Step 2 : maxWaterCanHold = calculate min(pMax, sMax)
          * Step 3 : exactWaterCanHold = minWaterCanHold - arr[ith index]
-         *
-         *
          * */
+        int[] blocks = {0, 1, 0, 2};   //Output : 1
+        netWaterTrap(blocks);
 
 
         //4) Max sub-array sum (Kadane's Algo) ------------------------------ Kadane's Algo (Find Max Sum Sub-array)-----------------------------------
@@ -223,6 +224,60 @@ public class ArrayOne {
         for (int i = 0; i < arr.length; i++) {
             sum = sum + arr[i];
             arr[i] = sum;
+        }
+
+        return arr;
+    }
+
+    public static int netWaterTrap(final int[] A) {
+
+        int[] pMax = getPrefixMax(A);
+        int[] sMax = getSuffixMax(A);
+        int ans = 0;
+
+        for (int i = 1; i < A.length - 1; i++) {
+            int leftMax = pMax[i - 1];
+            int rightMax = sMax[i + 1];
+
+            int maxWaterCanHold = Math.min(leftMax, rightMax);
+            int netWaterCanHold = maxWaterCanHold - A[i];
+
+            if (netWaterCanHold > 0) {
+                ans += netWaterCanHold;
+            }
+        }
+        return ans;
+    }
+
+    public static int[] getPrefixMax(int[] a) {
+
+        int[] arr = new int[a.length];
+        int max = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > max) {
+                arr[i] = a[i];
+                max = a[i];
+            } else {
+                arr[i] = max;
+            }
+        }
+
+        return arr;
+    }
+
+    public static int[] getSuffixMax(int[] a) {
+
+        int[] arr = new int[a.length];
+        int max = 0;
+
+        for (int i = a.length - 1; i >= 0; i--) {
+            if (a[i] > max) {
+                arr[i] = a[i];
+                max = a[i];
+            } else {
+                arr[i] = max;
+            }
         }
 
         return arr;
