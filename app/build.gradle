@@ -23,7 +23,7 @@ android {
         }
     }
 
-    //compileOptions.encoding = 'UTF-8'
+    compileOptions.encoding = 'UTF-8'
     //compileOptions.encoding = 'ISO-8859-1'
     //compileOptions.encoding = 'windows-1251'
 
