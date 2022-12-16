@@ -15,3 +15,14 @@ data class MoviesData(
     @SerializedName("title")
     var title: String
 )
+
+data class WeatherData(
+    @SerializedName("region")
+    var region: String,
+    //@SerializedName("currentConditions")
+    //var currentConditions: String,
+    //@SerializedName("next_days")
+    //var next_days: String,
+    @SerializedName("data_source")
+    var data_source: String
+)
