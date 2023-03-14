@@ -27,6 +27,7 @@ import test.practice.android_media.PlayVideoActivity;
 import test.practice.android_onSaveInstanceState.OnRestoreActivityTest;
 import test.practice.android_parcelable.FirstActivity;
 import test.practice.android_recyclerview.RecyclerViewActivity;
+import test.practice.android_sensors.DesignCompass;
 import test.practice.android_session.Android_SessionMgmt;
 import test.practice.android_spannable.NewLineSpannable;
 import test.practice.android_volley.Volley_Test;
@@ -393,6 +394,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TestCoroutinesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.test_sensor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DesignCompass.class);
                 startActivity(intent);
             }
         });

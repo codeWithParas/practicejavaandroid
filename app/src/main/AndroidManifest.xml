@@ -32,6 +32,9 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <!--Used for sensor compass design-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <!--android:name=".android_volley.AppController"-->
     <application
         android:name=".android_aaa_kotlin_rxjava.LearningRxJavaApplication"
@@ -128,7 +131,7 @@
             android:enabled="true"
             android:multiprocess="true"
             android:exported="true"
-            android:authorities="paras.server.MyContentProvider"></provider>
+            android:authorities="paras.server.MyContentProvider" />
 
 
         <!--Registring binding service for AIDL-->
@@ -148,7 +151,7 @@
 
         <!--Kotlin Android Activity-->
         <activity android:name=".android_aaa_kotlin_app.StartKotlinApp" />
-        <activity android:name=".android_aarchitecture_kotlin.b_mvp.MVPLoginActivity" />
+        <activity android:name=".android_aarchitecture.b_mvp.MVPLoginActivity" />
 
         <!---->
         <activity android:name=".android_spannable.NewLineSpannable" />
@@ -181,6 +184,11 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>-->
+
+        <!--Implement Compass Using Sensors-->
+        <activity android:name=".android_sensors.DesignCompass" />
+        <service android:name=".android_sensors.LocatyService" />
+        <receiver android:name=".android_sensors.LocatyService$ActionListener" />
 
     </application>
 

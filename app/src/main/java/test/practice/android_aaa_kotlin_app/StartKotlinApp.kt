@@ -20,7 +20,6 @@ import test.practice.android_aaa_kotlin_app.model.MoviesData
 import test.practice.android_aaa_kotlin_app.model.MyName
 import test.practice.android_aaa_kotlin_app.model.WeatherData
 import test.practice.android_aaa_kotlin_app.network.ImageApi
-import test.practice.android_aaa_kotlin_app.network.MoviesApi
 import test.practice.android_aaa_kotlin_app.network.WeatherServiceApi
 import test.practice.databinding.ActivityKotlinBinding
 
@@ -119,7 +118,7 @@ public class StartKotlinApp : AppCompatActivity()
                     System.out.println(">> Response Output : " + response)
 
                     //allMovieList = response.body()!!
-                    val moviesList = MoviesList(allMovieList)
+                    //val moviesList = MoviesList(allMovieList)
                     //val title = moviesList.list.get(0)
                     //binding.myMovies = allMovieList.get(0)
                     //initUI()
