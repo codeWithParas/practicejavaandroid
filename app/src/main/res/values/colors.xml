@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="textColor">#737373</color>
+    <color name="white">#FFFFFF</color>
+    <color name="azure">#01ABE1</color>
+    <color name="very_light_pink">#bebebe</color>
+
 </resources>
