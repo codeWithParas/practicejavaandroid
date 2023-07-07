@@ -36,6 +36,10 @@ android {
         compileOptions.encoding = 'ISO-8859-1'
     }
     ndkVersion '21.0.6113669'
+    buildFeatures {
+        aidl true
+    }
+    namespace 'test.practice'
 }
 
 ext {

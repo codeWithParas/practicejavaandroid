@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
-      <module name="practicejavaandroid.app" target="11" />
-      <module name="practicejavaandroid.client" target="11" />
+      <module name="practicejavaandroid.app" target="17" />
+      <module name="practicejavaandroid.client" target="17" />
       <module name="practicejavaandroid.javapractice" target="1.8" />
       <module name="practicejavaandroid.javapractice.main" target="1.8" />
       <module name="practicejavaandroid.javapractice.test" target="1.8" />
