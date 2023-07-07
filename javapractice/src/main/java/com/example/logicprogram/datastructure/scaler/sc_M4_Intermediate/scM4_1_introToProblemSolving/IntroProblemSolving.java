@@ -124,6 +124,7 @@ by 2 otherwise.
         return count;
     }
 
+    // Time Complexity : Root N
     public int optimiseIsPrime(long A) {
         int count = 0;
         double a = Math.sqrt(A);
