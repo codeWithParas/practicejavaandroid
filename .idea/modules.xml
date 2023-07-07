@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PJAone.practicejavaandroid.iml" filepath="$PROJECT_DIR$/.idea/modules/PJAone.practicejavaandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/practicejavaandroid.iml" filepath="$PROJECT_DIR$/practicejavaandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/practicejavaandroid.app.androidTest.iml" />
