@@ -91,6 +91,7 @@ by 2 otherwise.
     * */
 
     public int optimiseFactors(int A) {
+        // 6 : 1,2,3,6
         double a = Math.sqrt(A);
         int count = 0;
         for(double i = 1; i<=a; i++){
@@ -178,15 +179,18 @@ by 2 otherwise.
 
     // Q7. Find the time Complexityyou
     /*
-    *
-    * Find the number of times below code runs where N is a perfect square
-    * for i -> 1 to N
-    * if(i * i == N)
-    * return i
-    *
-    * Options : N, N/2, sqrt(N), logN
-    * Answer : sqrt(N)
-    *
-    * */
+     *
+     * Find the number of times below code runs where N is a perfect square
+     * for i -> 1 to N
+     * if(i * i == N)
+     * return i
+     *
+     * Options : N, N/2, sqrt(N), logN
+     * Answer : sqrt(N)
+     *
+     * */
+
+
+    // Scalar Questions
 
 }

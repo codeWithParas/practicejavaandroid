@@ -108,6 +108,10 @@ public class M3L4_TwoDArrays {
             //System.out.println("Row : " + i + "   "+ Arrays.toString(twoD[i]));
         }
 
+        /*
+         * Given a 2D array. Write a fn that returns a transpose of that array.
+         * i.e -> (N*M) becomes (M*N)
+         * */
         System.out.println("---Inverted or transpose---");
         for (int i = 0; i < twoD[0].length; i++) { //cols
             for (int j = 0; j < twoD.length; j++) {  //rows
@@ -116,16 +120,7 @@ public class M3L4_TwoDArrays {
             System.out.println(" ");
         }
 
-
-        System.out.println("------------- Problem 4 : 2D Array---------------- ");
-
-        /*
-         * Given a 2D array. Write a fn that returns a transpose of that array.
-         * i.e -> (N*M) becomes (M*N)
-         * */
-
-
-        System.out.println("------------- Problem 5 : 2D Array Print Wave (column wise)---------------- ");
+        System.out.println("------------- Problem 4 : 2D Array Print Wave (column wise)---------------- ");
 
         Scanner sc = new Scanner(System.in);
 
