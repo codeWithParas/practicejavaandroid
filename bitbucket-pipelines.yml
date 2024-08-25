@@ -33,3 +33,4 @@ pipelines:
         trigger: 'manual'
         script:
           - echo "Your deployment to production script goes here..."
+          - git push --mirror git@github.com:paras1805/practicejavaandroid.git
