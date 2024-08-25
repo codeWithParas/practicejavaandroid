@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="test.practice">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -31,6 +30,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--Used for sensor compass design-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <!--android:name=".android_volley.AppController"-->
     <application
@@ -128,7 +130,7 @@
             android:enabled="true"
             android:multiprocess="true"
             android:exported="true"
-            android:authorities="paras.server.MyContentProvider"></provider>
+            android:authorities="paras.server.MyContentProvider" />
 
 
         <!--Registring binding service for AIDL-->
@@ -148,7 +150,7 @@
 
         <!--Kotlin Android Activity-->
         <activity android:name=".android_aaa_kotlin_app.StartKotlinApp" />
-        <activity android:name=".android_aarchitecture_kotlin.b_mvp.MVPLoginActivity" />
+        <activity android:name=".android_aarchitecture.b_mvp.MVPLoginActivity" />
 
         <!---->
         <activity android:name=".android_spannable.NewLineSpannable" />
@@ -181,6 +183,11 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>-->
+
+        <!--Implement Compass Using Sensors-->
+        <activity android:name=".android_sensors.DesignCompass" />
+        <service android:name=".android_sensors.LocatyService" />
+        <receiver android:name=".android_sensors.LocatyService$ActionListener" />
 
     </application>
 

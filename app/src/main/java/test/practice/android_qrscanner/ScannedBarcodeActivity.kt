@@ -1,8 +1,9 @@
 package test.practice.android_qrscanner
-/*
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.SurfaceHolder
 import android.view.SurfaceView
@@ -15,7 +16,6 @@ import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
 import kotlinx.android.synthetic.main.activity_scan_barcode.*
-import kotlinx.android.synthetic.main.qr_scanner.*
 import test.practice.R
 import java.io.IOException
 
@@ -45,14 +45,20 @@ class ScannedBarcodeActivity : AppCompatActivity() {
         //initialiseDetectorsAndSources()
         //BarcodeDetector.Builder(context)
 
-        */
-/*btnAction.setOnClickListener {
-            if (intentData.length > 0) {
-                if (isEmail) startActivity(Intent(this@ScannedBarcodeActivity, EmailActivity::class.java).putExtra("email_address", intentData)) else {
+        btnAction.setOnClickListener {
+            if (intentData.isNotEmpty()) {
+                if (isEmail) {
+                    /*startActivity(
+                        Intent(
+                            this@ScannedBarcodeActivity,
+                            EmailActivity::class.java
+                        ).putExtra("email_address", intentData)
+                    )*/
+                } else {
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(intentData)))
                 }
             }
-        }*//*
+        }
 
     }
 
@@ -132,4 +138,4 @@ class ScannedBarcodeActivity : AppCompatActivity() {
         super.onResume()
         initialiseDetectorsAndSources()
     }
-}*/
+}

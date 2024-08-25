@@ -1,0 +1,22 @@
+BITBUCKET_USERNAME=parassharma1805@gmail.com
+BITBUCKET_PASSWORD=bitbucket1805_
+
+
+
+Git PracticeJavaAndroid
+
+Repository Access Token created
+Your Repository Access Token: "practiceJavaAndroid"
+Record this token somewhere secure, it can't be viewed or retrieved once you close this window.
+ATCTT3xFfGN0_j2xn2_LfgG5-b05IPTMcMYmuvv65lrf_XOX4z9Aa1WV8EzrKzzqiZUExgZ7Pa4hMVfltpuog8ElMwO0S71vwQVAI8NCq_Q1OVI5RKT38372HrE-oWkdUF-ifu3-3BWNXCh-GpWxRu5_10HwvdbX7wRn_ExCR-VuOsGLj9BKcNQ=F897E3B3
+
+How to use this token with APIs
+Provide this token in the Authorization header as a bearer token when making requests to Bitbucket APIs, for example:
+Authorization: Bearer ATCTT3xFfGN0_j2xn2_LfgG5-b05IPTMcMYmuvv65lrf_XOX4z9Aa1WV8EzrKzzqiZUExgZ7Pa4hMVfltpuog8ElMwO0S71vwQVAI8NCq_Q1OVI5RKT38372HrE-oWkdUF-ifu3-3BWNXCh-GpWxRu5_10HwvdbX7wRn_ExCR-VuOsGLj9BKcNQ=F897E3B3
+
+How to use this token with your Git repository
+To clone this repository using this token, run:
+git clone https://x-token-auth:ATCTT3xFfGN0_j2xn2_LfgG5-b05IPTMcMYmuvv65lrf_XOX4z9Aa1WV8EzrKzzqiZUExgZ7Pa4hMVfltpuog8ElMwO0S71vwQVAI8NCq_Q1OVI5RKT38372HrE-oWkdUF-ifu3-3BWNXCh-GpWxRu5_10HwvdbX7wRn_ExCR-VuOsGLj9BKcNQ=F897E3B3@bitbucket.org/parassharma1805/practicejavaandroid.git
+
+To use this token to push code to this repository, you need to set the Git author on the cloned repository by running:
+git config user.email 712020:b557b834-365a-408e-af52-ea15df198f02@bots.bitbucket.org
