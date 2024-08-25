@@ -21,15 +21,15 @@ public class M4L5_ArraysPrefixSum {
         //Question 1
         //Prefix Sum Queries
         //int[] arr = {-3,6,2,4,5,2,8,-9,3,1};
-        int[] arr = {1, -2, 3, 4, 5};    // ans = [10, 5], queries = [[1, 4], [2, 3]]
-        int[][] queries = {{1, 4}, {2, 3}};
-        //prefixSumQueries(arr, queries);
+        int[] arr = {1, -2, 3, 4, 5};    // ans = [10, 7], queries = [[1, 4], [2, 3]]
+        int[][] queries = {{1, 4}, {2, 3}};  // indexes
+        prefixSumQueries(arr, queries);
 
 
         System.out.println("\nConstruct prefix sum of the array in the given array itself");
         // Question 2
         // Given an array A of N integers. Construct prefix sum of the array in the given array itself.
-        //prefixSumInSameArray(arr);
+        prefixSumInSameArray(arr);
 
 
         System.out.println("\nFind Equilibrium Index");
@@ -163,8 +163,8 @@ public class M4L5_ArraysPrefixSum {
         long[] pSum = getPrefixSum(arr);
         long[] ans = new long[queries.length];
         for (int i = 0; i < queries.length; i++) {
-            int leftIndex = queries[i][0] - 1;    // ex : If query value is 4 then index is 4-1 = 3
-            int rightIndex = queries[i][1] - 1;
+            int leftIndex = queries[i][0];
+            int rightIndex = queries[i][1];
             if (leftIndex - 1 < 0) {
                 ans[i] = pSum[rightIndex];
             } else {
