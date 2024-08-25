@@ -5,20 +5,31 @@ import java.util.ArrayList;
 
 /*
 * Q1. Count Factors - 2
-* Q2. IsPrime
-* Q3. Square root of a number
-* Q4. Sum of evens!
-* Q5. Power function
-* Q6. Sum of N natural numbers
-* Q7. Find the time Complexity
-* Q8. Divide by 2
-* Q9. Logarithmic Properties
-*
+ * Q2. IsPrime
+ * Q3. Square root of a number
+ * Q4. Sum of evens!
+ * Q5. Power function
+ * Q6. Sum of N natural numbers
+ * Q7. Find the time Complexity
+ * Q8. Divide by 2
+ * Q9. Logarithmic Properties
+ *
+ * Find square root of a number
+ * Find square root of a perfect square number using binary search
+ * what is TLE and how it occurs, how to predict the time taken by your algorithm ?
+ * How to optimise any case to avoid TLE situation
+ * Count factors of a number
+ *
  * */
 
 public class IntroProblemSolving {
 
-    // Q1. Count Factors - 2
+    public static void main(String[] args) {
+        int count = optimiseFactors(6);
+        System.out.println(count);
+    }
+
+
     // https://www.scaler.com/topics/square-root-in-java/
     // 1) Find square root of a number
     public void findSquareRoot(int A) {
@@ -67,36 +78,36 @@ public class IntroProblemSolving {
         return factors.size();
     }
 
-    // How to optimise above case to avoid TLE situation.
+    // How to optimise above case to avoid TLE situation. (Time Limit Exceed)
     /*
-    * We call it as "Reduction Strategy"
-    *
-    * First Step : Check input and output data size (array) just to analyze
-    *               iteration that is going to execute on input data.
-    * Second Step : Check if o/p data size is lesser or half of input data size.
-    *               Accordingly set the looping limits for iteration.
-    * Third Step : After analyzing i/p-o/p data. Check mathe's conditions or formulas (of Math.sqrt())
-    *               if we can reduce looping in for loop.
-    * Example : Math.sqrt(A) -> will reduce iterations
-    * Fourth Step : Inside for loop also check if maximum Output can be covered in single iteration only.
-    * Example : count = count + 2 -> Adding here +2 will cover 2 cases at one iteration : 1*25 = 25 && 25*1 = 25
+     * We call it as "Data Reduction Strategy"
+     *
+     * First Step : Check input and output data size (array) just to analyze
+     *               iteration that is going to execute on input data.
+     * Second Step : Check if o/p data size is lesser or half of input data size.
+     *               Accordingly set the looping limits for iteration.
+     * Third Step : After analyzing i/p-o/p data. Check mathe's conditions or formulas (of Math.sqrt())
+     *               if we can reduce looping in for loop.
+     * Example : Math.sqrt(A) -> will reduce iterations
+     * Fourth Step : Inside for loop also check if maximum Output can be covered in single iteration only.
+     * Example : count = count + 2 -> Adding here +2 will cover 2 cases at one iteration : 1*25 = 25 && 25*1 = 25
     * */
 
     /*
-    * Iterate over all numbers from 1 to root(N).
+    * Iterate over all numbers from 1 to square root(N).
 For each number check if N % i == 0.
 If yes, then increment count by 1 if i * i == N or
 by 2 otherwise.
     *
     * */
 
-    public int optimiseFactors(int A) {
+    public static int optimiseFactors(int A) {
         // 6 : 1,2,3,6
         double a = Math.sqrt(A);
         int count = 0;
-        for(double i = 1; i<=a; i++){
-            if(A % i == 0) {
-                if(i * i == A){
+        for (double i = 1; i <= a; i++) {
+            if (A % i == 0) {
+                if (i * i == A) {
                     count++;
                 } else {
                     count = count + 2;

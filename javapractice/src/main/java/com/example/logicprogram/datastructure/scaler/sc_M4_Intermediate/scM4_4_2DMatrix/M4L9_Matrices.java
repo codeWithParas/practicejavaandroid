@@ -105,7 +105,7 @@ public class M4L9_Matrices {
             col++;
         }
 
-        //Print transpose matrix
+        //Print transpose matrix1
         for(row=0; row<A.length; row++)
         {
             for(col=0; col<A[0].length; col++)
